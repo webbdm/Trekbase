@@ -1,0 +1,92 @@
+{
+  "parks" : {
+    "park0" : {
+      "name" : "South Cumberland State Park",
+      "zip": "",
+      "city": "",
+      "state": "",
+      "latitude": "",
+      "longitude": "",
+      "image": "",
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
+    },
+    "park1" : {
+      "name" : "Cherokee National Forest",
+      "zip": "",
+      "city": "",
+      "state": "",
+      "latitude": "",
+      "longitude": "",
+      "image": "",
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
+    },
+    "park2" : {
+      "name" : "Great Smoky Mountains National Park",
+      "zip": "",
+      "city": "",
+      "state": "",
+      "latitude": "",
+      "longitude": "",
+      "image": "",
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52"
+    }
+  },
+  "campsites" : {
+    "campsite0" : {
+      "parkId" : "park0",
+      "image" : "",
+      "campsiteName" : "Arrow",
+      "latitude": "",
+      "longitude": "",
+      "area": "",
+      "review": "",
+      "features": "",
+      "fee": "",
+      "bathrooms": "",
+      "type": "",
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
+    },
+    "campsite1" : {
+      "parkId" : "park0",
+      "image" : "",
+      "campsiteName" : "Big Fork",
+      "latitude": "",
+      "longitude": "",
+      "area": "",
+      "review": "",
+      "features": "",
+      "fee": "",
+      "bathrooms": "",
+      "type": "",
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
+    },
+    "campsite2" : {
+      "parkId" : "park2",
+      "image" : "",
+      "campsiteName" : "Black Rock",
+      "latitude": "",
+      "longitude": "",
+      "area": "",
+      "review": "",
+      "features": "",
+      "fee": "",
+      "bathrooms": "",
+      "type": "",
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52"
+    }
+  },
+  "users" : {
+    "user0" : {
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2",
+      "username" : "Ally"
+    },
+    "user1" : {
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52",
+      "username" : "Billy"
+    },
+    "user2" : {
+      "uid" : "6AgPsSmt97XlA2lnBUSbojWNkvi1",
+      "username" : "Charlie"
+    }
+  }
+}

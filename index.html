@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trekbase</title>
+        
+        <link rel="stylesheet" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+
+    <body ng-app="TrekbaseApp">
+
+        <div ng-include="'partials/navbar.html'"></div>
+
+        <main ng-view class=""></main>
+        <!-- THIRD PARTY / DEPENDENCIES -->
+        <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+        <script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
+        <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
+
+
+        <!-- APP CONFIG -->
+        <script type="text/javascript" src="javascript/app.js"></script>
+        <script type="text/javascript" src="javascript/AppConstants.js"></script>
+        <script type="text/javascript" src="javascript/AppConfig.js"></script>
+        
+        <!-- FACTORIES -->
+        <script type="text/javascript" src="javascript/factories/AuthFactory.js"></script>
+        <script type="text/javascript" src="javascript/factories/CampsiteFactory.js"></script>
+        <script type="text/javascript" src="javascript/factories/ParkFactory.js"></script>
+        <script type="text/javascript" src="javascript/factories/UserFactory.js"></script>
+        
+        <!-- CONTROLLERS -->
+        <script type="text/javascript" src="javascript/controllers/AuthCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/CardViewCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/HomeCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/NavCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/ParkListCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/ParkSearchCtrl.js"></script>
+        <script type="text/javascript" src="javascript/controllers/ParkViewCtrl.js"></script>
+        
+    </body>
+
+</html>
