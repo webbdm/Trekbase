@@ -8,7 +8,7 @@
       "latitude": "",
       "longitude": "",
       "image": "",
-      "uid" : "BCqP0wXysjMVi1P3JW7xTPXk0KC2"
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
     },
     "park1" : {
       "name" : "Cherokee National Forest",
@@ -18,7 +18,7 @@
       "latitude": "",
       "longitude": "",
       "image": "",
-      "uid" : "BCqP0wXysjMVi1P3JW7xTPXk0KC2"
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
     },
     "park2" : {
       "name" : "Great Smoky Mountains National Park",
@@ -28,11 +28,11 @@
       "latitude": "",
       "longitude": "",
       "image": "",
-      "uid" : "BCqP0wXysjMVi1P3JW7xTPXk0KC2"
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52"
     }
   },
   "campsites" : {
-    "card0" : {
+    "campsite0" : {
       "parkId" : "park0",
       "image" : "",
       "campsiteName" : "Arrow",
@@ -44,9 +44,9 @@
       "fee": "",
       "bathrooms": "",
       "type": "",
-      "uid" : "BCqP0wXysjMVi1P3JW7xTPXk0KC2"
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
     },
-    "card1" : {
+    "campsite1" : {
       "parkId" : "park0",
       "image" : "",
       "campsiteName" : "Big Fork",
@@ -58,9 +58,9 @@
       "fee": "",
       "bathrooms": "",
       "type": "",
-      "uid" : "yw1Qqs4p1vfQjbVTCp0n6p4VXpK2"
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
     },
-    "card" : {
+    "campsite2" : {
       "parkId" : "park2",
       "image" : "",
       "campsiteName" : "Black Rock",
@@ -72,20 +72,20 @@
       "fee": "",
       "bathrooms": "",
       "type": "",
-      "uid" : "3ZikE2rWvAQCdNJwaaDvJp1ust63"
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52"
     }
   },
   "users" : {
     "user0" : {
-      "uid" : "BCqP0wXysjMVi1P3JW7xTPXk0KC2",
+      "uid" : "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2",
       "username" : "Ally"
     },
     "user1" : {
-      "uid" : "yw1Qqs4p1vfQjbVTCp0n6p4VXpK2",
+      "uid" : "08cR9zG1KzS6ylC2jce8g4g4fB52",
       "username" : "Billy"
     },
     "user2" : {
-      "uid" : "3ZikE2rWvAQCdNJwaaDvJp1ust63",
+      "uid" : "6AgPsSmt97XlA2lnBUSbojWNkvi1",
       "username" : "Charlie"
     }
   }
