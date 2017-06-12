@@ -27,5 +27,25 @@ app.config(function($routeProvider) {
             templateUrl: 'partials/login-view.html',
             controller: 'AuthCtrl'
         })
+        .when('/home', {
+            templateUrl: 'partials/home-view.html',
+            controller: 'HomeCtrl'
+        })
+        .when('/search', {
+            templateUrl: 'partials/park-search-view.html',
+            controller: 'ParkSearchCtrl'
+        })
+        .when('/list', {
+            templateUrl: 'partials/park-list-view.html',
+            controller: 'ParkListCtrl'
+        })
+        .when('/park_view', {
+            templateUrl: 'partials/login-view.html',
+            controller: 'ParkViewCtrl'
+        })
+        .when('/campsite_view', {
+            templateUrl: 'partials/campsite-view.html',
+            controller: 'CampsiteViewCtrl'
+        })
         .otherwise('/auth');
 });
