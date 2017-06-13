@@ -3,8 +3,9 @@ app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $sc
 	$scope.allParks = [];
 
 	let getAllParks = () => {
-	 	UserFactory.getAllParks().then((results) => {
+	 	ParkFactory.fbGetAllParks().then((results) => {
 	 		$scope.allParks = results;
+	 		console.log($scope.allParks);
 	 	}).catch((error) => {
 	 		console.log("error getting list of all parks", error);
 	 	});

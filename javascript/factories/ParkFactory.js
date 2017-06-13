@@ -5,7 +5,7 @@ app.factory("ParkFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/parks.json`)
       .then((fbParks) => {
-        let parkCollection = fbPoards.data;
+        let parkCollection = fbParks.data;
         if (parkCollection !== null) {
             Object.keys(parkCollection).forEach((key) => {
             parkCollection[key].parkId=key;
@@ -19,8 +19,6 @@ app.factory("ParkFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
       });
     });
   };
-
-  
 
   let fbPostNewPark = newPark => {
     return $q((resolve, reject) => {
