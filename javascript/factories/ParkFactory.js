@@ -4,12 +4,12 @@ app.factory("ParkFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
     let parkArray = [];
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/parks.json`)
-      .then((fbparks) => {
-        let boardCollection = fbBoards.data;
-        if (boardCollection !== null) {
-            Object.keys(boardCollection).forEach((key) => {
-            boardCollection[key].parkId=key;
-            parkArray.push(boardCollection[key]);
+      .then((fbParks) => {
+        let parkCollection = fbPoards.data;
+        if (parkCollection !== null) {
+            Object.keys(parkCollection).forEach((key) => {
+            parkCollection[key].parkId=key;
+            parkArray.push(parkCollection[key]);
           });
         }
         resolve(parkArray);
@@ -22,10 +22,10 @@ app.factory("ParkFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
 
   
 
-  let fbPostNewPark = newBoard => {
+  let fbPostNewPark = newPark => {
     return $q((resolve, reject) => {
       $http.post(`${FIREBASE_CONFIG.databaseURL}/parks.json`,
-        JSON.stringify(newBoard))
+        JSON.stringify(newPark))
       .then(data => resolve(data))
       .catch(error => reject(error));
     });
