@@ -1,8 +1,8 @@
 app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, UserFactory) {
 
 	$scope.auth = {
-        email: "",
-        password: ""
+        email: "a@a.com",
+		password: "123456"
     };
 
     $scope.alerts = []; // For UI Bootstrap
@@ -21,7 +21,7 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
             //$scope.alerts.push({msg: error.message});
         }).then((user) => {
             $rootScope.user = user;
-            //$location.url();
+            $location.url('/home');
         }).catch((error) => {
             console.log("getUser error", error);
         });

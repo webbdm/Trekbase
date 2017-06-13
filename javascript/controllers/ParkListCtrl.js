@@ -1,4 +1,6 @@
-app.controller("ParkListCtrl", function() {
+app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory) {
+
+
 
     
 });

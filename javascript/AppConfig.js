@@ -40,7 +40,7 @@ app.config(function($routeProvider) {
             controller: 'ParkListCtrl'
         })
         .when('/park_view', {
-            templateUrl: 'partials/login-view.html',
+            templateUrl: 'partials/park-view.html',
             controller: 'ParkViewCtrl'
         })
         .when('/campsite_view', {
