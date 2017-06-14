@@ -1,2 +1,48 @@
 <h3>Park List</h3>
-<div><a ng-href="#!/park_view"><p>Parks List Goes Here</p></a></div>
+<div>
+    <a ng-href="#!/park_view">
+        <p>Parks List Goes</p>
+    </a>
+    <a ng-click="">
+        <button>+ Add Park</button>
+    </a>
+    <div class="add-park">
+        <form class="form-group">
+            <div class="">
+                <label>Park Name</label>
+                <input type="text" class="form-control" placeholder="Name" ng-model="newPark.name" ng-required="required" />
+            </div>
+            <div class="">
+                <label>City/Town</label>
+                <input type="text" class="form-control" placeholder="City/Town" ng-model="newPark.city" ng-required="required" />
+            </div>
+            <div class="">
+                <label>State</label>
+                <input type="text" class="form-control" placeholder="State" ng-model="newPark.state" />
+            </div>
+            <div class="">
+                <label>Latitude</label>
+                <input type="text" class="form-control" placeholder="Latitude" ng-model="newPark.latitude" />
+            </div>
+            <div class="">
+                <label>Longitude</label>
+                <input type="text" class="form-control" placeholder="Longitude" ng-model="newPark.longitude" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">Image</label>
+                <input type="file" id="exampleInputFile" ng-model="newPark.image">
+            </div>
+            <button class="btn btn-default" ng-click="addNewPark()">Submit</button>
+        </form>
+    </div>
+</div>
+<div ng-repeat="park in allParks">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
+            <a ng-click="deletePark(park.parkId)">
+                <button>Delete Park</button>
+            </a>
+        </div>
+    </div>
+</div>
