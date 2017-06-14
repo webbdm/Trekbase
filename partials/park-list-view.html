@@ -36,11 +36,13 @@
         </form>
     </div>
 </div>
-
 <div ng-repeat="park in allParks">
     <div class="panel panel-default">
         <div class="panel-body">
             <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
+            <a ng-click="deletePark(park.parkId)">
+                <button>Delete Park</button>
+            </a>
         </div>
     </div>
 </div>
