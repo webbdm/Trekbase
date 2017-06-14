@@ -39,7 +39,7 @@ app.config(function($routeProvider) {
             templateUrl: 'partials/park-list-view.html',
             controller: 'ParkListCtrl'
         })
-        .when('/park_view', {
+        .when('/park_view/:parkId', {
             templateUrl: 'partials/park-view.html',
             controller: 'ParkViewCtrl'
         })
