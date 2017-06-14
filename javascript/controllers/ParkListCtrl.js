@@ -1,19 +1,49 @@
 app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory) {
 
-	$scope.allParks = [];
+    $scope.allParks = [];
 
-	let getAllParks = () => {
-	 	ParkFactory.fbGetAllParks().then((results) => {
-	 		$scope.allParks = results;
-	 		console.log($scope.allParks);
-	 	}).catch((error) => {
-	 		console.log("error getting list of all parks", error);
-	 	});
-	};
+    $scope.newPark = {
+    	name: "",
+        city: "",
+        state: "",
+        zip: "",
+        image: "",
+        latitude: "",
+        longitude: "",
+        uid: ""
+    };
 
-	getAllParks();
+    let getAllParks = () => {
+        ParkFactory.fbGetAllParks().then((results) => {
+            $scope.allParks = results;
+        }).catch((error) => {
+            console.log("error getting list of all parks", error);
+        });
+    };
+
+    getAllParks();
+
+    $scope.addNewPark = () => {
+    	console.log("Add new park", $scope.newPark);
+        ParkFactory.fbPostNewPark($scope.newPark)
+            .then(() => {
+                getAllParks();
+            })
+            .catch((error)=>{
+            	console.log("Create New Park Error", error);
+            });
+    };
+
+    $scope.deletePark = (parkId) => {
+    	ParkFactory.fbDeletePark(parkId).then(() => {
+            getAllParks();
+        }).catch((error) => {
+            console.log("deletePark error", error);
+        });
+
+    };
 
 
 
-    
+
 });
