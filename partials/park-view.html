@@ -1,12 +1,12 @@
 <h3>{{park.name}}</h3>
-<div><a ng-href="#!/campsite_view">This is a campsite link</a></div>
+<p>{{park.city}}, {{park.state}}</p>
 <div ng-repeat="campsite in campsites">
     <div class="panel panel-default">
         <div class="panel-body">
-            <!-- <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
-            <a ng-click="deletePark(park.parkId)"> -->
+            <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a>
+            <!-- <a ng-click="deleteCampsite(campsite.campsiteId)">
                 <button>Delete Campsite</button>
-            <!-- </a> -->
+            </a> -->
         </div>
     </div>
 </div>

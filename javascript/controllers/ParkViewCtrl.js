@@ -1,4 +1,4 @@
-app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory) {
+app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
     $scope.park = {};
     $scope.campsites = [];
@@ -15,14 +15,21 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     getSinglePark();
 
     let getAllCampsites = () => {
-        CampsiteFactory.fbgetAllCampsites().then((results) => {
-                $scope.campsites = results;
+        CampsiteFactory.fbGetAllCampsites($routeParams.parkId).then((results) => {
+
+                //$scope.$apply(() => {
+                    $scope.campsites = results;
+                //});
+
+                
+                console.log("CAMPSITE ", $scope.campsites);
             })
             .catch((error) => {
                 console.log("getAllCampsites error", error);
-
             });
     };
+
+    getAllCampsites();
 
 
 });

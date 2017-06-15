@@ -1,6 +1,6 @@
 app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
 
-    let fbGetCampsiteList = (parkId) => {
+    let fbGetAllCampsites = (parkId) => {
         let campsiteArray = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/campsites.json?orderBy="parkId"&equalTo="${parkId}"`)
@@ -8,7 +8,7 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
                     let campsiteCollection = fbCampsites.data;
                     if (campsiteCollection !== null) {
                         Object.keys(campsiteCollection).forEach((key) => {
-                            campsiteCollection[key].id = key;
+                            campsiteCollection[key].campsiteId = key;
                             campsiteArray.push(campsiteCollection[key]);
                         });
                     }
@@ -56,7 +56,7 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
 
     let fbEditCampsite = (campsite) => {
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsite.id}.json`,
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsiteId}.json`,
                 JSON.stringify({
                     // ng model for campsite
                 })
@@ -69,7 +69,7 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
     };
 
     return {
-        fbGetCampsiteList: fbGetCampsiteList,
+        fbGetAllCampsites: fbGetAllCampsites,
         fbGetSingleCampsite: fbGetSingleCampsite,
         fbPostNewCampsite: fbPostNewCampsite,
         fbDeleteCampsite: fbDeleteCampsite,

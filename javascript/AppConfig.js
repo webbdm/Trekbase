@@ -43,7 +43,7 @@ app.config(function($routeProvider) {
             templateUrl: 'partials/park-view.html',
             controller: 'ParkViewCtrl'
         })
-        .when('/campsite_view', {
+        .when('/campsite_view/:campsiteId', {
             templateUrl: 'partials/campsite-view.html',
             controller: 'CampsiteViewCtrl'
         })
