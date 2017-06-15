@@ -20,7 +20,8 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
         });
     };
 
-    let fbPostNewCampsite = (newCampsite) => {
+    let fbCreateNewCampsite = (newCampsite) => {
+        console.log(newCampsite);
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/campsites.json`, angular.toJson(newCampsite))
                 .then((resultz) => {
@@ -71,7 +72,7 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
     return {
         fbGetAllCampsites: fbGetAllCampsites,
         fbGetSingleCampsite: fbGetSingleCampsite,
-        fbPostNewCampsite: fbPostNewCampsite,
+        fbCreateNewCampsite: fbCreateNewCampsite,
         fbDeleteCampsite: fbDeleteCampsite,
         fbEditCampsite: fbEditCampsite
     };
