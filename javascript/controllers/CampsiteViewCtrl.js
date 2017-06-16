@@ -13,6 +13,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     let getSingleCampsite = () => {
         CampsiteFactory.fbGetSingleCampsite($routeParams.campsiteId).then((results) => {
                 $scope.campsite = results;
+                $scope.campsite.campsiteId = $routeParams.campsiteId;
                 getSinglePark();
             })
             .catch((error) => {
@@ -22,10 +23,11 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     getSingleCampsite();
 
-    $scope.deleteCampsite = () => {
-        CampsiteFactory.fbDeleteCampsite($scope.campsiteId).then(() => {
-                console.log("Delete", $scope.campsiteId);
-                getAllCampsites();
+    $scope.deleteCampsite = (Id) => {
+    	console.log("test this", Id);
+        CampsiteFactory.fbDeleteCampsite(Id).then(() => {
+                console.log("Deleted", $scope.campsiteName);
+                $location.url(`/park_view/${$scope.campsite.parkId}`);
             })
             .catch((error) => {
                 console.log("creatNewCampsite error", error);
