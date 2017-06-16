@@ -45,8 +45,8 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
             $http.get(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsiteId}.json`)
                 .then((results) => {
                     console.log("results", results);
-                    results.data.id = id;
-                    resolve(results);
+                    //results.data = id;
+                    resolve(results.data);
                 })
                 .catch((error) => {
                     reject(error);

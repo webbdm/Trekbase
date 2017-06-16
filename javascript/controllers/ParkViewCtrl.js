@@ -49,5 +49,4 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     };
 
-
 });
