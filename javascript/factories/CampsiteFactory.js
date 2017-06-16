@@ -40,12 +40,11 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
         });
     };
 
-    let fbGetSingleCampsite = (campsiteId) => {
+    let fbGetSingleCampsite = campsiteId => {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsiteId}.json`)
                 .then((results) => {
                     console.log("results", results);
-                    //results.data = id;
                     resolve(results.data);
                 })
                 .catch((error) => {
@@ -55,12 +54,23 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
     };
 
 
-    let fbEditCampsite = (campsite) => {
+    let fbEditCampsite = campsite => {
+        console.log("testing1 ",campsite);
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsiteId}.json`,
-                JSON.stringify({
-                    // ng model for campsite
-                })
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsite.campsiteId}.json`,
+                // JSON.stringify({
+                //     area: "",
+                //     bathrooms: "",
+                //     campsiteName: "",
+                //     features: "",
+                //     fee: "",
+                //     image: "",
+                //     latitude: "",
+                //     longitude: "",
+                //     review: "",
+                //     type: ""
+                // })
+                JSON.stringify(campsite)
             ).then((resultz) => {
                 resolve(resultz);
             }).catch((error) => {
