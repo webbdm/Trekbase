@@ -1,1 +1,1 @@
-var app = angular.module("TrekbaseApp", ["ngRoute"]);
+var app = angular.module("TrekbaseApp", ["naif.base64", "ngRoute"]);

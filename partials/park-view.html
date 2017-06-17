@@ -38,8 +38,9 @@
             <input type="text" class="form-control" placeholder="Features" ng-model="newCampsite.features" />
         </div>
         <div class="form-group">
-            <label for="exampleInputFile">Image</label>
-            <input type="file" id="exampleInputFile" ng-model="newCampsite.image">
+            <label for="file">Image</label>
+            <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
+            <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
         </div>
         <div class="">
             <label>Review</label>

@@ -1,12 +1,7 @@
 <h3>Park List</h3>
 <div>
-    <a ng-href="#!/park_view">
-        <p>Parks List</p>
-    </a>
-
-        <button ng-click="addingPark = true;"  ng-show="!addingPark">+ Add Park</button>
-        <button ng-click="addingPark = false;" ng-show="addingPark">Close</button>
-
+    <button ng-click="addingPark = true;" ng-show="!addingPark">+ Add Park</button>
+    <button ng-click="addingPark = false;" ng-show="addingPark">Close</button>
     <div class="add-park" ng-show="addingPark">
         <form class="form-group">
             <div class="">

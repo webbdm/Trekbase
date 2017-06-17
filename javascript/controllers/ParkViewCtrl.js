@@ -50,6 +50,25 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     };
 
+    $scope.itemSave = () => {
+        let newFile = {
+            //uid: $rootScope.user.uid,
+            base64code: $scope.file.base64,
+            filetype: $scope.file.filetype,
+            category: $scope.imageCategory
+        };
+
+        $scope.newCampsite.image = newFile;
+        console.log("Test", $scope.newCampsite);
+        // CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
+        //     getSingleCampsite($scope.campsite);
+        //     console.log(results, "Image saved");
+
+        // }).catch((error) => {
+        //     console.log("image save error", error);
+        // });
+    };
+
     let getMap = (park) => {
         let map;
         console.log("park",park);
