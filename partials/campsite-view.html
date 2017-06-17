@@ -3,7 +3,7 @@
         <h1>{{campsite.campsiteName}}</h1>
         <h4>{{park.name}} - {{park.city}}, {{park.state}}</h4>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" ng-show="!editing">
         <p>Area: {{campsite.area}}</p>
         <p>Type: {{campsite.type}}</p>
         <p>Features: {{campsite.features}}</p>
@@ -63,6 +63,6 @@
             <label>Review</label>
             <input type="text" class="form-control" placeholder="Write a review" ng-model="editedCampsite.review" />
         </div>
-        <button class="btn btn-default" ng-click="editCampsite()">Submit</button>
+        <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
     </form>
 </div>

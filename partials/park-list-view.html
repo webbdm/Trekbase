@@ -1,12 +1,13 @@
 <h3>Park List</h3>
 <div>
     <a ng-href="#!/park_view">
-        <p>Parks List Goes</p>
+        <p>Parks List</p>
     </a>
-    <a ng-click="">
-        <button>+ Add Park</button>
-    </a>
-    <div class="add-park">
+
+        <button ng-click="addingPark = true;"  ng-show="!addingPark">+ Add Park</button>
+        <button ng-click="addingPark = false;" ng-show="addingPark">Close</button>
+
+    <div class="add-park" ng-show="addingPark">
         <form class="form-group">
             <div class="">
                 <label>Park Name</label>
@@ -32,7 +33,7 @@
                 <label for="exampleInputFile">Image</label>
                 <input type="file" id="exampleInputFile" ng-model="newPark.image">
             </div>
-            <button class="btn btn-default" ng-click="addNewPark()">Submit</button>
+            <button class="btn btn-default" ng-click="addingPark = false; addNewPark()">Submit</button>
         </form>
     </div>
 </div>
