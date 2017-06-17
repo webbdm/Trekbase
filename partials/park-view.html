@@ -1,12 +1,59 @@
 <h3>{{park.name}}</h3>
-<div><a ng-href="#!/campsite_view">This is a campsite link</a></div>
+<p>{{park.city}}, {{park.state}}</p>
+<button class="btn btn-default" ng-click="addingCampsite = true;" ng-hide="addingCampsite">Add Campsite</button>
+<button class="btn btn-default" ng-click="addingCampsite = false;" ng-show="addingCampsite">Close</button>
+<div class="add-campsite" ng-show="addingCampsite">
+    <form class="form-group">
+        <div class="">
+            <label>Campsite Name</label>
+            <input type="text" class="form-control" placeholder="Campsite Name" ng-model="newCampsite.campsiteName" ng-required="required" />
+        </div>
+        <div class="Area">
+            <label>Area</label>
+            <input type="text" class="form-control" placeholder="Area" ng-model="newCampsite.area" ng-required="required" />
+        </div>
+        <div class="">
+            <label>Type</label>
+            <input type="text" class="form-control" placeholder="Type" ng-model="newCampsite.type" />
+        </div>
+        <div class="">
+            <label>Latitude</label>
+            <input type="text" class="form-control" placeholder="Latitude" ng-model="newCampsite.latitude" />
+        </div>
+        <div class="">
+            <label>Longitude</label>
+            <input type="text" class="form-control" placeholder="Longitude" ng-model="newCampsite.longitude" />
+        </div>
+        <div class="">
+            <label>Fee</label>
+            <input type="text" class="form-control" placeholder="Fee" ng-model="newCampsite.fee" />
+        </div>
+        <div class="">
+            <label>Bathrooms</label>
+            <input type="text" class="form-control" placeholder="Bathrooms" ng-model="newCampsite.bathrooms" />
+        </div>
+        <div class="">
+            <label>Features</label>
+            <input type="text" class="form-control" placeholder="Features" ng-model="newCampsite.features" />
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">Image</label>
+            <input type="file" id="exampleInputFile" ng-model="newCampsite.image">
+        </div>
+        <div class="">
+            <label>Review</label>
+            <input type="text" class="form-control" placeholder="Write a review" ng-model="newCampsite.review" />
+        </div>
+        <button class="btn btn-default" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
+    </form>
+</div>
 <div ng-repeat="campsite in campsites">
     <div class="panel panel-default">
         <div class="panel-body">
-            <!-- <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
-            <a ng-click="deletePark(park.parkId)"> -->
+            <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a>
+            <!-- <a ng-click="deleteCampsite(campsite.campsiteId)">
                 <button>Delete Campsite</button>
-            <!-- </a> -->
+            </a> -->
         </div>
     </div>
 </div>
