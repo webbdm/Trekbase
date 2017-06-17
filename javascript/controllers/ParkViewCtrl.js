@@ -40,7 +40,6 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     $scope.createNewCampsite = () => {
         CampsiteFactory.fbCreateNewCampsite($scope.newCampsite).then(() => {
-                console.log("HI");
                 getAllCampsites();
             })
             .catch((error) => {

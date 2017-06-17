@@ -21,7 +21,6 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
     };
 
     let fbCreateNewCampsite = (newCampsite) => {
-        console.log(newCampsite);
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/campsites.json`, angular.toJson(newCampsite))
                 .then((resultz) => {
