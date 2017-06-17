@@ -1,9 +1,10 @@
-app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
+app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory) {
 
     $scope.editedCampsite = {
         campsiteId: $routeParams.campsiteId,
     };
 
+    $scope.key = MAPS_CONFIG.mapsKey;
     $scope.editing = false;
 
     let getSinglePark = (id) => {
@@ -21,6 +22,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
                 $scope.editedCampsite = results;
                 $scope.campsite.campsiteId = campsiteParams.campsiteId; /// Necessary?
                 getSinglePark($scope.campsite.parkId);
+                getMap($scope.campsite);
             })
             .catch((error) => {
                 console.log("getSingleCampsite error", error);
@@ -44,6 +46,21 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
             getSingleCampsite($scope.editedCampsite);
         }).catch((error) => {
             console.log("Add error", error);
+        });
+    };
+
+    let getMap = (campsite) => {
+        let map;
+        console.log(campsite);
+        let parsedLat = Number(campsite.latitude);
+        let parsedLong = Number(campsite.longitude);
+        console.log("lat", parsedLat, "long", parsedLong);
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: parsedLat,
+                lng: parsedLong
+            },
+            zoom: 12
         });
     };
 
