@@ -12,9 +12,8 @@
         <p>Latitude: {{campsite.latitude}}</p>
         <p>Longitude: {{campsite.longitude}}</p>
         <p>Review: {{campsite.review}}</p>
-        <!-- <p>{{campsite.image}}</p> -->
+        <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
         <div id="map"></div>
-        
         <a ng-click="deleteCampsite(campsite.campsiteId)">
             <button>Delete Campsite</button>
         </a>
@@ -59,7 +58,8 @@
         </div>
         <div class="form-group">
             <label for="exampleInputFile">Image</label>
-            <input type="file" id="exampleInputFile" ng-model="editedCampsite.image">
+            <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
+            <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
         </div>
         <div class="">
             <label>Review</label>

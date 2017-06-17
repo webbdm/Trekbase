@@ -7,6 +7,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     $scope.key = MAPS_CONFIG.mapsKey;
     $scope.editing = false;
 
+    $scope.imageUpload = {};
+
     let getSinglePark = (id) => {
         ParkFactory.fbGetSinglePark(id).then((results) => {
                 $scope.park = results;
@@ -61,6 +63,23 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
                 lng: parsedLong
             },
             zoom: 12
+        });
+    };
+
+    $scope.itemSave = () => {
+        let newFile = {
+            //uid: $rootScope.user.uid,
+            base64code: $scope.file.base64,
+            filetype: $scope.file.filetype,
+            category: $scope.imageCategory
+        };
+        console.log(newFile);
+        CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
+        	getSingleCampsite($scope.campsite);
+        	console.log(results, "Image saved");
+
+        }).catch((error) => {
+            console.log("image save error", error);
         });
     };
 

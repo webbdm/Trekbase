@@ -63,12 +63,39 @@ app.factory("CampsiteFactory", function($http, $q, $routeParams, FIREBASE_CONFIG
         });
     };
 
+    let fbAddImage = (file, campsite) => {
+        console.log(campsite);
+        campsite.image = file;
+        return $q((resolve, reject) => {
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsite.campsiteId}.json`, angular.toJson(campsite))
+                .then((resultz) => {
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
+    let fbNewImage = (file, campsite) => {
+        console.log(campsite);
+        campsite.image = file;
+        return $q((resolve, reject) => {
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/campsites/${campsite.campsiteId}.json`, angular.toJson(campsite))
+                .then((resultz) => {
+                    resolve(resultz);
+                }).catch((error) => {
+                    reject(error);
+                });
+        });
+    };
+
     return {
         fbGetAllCampsites: fbGetAllCampsites,
         fbGetSingleCampsite: fbGetSingleCampsite,
         fbCreateNewCampsite: fbCreateNewCampsite,
         fbDeleteCampsite: fbDeleteCampsite,
-        fbEditCampsite: fbEditCampsite
+        fbEditCampsite: fbEditCampsite,
+        fbAddImage: fbAddImage
     };
 
 });
