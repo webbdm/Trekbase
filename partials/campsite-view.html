@@ -16,12 +16,12 @@
         <a ng-click="deleteCampsite(campsite.campsiteId)">
             <button>Delete Campsite</button>
         </a>
-        <!-- <a ng-click="">
+        <a ng-click="editing = true;">
             <button>Edit Campsite</button>
-        </a> -->
+        </a>
     </div>
 </div>
-<div class="edit-campsite">
+<div class="edit-campsite" ng-show="editing">
     <form class="form-group">
         <div class="">
             <label>Campsite Name</label>

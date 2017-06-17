@@ -1,48 +1,36 @@
 app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
-	$scope.editedCampsite = {
-        area: "",
-        bathrooms: "",
-        campsiteName: "",
+    $scope.editedCampsite = {
         campsiteId: $routeParams.campsiteId,
-        features: "",
-        fee: "",
-        image: "",
-        latitude: "",
-        longitude: "",
-        parkId: $routeParams.parkId,
-        review: "",
-        type: ""
     };
 
+    $scope.editing = false;
 
-    let getSinglePark = () => {
-        ParkFactory.fbGetSinglePark($scope.campsite.parkId).then((results) => {
+    let getSinglePark = (id) => {
+        ParkFactory.fbGetSinglePark(id).then((results) => {
                 $scope.park = results;
-                console.log("Park is ",$scope.park);
             })
             .catch((error) => {
                 console.log("getSinglePark error", error);
             });
     };
 
-    let getSingleCampsite = () => {
-        CampsiteFactory.fbGetSingleCampsite($routeParams.campsiteId).then((results) => {
+    let getSingleCampsite = (campsiteParams) => {
+        CampsiteFactory.fbGetSingleCampsite(campsiteParams.campsiteId).then((results) => {
                 $scope.campsite = results;
-                $scope.campsite.campsiteId = $routeParams.campsiteId;
-                getSinglePark();
+                $scope.editedCampsite = results;
+                $scope.campsite.campsiteId = campsiteParams.campsiteId;
+                getSinglePark($scope.campsite.parkId);
             })
             .catch((error) => {
                 console.log("getSingleCampsite error", error);
             });
     };
 
-    getSingleCampsite();
+    getSingleCampsite($routeParams);
 
     $scope.deleteCampsite = (Id) => {
-    	console.log("test this", Id);
         CampsiteFactory.fbDeleteCampsite(Id).then(() => {
-                console.log("Deleted", $scope.campsiteName);
                 $location.url(`/park_view/${$scope.campsite.parkId}`);
             })
             .catch((error) => {
@@ -52,15 +40,12 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     };
 
     $scope.editCampsite = () => {
-    	console.log($scope.editedCampsite);
-		CampsiteFactory.fbEditCampsite($scope.editedCampsite).then(() => {
-			//$location.url(``);
-			getSingleCampsite();
-			console.log($scope.editCampsite);
-
-		}).catch((error) => {
-			console.log("Add error", error);
-		});
-	};
+        CampsiteFactory.fbEditCampsite($scope.editedCampsite).then(() => {
+            //$location.url(``);
+            getSingleCampsite($scope.editedCampsite);
+        }).catch((error) => {
+            console.log("Add error", error);
+        });
+    };
 
 });
