@@ -5,7 +5,6 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     };
 
     $scope.key = MAPS_CONFIG.mapsKey;
-    //console.log($scope.key);
     $scope.editing = false;
 
     let getSinglePark = (id) => {
@@ -51,26 +50,18 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     };
 
     let getMap = (campsite) => {
-
         let map;
         console.log(campsite);
         let parsedLat = Number(campsite.latitude);
         let parsedLong = Number(campsite.longitude);
-        console.log("lat",parsedLat,"long",parsedLong);
+        console.log("lat", parsedLat, "long", parsedLong);
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: parsedLat,
                 lng: parsedLong
             },
-            zoom: 8
+            zoom: 12
         });
-
-
-        // </script>
-        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
     };
-
-
 
 });
