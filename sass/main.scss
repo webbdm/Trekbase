@@ -1,10 +1,49 @@
+@import "colors";
+nav {
+    height: 100px;
+    margin-bottom: 0;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.bgr-box-primary {
+    background-color: $primary;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.btn-accent{
+	background-color: $accent;
+	border: none;
+}
+
+.park_view--campsite-card {
+    background-color: #272020;
+    border: none;
+    p {
+        color: white;
+    }
+}
+
+.park_list--park_card {
+    background-color: $secondary;
+    border: none;
+    p {
+        color: white;
+    }
+}
+
+.uploadedImage {
+    height: 140px;
+    width: auto;
+}
+
 #map {
     height: 300px;
     width: 400px;
-}
-
-.uploadedImage{
-	height: 140px;
-	width: auto;
-
 }
