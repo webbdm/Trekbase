@@ -1,6 +1,6 @@
 <div class="container bgr-box-primary">
-    <div class="col-md-3 col-md-offset-1">
-        <div class="panel panel-default">
+    <div class="col-md-4">
+        <div class="panel panel-default campsite-view_infobox">
             <div class="panel-heading">
                 <h1>{{campsite.campsiteName}}</h1>
                 <h4>{{park.name}} - {{park.city}}, {{park.state}}</h4>
@@ -14,18 +14,26 @@
                 <p>Latitude: {{campsite.latitude}}</p>
                 <p>Longitude: {{campsite.longitude}}</p>
                 <a ng-click="deleteCampsite(campsite.campsiteId)">
-                    <button>Delete Campsite</button>
+                    <button class="btn btn-default btn-accent">Delete Campsite</button>
                 </a>
                 <a ng-click="editing = true;">
-                    <button ng-show="!editing">Edit Campsite</button>
+                    <button class="btn btn-default btn-accent" ng-show="!editing">Edit Campsite</button>
                 </a>
             </div>
         </div>
     </div>
-    <div class="col-md-8 description-box" ng-show="!editing">
-        <p>Review: {{campsite.review}}</p>
-        <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
-        <div id="map"></div>
+    <div class="col-md-8 campsite-view_main-box container" ng-show="!editing">
+        <div class="row review-box">
+            <p>Review: {{campsite.review}}</p>
+        </div>
+        <div class="row bottom-box">
+            <div class="col-md-6">
+                <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
     <div class="col-md-8">
         <!--End of first panel-->

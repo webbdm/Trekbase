@@ -11,7 +11,7 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
     let logout = () => {
         firebase.auth().signOut();
     };
-
+      
     let authenticate = (credentials) => {
         return $q((resolve, reject) => {
             firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)

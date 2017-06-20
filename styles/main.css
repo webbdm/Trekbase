@@ -2,20 +2,92 @@ nav {
   height: 100px;
   margin-bottom: 0; }
 
+.logo {
+  padding-top: 40px;
+  padding-bottom: 50px; }
+
+.navlist li {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .navlist li a {
+    color: white; }
+
 .navbar {
   margin-bottom: 0;
   border: none;
   border-radius: 0; }
 
+.navbar-default,
+.navbar-nav > li > a {
+  color: white; }
+
+.login-box_left {
+  padding: 55px; }
+
+.login-box_right {
+  padding: 55px; }
+
+.divider {
+  width: 100%;
+  height: 10px;
+  background-color: #312F2F; }
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+  .home-container .park-box {
+    background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
+    background-size: cover; }
+  .home-container .campsite-box {
+    background: url(https://images.theoutbound.com/uploads/1437140402255/wumsmrfw78e/ca76c0961beec40ee34c0e8b7997e543?w=900&h=600&fit=crop) no-repeat center center;
+    background-size: cover; }
+
+.home_container-boxes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  font-size: 50px; }
+
 .bgr-box-primary {
   background-color: #1F445F;
   height: 100vh;
   width: 100%;
+  margin: 0;
+  padding-top: 2%; }
+
+.bgr-box-home {
+  background-color: #1F445F;
+  height: 100vh;
+  width: 100%;
   margin: 0; }
+  .bgr-box-home a,
+  .bgr-box-home a:hover {
+    color: white;
+    text-decoration: none; }
 
 .btn-accent {
   background-color: #FFB81C;
   border: none; }
+
+.btn-secondary {
+  background-color: #312F2F;
+  border: none;
+  color: white; }
+  .btn-secondary:hover {
+    color: #FFB81C; }
+
+.btn-right {
+  margin-right: 15px;
+  margin-bottom: 15px; }
 
 .park_view--campsite-card {
   background-color: #272020;
@@ -25,9 +97,25 @@ nav {
 
 .park_list--park_card {
   background-color: #312F2F;
-  border: none; }
+  border: none;
+  height: 250px;
+  width: auto; }
   .park_list--park_card p {
     color: white; }
+
+.campsite-view_infobox {
+  height: 80vh;
+  color: white;
+  border: none;
+  background-color: #312F2F; }
+
+.campsite-view_main-box {
+  color: white;
+  background-color: #312F2F; }
+  .campsite-view_main-box .review-box {
+    padding: 15px; }
+  .campsite-view_main-box .bottom-box {
+    padding: 15px; }
 
 .uploadedImage {
   height: 140px;
@@ -35,4 +123,4 @@ nav {
 
 #map {
   height: 300px;
-  width: 400px; }
+  width: 100%; }

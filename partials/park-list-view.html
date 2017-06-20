@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-md-2 col-md-offset-10">
-                <button class="btn btn-default btn-accent" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
+                <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
                 <button class="btn btn-default btn-accent" ng-click="addingPark = false;" ng-show="addingPark">Close</button>
             </div>
         </div>
@@ -43,7 +43,7 @@
                     <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
                     <p>{{park.city}}, {{park.state}}</p>
                     <a ng-click="deletePark(park.parkId)">
-                        <button>Delete Park</button>
+                        <!-- <button>Delete Park</button> -->
                     </a>
                 </div>
             </div>
