@@ -1,6 +1,10 @@
 app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory) {
 
+    $rootScope.tallNav = false;
+    console.log($rootScope.tallNav);
+
     $scope.allParks = [];
+    $scope.editing = true;
 
     $scope.newPark = {
     	name: "",
@@ -13,6 +17,17 @@ app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $sc
         uid: ""
     };
 
+    // $scope.editedPark = {
+    //     // name: "",
+    //     // city: "",
+    //     // state: "",
+    //     // zip: "",
+    //     // image: "",
+    //     // latitude: "",
+    //     // longitude: "",
+    //     // uid: ""
+    // };
+
     let getAllParks = () => {
         ParkFactory.fbGetAllParks().then((results) => {
             $scope.allParks = results;
@@ -22,6 +37,17 @@ app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $sc
     };
 
     getAllParks();
+
+    // $scope.editPark = () => {
+    //     console.log("editing", $scope.editedPark);
+    //     ParkFactory.fbEditPark($scope.editedPark).then(() => {
+    //         //$location.url(``);
+
+    //         getAllParks();
+    //     }).catch((error) => {
+    //         console.log("Add error", error);
+    //     });
+    // };
 
     $scope.addNewPark = () => {
     	console.log("Add new park", $scope.newPark);

@@ -1,5 +1,4 @@
 nav {
-  height: 100px;
   margin-bottom: 0; }
 
 .logo {
@@ -117,9 +116,24 @@ nav {
   .campsite-view_main-box .bottom-box {
     padding: 15px; }
 
+.bottom-box img {
+  height: 100%;
+  width: 100%;
+  margin: 5px; }
+
+.input-box input {
+  max-width: 300px; }
+
 .uploadedImage {
   height: 140px;
   width: auto; }
+
+.no-space {
+  max-width: 350px;
+  padding: 0; }
+
+.nav-test {
+  height: 300px; }
 
 #map {
   height: 300px;

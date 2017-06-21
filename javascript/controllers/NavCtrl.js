@@ -1,20 +1,18 @@
 app.controller("NavCtrl", function($location, $scope, $rootScope) {
 
-	$scope.tallNav = true;
-	$scope.currentLocation = $location.path();
+    $rootScope.tallNav = true;
+    // //$scope.currentLocation = $location.path();
+    // //$scope.homepage = true;
 
-	console.log($scope.currentLocation);
+    // $scope.$apply(() => {
+    //     $scope.homepage = $rootScope.tallNav;
+    // });
 
-	// if($scope.currentLocation == "/auth"){
+    // if ($rootScope.tallNav === true) {
+    //     console.log("Tall Navbar");
+    // } else if ($rootScope.tallNav === false) {
+    //     $scope.homepage = false;
+    //     console.log("Short Navbar");
+    // }
 
-	// 	$scope.onHomepage = false;
-	// 	console.log("Homepage!");
-
-	// }else{
-
-	// }
-
-	$scope.text = "Capstone Project";
-
-    
 });
