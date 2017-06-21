@@ -50,6 +50,7 @@ app.factory("ParkFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
     };
 
     let fbEditPark = park => {
+        console.log("factory", park);
         let parkId = park.parkId;
         return $q((resolve, reject) => {
             $http.put(`${FIREBASE_CONFIG.databaseURL}/parks/${parkId}.json`,
