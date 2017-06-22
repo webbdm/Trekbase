@@ -1,5 +1,10 @@
 app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
+    $rootScope.tallNav = false;
+    console.log($rootScope.tallNav);
+
+    $scope.editing = false;
+
     $scope.park = {};
     $scope.campsites = [];
     $scope.newCampsite = {
@@ -19,8 +24,8 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     let getSinglePark = () => {
         ParkFactory.fbGetSinglePark($routeParams.parkId).then((results) => {
                 $scope.park = results;
-                //console.log($scope.park);
-                getMap($scope.park);
+                $scope.editedPark = results;
+                //getMap($scope.park);
             })
             .catch((error) => {
                 console.log("getSinglePark error", error);
@@ -39,6 +44,29 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     };
 
     getAllCampsites();
+
+    $scope.makeEdit = (park) =>{
+
+        console.log("park", park);
+        //$scope.editedPark = park;
+
+    };
+
+    // $scope.editPark = (park) =>{
+    //     console.log(park);
+    // };
+
+    $scope.editPark = () => {
+        console.log("editing", $scope.editedPark);
+        $scope.editedPark.parkId = $routeParams.parkId;
+        ParkFactory.fbEditPark($scope.editedPark).then(() => {
+            //$location.url(``);
+            console.log("edited!");
+            getSinglePark();
+        }).catch((error) => {
+            console.log("Add error", error);
+        });
+    };
 
     $scope.createNewCampsite = () => {
         CampsiteFactory.fbCreateNewCampsite($scope.newCampsite).then(() => {
@@ -71,10 +99,8 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     let getMap = (park) => {
         let map;
-        console.log("park",park);
         let parsedLat = Number(park.latitude);
         let parsedLong = Number(park.longitude);
-        console.log("lat", parsedLat, "long", parsedLong);
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: parsedLat,
