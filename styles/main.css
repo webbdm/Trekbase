@@ -2,14 +2,16 @@ nav {
   margin-bottom: 0; }
 
 .logo {
-  padding-top: 40px;
-  padding-bottom: 50px; }
+  font-size: 4em;
+  color: black;
+  padding: 50px; }
 
 .navlist li {
   padding-top: 30px;
   padding-bottom: 30px; }
   .navlist li a {
-    color: white; }
+    color: white;
+    font-size: 1.5em; }
 
 .navbar {
   margin-bottom: 0;
@@ -19,6 +21,9 @@ nav {
 .navbar-default,
 .navbar-nav > li > a {
   color: white; }
+
+.navbar-default, .navbar-brand {
+  color: none; }
 
 .login-box_left {
   padding: 55px; }
@@ -133,7 +138,7 @@ nav {
   padding: 0; }
 
 .nav-test {
-  height: 300px; }
+  height: 600px; }
 
 #map {
   height: 300px;

@@ -5,8 +5,9 @@ nav {
 }
 
 .logo {
-    padding-top: 40px;
-    padding-bottom: 50px;
+    font-size: 4em;
+    color: black;
+    padding: 50px;
 }
 
 .navlist {
@@ -17,6 +18,7 @@ nav {
         padding-bottom: 30px;
         a {
             color: white;
+            font-size: 1.5em;
         }
     }
 }
@@ -31,6 +33,11 @@ nav {
 .navbar-nav>li>a {
     color: white;
 }
+
+.navbar-default, .navbar-brand {
+    color: none;
+}
+
 
 .login-box {
     &_left {
@@ -191,7 +198,7 @@ nav {
 }
 
 .nav-test {
-    height: 300px;
+    height: 600px;
     // color: red;
     // text-transform: uppercase;
     // text-decoration: underline;

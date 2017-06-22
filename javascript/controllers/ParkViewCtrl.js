@@ -24,7 +24,7 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     let getSinglePark = () => {
         ParkFactory.fbGetSinglePark($routeParams.parkId).then((results) => {
                 $scope.park = results;
-                //console.log($scope.park);
+                $scope.editedPark = results;
                 //getMap($scope.park);
             })
             .catch((error) => {
@@ -48,7 +48,7 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     $scope.makeEdit = (park) =>{
 
         console.log("park", park);
-        $scope.editedPark = park;
+        //$scope.editedPark = park;
 
     };
 

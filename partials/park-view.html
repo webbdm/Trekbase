@@ -1,9 +1,10 @@
 <div class="bgr-box-primary container">
     <h3>{{park.name}}</h3>
     <p>{{park.city}}, {{park.state}}</p>
-    <a ng-click="makeEdit(park)">
+    <a ng-click="editing=true;makeEdit(park)">
         <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
     </a>
+    <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
     <!-- <div id="map"></div> -->
     <!-- <div class="row">
         <div class="col-md-2 col-md-offset-10">
@@ -66,7 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="add-park" ng-hide="editing">
+    <div class="add-park" ng-hide="!editing">
         <form class="form-group">
             <div class="">
                 <label>Park Name</label>
