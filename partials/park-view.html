@@ -1,8 +1,10 @@
 <div class="bgr-box-primary container">
-    <h3>{{park.name}}</h3>
-    <p>{{park.city}}, {{park.state}}</p>
+    <div class="park-title-box">
+        <h3>{{park.name}}</h3>
+        <p>{{park.city}}, {{park.state}}</p>
+    </div>
     <a ng-click="editing=true;makeEdit(park)">
-        <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
+        <button class="btn btn-default btn-accent pull-right">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
     </a>
     <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
     <!-- <div id="map"></div> -->
@@ -60,10 +62,14 @@
             <button class="btn btn-default" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
         </form>
     </div>
-    <div ng-repeat="campsite in campsites">
-        <div class="col-md-4 panel panel-default park_view--campsite-card">
-            <div class="panel-body">
-                <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a>
+    <div class="campsites-box">
+        <div ng-repeat="campsite in campsites">
+            <div class="col-md-4">
+                <div class="panel panel-default park_view--campsite-card">
+                    <div class="panel-body">
+                        <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

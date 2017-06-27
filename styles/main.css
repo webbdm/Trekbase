@@ -22,8 +22,12 @@ nav {
 .navbar-nav > li > a {
   color: white; }
 
-.navbar-default, .navbar-brand {
-  color: none; }
+.navbar-default,
+.navbar-brand {
+  color: white; }
+
+.nav-item {
+  color: white !important; }
 
 .login-box_left {
   padding: 55px; }
@@ -93,9 +97,17 @@ nav {
   margin-right: 15px;
   margin-bottom: 15px; }
 
+.campsites-box {
+  margin: 10px 0px; }
+
+.park-title-box h3,
+.park-title-box p {
+  color: white !important; }
+
 .park_view--campsite-card {
   background-color: #272020;
-  border: none; }
+  border: none;
+  margin: 3px; }
   .park_view--campsite-card p {
     color: white; }
 
@@ -143,3 +155,6 @@ nav {
 #map {
   height: 300px;
   width: 100%; }
+
+.form-group label {
+  color: white; }
