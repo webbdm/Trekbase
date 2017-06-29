@@ -34,10 +34,14 @@ nav {
     color: white;
 }
 
-.navbar-default, .navbar-brand {
-    color: none;
+.navbar-default,
+.navbar-brand {
+    color: white;
 }
 
+.nav-item {
+    color: white !important;
+}
 
 .login-box {
     &_left {
@@ -141,9 +145,30 @@ nav {
     margin-bottom: 15px;
 }
 
+.campsites-box {
+    margin: 10px 0px;
+}
+
+.park-title-box {
+    h3,
+    p {
+        color: white !important;
+    }
+}
+
+.park-buttons{
+    margin: 5px 0px;
+}
+
+.park-title-box, .park-buttons{
+    margin: 0px 20px;
+}
+
+// change to BEM dashes park-view
 .park_view--campsite-card {
     background-color: #272020;
     border: none;
+    margin: 3px;
     p {
         color: white;
     }
@@ -207,4 +232,8 @@ nav {
 #map {
     height: 300px;
     width: 100%;
+}
+
+.form-group label {
+    color: white;
 }
