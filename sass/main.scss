@@ -156,6 +156,14 @@ nav {
     }
 }
 
+.park-buttons{
+    margin: 5px 0px;
+}
+
+.park-title-box, .park-buttons{
+    margin: 0px 20px;
+}
+
 // change to BEM dashes park-view
 .park_view--campsite-card {
     background-color: #272020;
