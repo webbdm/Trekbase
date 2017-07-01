@@ -6,6 +6,12 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.key = MAPS_CONFIG.mapsKey;
     $scope.editing = false;
+    $scope.comments = false;
+    console.log("comments are ",$scope.comments);
+
+    $scope.testy = () =>{
+        console.log("comments are ",$scope.comments);
+    };
 
     $scope.imageUpload = {};
 
@@ -53,10 +59,10 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     let getMap = (campsite) => {
         let map;
-        console.log(campsite);
+        //console.log(campsite);
         let parsedLat = Number(campsite.latitude);
         let parsedLong = Number(campsite.longitude);
-        console.log("lat", parsedLat, "long", parsedLong);
+        //console.log("lat", parsedLat, "long", parsedLong);
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: parsedLat,
@@ -73,7 +79,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
             filetype: $scope.file.filetype,
             category: $scope.imageCategory
         };
-        console.log(newFile);
+        //console.log(newFile);
         CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
         	getSingleCampsite($scope.campsite);
         	console.log(results, "Image saved");

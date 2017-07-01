@@ -26,13 +26,21 @@
     <div class="col-md-8 campsite-view_main-box container" ng-show="!editing">
         <div class="row review-box">
             <p>{{campsite.review}}</p>
+            <a ng-click="comments = true; testy()" ng-show="!comments">View Comments</a>
         </div>
         <div class="row bottom-box">
-            <div class="col-md-6">
-                <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+        	<div class="comment-box" ng-show="comments">
+                <p>Comments</p>
+                <p>Add a comment</p>
+                <a ng-click="comments = false; testy()">Hide Comments</a>
             </div>
-            <div class="col-md-6">
-                <div id="map"></div>
+            <div class="image-map" ng-show="!comments">
+                <div class="col-md-6">
+                    <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+                </div>
+                <div class="col-md-6">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>

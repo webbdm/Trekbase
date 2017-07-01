@@ -144,7 +144,8 @@ nav {
 
 .campsite-view_main-box {
   color: white;
-  background-color: #312F2F; }
+  background-color: #312F2F;
+  height: 80vh; }
   .campsite-view_main-box .review-box {
     padding: 15px; }
   .campsite-view_main-box .bottom-box {
