@@ -4,7 +4,7 @@
         <p>{{park.city}}, {{park.state}}</p>
     </div>
     <div class="park-buttons">
-        <a ng-click="editing=true;makeEdit(park)" ng-hide="editing; addingCampsite">
+        <a ng-click="editing=true" ng-hide="addingCampsite">
             <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
         </a>
         <a ng-click="editing=false" ng-show="editing">
