@@ -29,9 +29,14 @@
             <a ng-click="comments = true" ng-show="!comments">View Comments</a>
         </div>
         <div class="row bottom-box">
-        	<div class="comment-box" ng-show="comments">
+            <div class="comment-box" ng-show="comments">
                 <p>Comments</p>
                 <p>Add a comment</p>
+                <div class="">
+                    <label>New Comment</label>
+                    <input type="text" class="form-control" placeholder="Features" ng-model="newComment.text" />
+                    <button class="btn btn-primary btn-default" ng-click="addComment(newComment)">Save</button>
+                </div>
                 <a ng-click="comments = false">Hide Comments</a>
             </div>
             <div class="image-map" ng-show="!comments">
@@ -80,7 +85,7 @@
                             <label>Bathrooms</label>
                             <input type="text" class="form-control" placeholder="Bathrooms" ng-model="editedCampsite.bathrooms" />
                         </div>
-                        <div class="">
+                         <div class="">
                             <label>Features</label>
                             <input type="text" class="form-control" placeholder="Features" ng-model="editedCampsite.features" />
                         </div>

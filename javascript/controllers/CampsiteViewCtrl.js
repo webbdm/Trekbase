@@ -1,4 +1,4 @@
-app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory) {
+app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory, CommentFactory) {
 
     $scope.editedCampsite = {
         campsiteId: $routeParams.campsiteId,
@@ -85,42 +85,42 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
         });
     };
 
-    // let getAllComments = () => {
-    //     CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
-    //             $scope.commentList = results;
-    //         })
-    //         .catch((error) => {
-    //             console.log("getAllComments error", error);
-    //         });
-    // };
+    let getAllComments = () => {
+        CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
+                $scope.commentList = results;
+            })
+            .catch((error) => {
+                console.log("getAllComments error", error);
+            });
+    };
 
-    // getAllComments();
+    getAllComments();
 
-    // $scope.addComment = (newComment) => {
-    //     console.log("Yay new comment");
-    //     CommentFactory.fbAddComment(newComment).then(() => {
-    //         })
-    //         .catch((error) => {
-    //             console.log("addComment error", error);
-    //         });
-    // }; 
+    $scope.addComment = (newComment) => {
+        console.log("Yay new comment", newComment);
+        // CommentFactory.fbAddComment(newComment).then(() => {
+        //     })
+        //     .catch((error) => {
+        //         console.log("addComment error", error);
+        //     });
+    }; 
   
-    // $scope.editComment = () => {
-    //     CommentFactory.fbEditComment($scope.editedComment).then(() => {
-    //         getAllComments();
-    //     }).catch((error) => {
-    //         console.log("Add error", error);
-    //     });
-    // };
+    $scope.editComment = () => {
+        CommentFactory.fbEditComment($scope.editedComment).then(() => {
+            getAllComments();
+        }).catch((error) => {
+            console.log("Add error", error);
+        });
+    };
 
-    // $scope.deleteComment = (id) => {
-    //     CommentFactory.fbDeleteComment(id).then(() => {
-    //             console.log("deleted", id);
-    //         })
-    //         .catch((error) => {
-    //             console.log("deleteComment error", error);
-    //         });
-    // };
+    $scope.deleteComment = (id) => {
+        CommentFactory.fbDeleteComment(id).then(() => {
+                console.log("deleted", id);
+            })
+            .catch((error) => {
+                console.log("deleteComment error", error);
+            });
+    };
 
 
 });
