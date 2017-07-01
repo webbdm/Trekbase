@@ -1,8 +1,6 @@
 app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
     $rootScope.tallNav = false;
-    console.log($rootScope.tallNav);
-
     $scope.editing = false;
 
     $scope.park = {};
@@ -46,10 +44,8 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     getAllCampsites();
 
     $scope.makeEdit = (park) =>{
-
-        console.log("park", park);
+        //console.log("park", park);
         //$scope.editedPark = park;
-
     };
 
     // $scope.editPark = (park) =>{
@@ -57,11 +53,9 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
     // };
 
     $scope.editPark = () => {
-        console.log("editing", $scope.editedPark);
         $scope.editedPark.parkId = $routeParams.parkId;
         ParkFactory.fbEditPark($scope.editedPark).then(() => {
             //$location.url(``);
-            console.log("edited!");
             getSinglePark();
         }).catch((error) => {
             console.log("Add error", error);

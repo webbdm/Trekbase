@@ -4,7 +4,7 @@
         <p>{{park.city}}, {{park.state}}</p>
     </div>
     <div class="park-buttons">
-        <a ng-click="editing=true;makeEdit(park)" ng-hide="editing">
+        <a ng-click="editing=true" ng-hide="addingCampsite">
             <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
         </a>
         <a ng-click="editing=false" ng-show="editing">
@@ -67,12 +67,13 @@
             <button class="btn btn-default" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
         </form>
     </div>
-    <div class="campsites-box" ng-hide="editing">
+    <div class="campsites-box" ng-hide="editing; addingCampsite">
         <div ng-repeat="campsite in campsites">
             <div class="col-md-4">
                 <div class="panel panel-default park_view--campsite-card">
                     <div class="panel-body">
-                        <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a>
+                        <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
+                        <img class="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
                     </div>
                 </div>
             </div>
@@ -100,10 +101,10 @@
                 <label>Longitude</label>
                 <input type="text" class="form-control" placeholder="Longitude" ng-model="editedPark.longitude" />
             </div>   
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input type="file" id="exampleInputFile" ng-model="editedPark.image">
-            </div>
+            </div> -->
             <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
         </form>
     </div>
