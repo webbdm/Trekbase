@@ -7,11 +7,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     $scope.key = MAPS_CONFIG.mapsKey;
     $scope.editing = false;
     $scope.comments = false;
-    console.log("comments are ",$scope.comments);
-
-    $scope.testy = () =>{
-        console.log("comments are ",$scope.comments);
-    };
+    $scope.commentList = [];
 
     $scope.imageUpload = {};
 
@@ -88,5 +84,43 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
             console.log("image save error", error);
         });
     };
+
+    // let getAllComments = () => {
+    //     CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
+    //             $scope.commentList = results;
+    //         })
+    //         .catch((error) => {
+    //             console.log("getAllComments error", error);
+    //         });
+    // };
+
+    // getAllComments();
+
+    // $scope.addComment = (newComment) => {
+    //     console.log("Yay new comment");
+    //     CommentFactory.fbAddComment(newComment).then(() => {
+    //         })
+    //         .catch((error) => {
+    //             console.log("addComment error", error);
+    //         });
+    // }; 
+  
+    // $scope.editComment = () => {
+    //     CommentFactory.fbEditComment($scope.editedComment).then(() => {
+    //         getAllComments();
+    //     }).catch((error) => {
+    //         console.log("Add error", error);
+    //     });
+    // };
+
+    // $scope.deleteComment = (id) => {
+    //     CommentFactory.fbDeleteComment(id).then(() => {
+    //             console.log("deleted", id);
+    //         })
+    //         .catch((error) => {
+    //             console.log("deleteComment error", error);
+    //         });
+    // };
+
 
 });

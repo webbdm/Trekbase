@@ -210,9 +210,13 @@ nav {
     height: 80vh;
     .review-box {
         padding: 15px;
+        height: 50%;
     }
     .bottom-box {
         padding: 15px;
+        height: 50%;
+        
+
     }
 }
 
@@ -248,7 +252,8 @@ nav {
 }
 
 #map {
-    height: 300px;
+    height: 250px;
+    //max-height: 50%;
     width: 100%;
 }
 
