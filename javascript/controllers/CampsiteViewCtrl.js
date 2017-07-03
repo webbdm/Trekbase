@@ -8,7 +8,6 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     $scope.editing = false;
     $scope.comments = false;
     $scope.commentList = [];
-
     $scope.imageUpload = {};
 
     let getSinglePark = (id) => {
@@ -77,8 +76,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
         };
         //console.log(newFile);
         CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
-        	getSingleCampsite($scope.campsite);
-        	console.log(results, "Image saved");
+            getSingleCampsite($scope.campsite);
+            console.log(results, "Image saved");
 
         }).catch((error) => {
             console.log("image save error", error);
@@ -88,6 +87,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     let getAllComments = () => {
         CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
                 $scope.commentList = results;
+                console.log($scope.commentList);
             })
             .catch((error) => {
                 console.log("getAllComments error", error);
@@ -97,14 +97,16 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     getAllComments();
 
     $scope.addComment = (newComment) => {
-        console.log("Yay new comment", newComment);
-        // CommentFactory.fbAddComment(newComment).then(() => {
-        //     })
-        //     .catch((error) => {
-        //         console.log("addComment error", error);
-        //     });
-    }; 
-  
+        CommentFactory.fbPostNewComment(newComment, $routeParams.campsiteId).then((resultz) => {
+                getAllComments();
+                console.log("rezults", resultz);
+            })
+            .catch((error) => {
+                console.log("addComment error", error);
+            });
+
+    };
+
     $scope.editComment = () => {
         CommentFactory.fbEditComment($scope.editedComment).then(() => {
             getAllComments();
@@ -115,6 +117,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.deleteComment = (id) => {
         CommentFactory.fbDeleteComment(id).then(() => {
+                getAllComments();
                 console.log("deleted", id);
             })
             .catch((error) => {

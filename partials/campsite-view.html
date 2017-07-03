@@ -30,7 +30,10 @@
         </div>
         <div class="row bottom-box">
             <div class="comment-box" ng-show="comments">
-                <p>Comments</p>
+                <div ng-repeat="comment in commentList">
+                    <h3>{{comment.text}}<a ng-click="deleteComment(comment.commentId)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></h3>
+                    <p>- {{comment.creator}}</p>
+                </div>
                 <p>Add a comment</p>
                 <div class="">
                     <label>New Comment</label>
@@ -85,7 +88,7 @@
                             <label>Bathrooms</label>
                             <input type="text" class="form-control" placeholder="Bathrooms" ng-model="editedCampsite.bathrooms" />
                         </div>
-                         <div class="">
+                        <div class="">
                             <label>Features</label>
                             <input type="text" class="form-control" placeholder="Features" ng-model="editedCampsite.features" />
                         </div>

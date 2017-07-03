@@ -32,28 +32,28 @@ app.config(function($routeProvider) {
         })
         .when('/home', {
             templateUrl: 'partials/home-view.html',
-            controller: 'HomeCtrl'
-            //resolve: { isAuth }
+            controller: 'HomeCtrl',
+            resolve: { isAuth }
         })
         .when('/search', {
             templateUrl: 'partials/park-search-view.html',
-            controller: 'ParkSearchCtrl'
-            //resolve: { isAuth }
+            controller: 'ParkSearchCtrl',
+            resolve: { isAuth }
         })
         .when('/list', {
             templateUrl: 'partials/park-list-view.html',
-            controller: 'ParkListCtrl'
-            //resolve: { isAuth }
+            controller: 'ParkListCtrl',
+            resolve: { isAuth }
         })
         .when('/park_view/:parkId', {
             templateUrl: 'partials/park-view.html',
-            controller: 'ParkViewCtrl'
-            //resolve: { isAuth }
+            controller: 'ParkViewCtrl',
+            resolve: { isAuth }
         })
         .when('/campsite_view/:campsiteId', {
             templateUrl: 'partials/campsite-view.html',
-            controller: 'CampsiteViewCtrl'
-            //resolve: { isAuth }
+            controller: 'CampsiteViewCtrl',
+            resolve: { isAuth }
         })
-        .otherwise('/auth');
+        .otherwise('/home');
 });

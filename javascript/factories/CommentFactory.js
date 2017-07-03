@@ -1,9 +1,9 @@
-app.factory("CommentFactory", function($http, $q, $routeParams, FIREBASE_CONFIG) {
+app.factory("CommentFactory", function($http, $q, $rootScope, $routeParams, FIREBASE_CONFIG) {
 
-    let fbGetAllComments = () => {
+    let fbGetAllComments = (campsiteId) => {
         let commentArray = [];
         return $q((resolve, reject) => {
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/comments.json`)
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/comments.json?orderBy="campsiteId"&equalTo="${campsiteId}"`)
                 .then((comment) => {
                     let commentCollection = comment.data;
                     if (commentCollection !== null) {
@@ -32,7 +32,9 @@ app.factory("CommentFactory", function($http, $q, $routeParams, FIREBASE_CONFIG)
         });
     };
 
-    let fbPostNewComment = newComment => {
+    let fbPostNewComment = (newComment,Id) => {
+        newComment.creator = $rootScope.user.username;
+        newComment.campsiteId = Id;
         return $q((resolve, reject) => {
             $http.post(`${FIREBASE_CONFIG.databaseURL}/comments.json`,
                     JSON.stringify(newComment))
@@ -42,6 +44,7 @@ app.factory("CommentFactory", function($http, $q, $routeParams, FIREBASE_CONFIG)
     };
 
     let fbDeleteComment = commentId => {
+        console.log(commentId);
         return $q((resolve, reject) => {
             $http.delete(`${FIREBASE_CONFIG.databaseURL}/comments/${commentId}.json`)
                 .then(result => resolve(result))
@@ -50,7 +53,7 @@ app.factory("CommentFactory", function($http, $q, $routeParams, FIREBASE_CONFIG)
     };
 
     let fbEditComment = comment => {
-        console.log("factory", comment);
+        //console.log("factory", comment);
         let commentId = comment.commentId;
         return $q((resolve, reject) => {
             $http.put(`${FIREBASE_CONFIG.databaseURL}/comments/${commentId}.json`,
