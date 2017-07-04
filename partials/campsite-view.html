@@ -31,12 +31,22 @@
         <div class="row bottom-box">
             <div class="comment-box" ng-show="comments">
                 <div ng-repeat="comment in commentList">
-                    <h3>{{comment.text}}<a ng-click="deleteComment(comment.commentId)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></h3>
+                    <h3>{{comment.text}}
+                    	<input ng-show="editingComment" type="text" class="form-control" placeholder="Features" ng-model="comment.text" />
+                    	<a ng-click="editingComment = true" ng-show="!editingComment">
+                    		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                  		</a>
+                  		<a ng-click="editingComment = false" ng-show="editingComment">
+                    		<button class="btn btn-default btn-accent">Save Changes</button>
+                  		</a>
+                    	<a ng-click="deleteComment(comment.commentId)">
+                    		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  		</a>
+                    </h3>
                     <p>- {{comment.creator}}</p>
                 </div>
-                <p>Add a comment</p>
                 <div class="">
-                    <label>New Comment</label>
+                    <label>Write a comment</label>
                     <input type="text" class="form-control" placeholder="Features" ng-model="newComment.text" />
                     <button class="btn btn-primary btn-default" ng-click="addComment(newComment)">Save</button>
                 </div>

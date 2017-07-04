@@ -6,6 +6,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.key = MAPS_CONFIG.mapsKey;
     $scope.editing = false;
+    $scope.editingComment = false;
     $scope.comments = false;
     $scope.commentList = [];
     $scope.imageUpload = {};
