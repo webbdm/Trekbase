@@ -53,11 +53,10 @@ app.factory("CommentFactory", function($http, $q, $rootScope, $routeParams, FIRE
     };
 
     let fbEditComment = comment => {
-        //console.log("factory", comment);
-        let commentId = comment.commentId;
+        console.log("factory", comment);
         return $q((resolve, reject) => {
-            $http.put(`${FIREBASE_CONFIG.databaseURL}/comments/${commentId}.json`,
-                    JSON.stringify(comment))
+            $http.put(`${FIREBASE_CONFIG.databaseURL}/comments/${comment.commentId}.json`,
+                    angular.toJson(comment))
                 .then(result => resolve(result))
                 .catch(error => reject(error));
         });

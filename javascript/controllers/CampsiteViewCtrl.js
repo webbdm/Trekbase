@@ -78,7 +78,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
         //console.log(newFile);
         CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
             getSingleCampsite($scope.campsite);
-            console.log(results, "Image saved");
+            //console.log(results, "Image saved");
 
         }).catch((error) => {
             console.log("image save error", error);
@@ -88,7 +88,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     let getAllComments = () => {
         CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
                 $scope.commentList = results;
-                console.log($scope.commentList);
+                //console.log($scope.commentList);
             })
             .catch((error) => {
                 console.log("getAllComments error", error);
@@ -100,6 +100,7 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     $scope.addComment = (newComment) => {
         CommentFactory.fbPostNewComment(newComment, $routeParams.campsiteId).then((resultz) => {
                 getAllComments();
+                $scope.newComment.text = "";
                 console.log("rezults", resultz);
             })
             .catch((error) => {
@@ -108,8 +109,9 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     };
 
-    $scope.editComment = () => {
-        CommentFactory.fbEditComment($scope.editedComment).then(() => {
+    $scope.editComment = (comment) => {
+        console.log(comment);
+        CommentFactory.fbEditComment(comment).then(() => {
             getAllComments();
         }).catch((error) => {
             console.log("Add error", error);

@@ -109,7 +109,8 @@ nav {
 .park-buttons {
   margin: 5px 0px; }
 
-.park-title-box, .park-buttons {
+.park-title-box,
+.park-buttons {
   margin: 0px 20px; }
 
 .park_view--campsite-card {
@@ -149,9 +150,12 @@ nav {
   .campsite-view_main-box .review-box {
     padding: 15px;
     height: 30%; }
+  .campsite-view_main-box .comment-box {
+    padding: 15px;
+    height: 30%; }
   .campsite-view_main-box .bottom-box {
     padding: 15px;
-    height: 70%; }
+    height: 30%; }
 
 .bottom-box img {
   height: 100%;

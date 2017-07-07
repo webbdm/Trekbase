@@ -158,11 +158,12 @@ nav {
     }
 }
 
-.park-buttons{
+.park-buttons {
     margin: 5px 0px;
 }
 
-.park-title-box, .park-buttons{
+.park-title-box,
+.park-buttons {
     margin: 0px 20px;
 }
 
@@ -182,7 +183,7 @@ nav {
     p {
         color: white;
     }
-    div{
+    div {
         padding: 0;
     }
 }
@@ -212,11 +213,13 @@ nav {
         padding: 15px;
         height: 30%;
     }
+    .comment-box {
+        padding: 15px;
+        height: 30%;
+    }
     .bottom-box {
         padding: 15px;
-        height: 70%;
-        
-
+        height: 30%;
     }
 }
 
@@ -235,7 +238,7 @@ nav {
     width: auto;
 }
 
-.campsite-bgr{
+.campsite-bgr {
     height: 300px;
 }
 

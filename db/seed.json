@@ -77,12 +77,14 @@
     },
     "comments": {
         "comment0": {
+            "campsiteId": "campsite0",
             "text": "This site was great during our Fall trip",
-            "creator": "user0"
+            "creator": "Ally"
         },
         "comment1": {
+            "campsiteId": "campsite0",
             "text": "Camspite #2 here has a great firepit & view of the creek",
-            "creator": "user0"
+            "creator": "Billy"
         }
 
     },
