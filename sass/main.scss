@@ -211,15 +211,20 @@ nav {
     height: 80vh;
     .review-box {
         padding: 15px;
-        height: 30%;
+        height: 20%;
+        overflow: auto;
+        p {
+            font-size: 15px;
+        }
     }
     .comment-box {
         padding: 15px;
-        height: 30%;
+        height: 35%;
+        overflow: auto;
     }
     .bottom-box {
         padding: 15px;
-        height: 30%;
+        height: 35%;
     }
 }
 

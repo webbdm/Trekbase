@@ -34,16 +34,19 @@
     "campsites": {
         "campsite0": {
             "parkId": "park0",
-            "image": "",
-            "campsiteName": "Arrow",
-            "latitude": "",
-            "longitude": "",
-            "area": "",
+            "image": {
+                "base64code": "/9j/4AAQSkZJRgABAQEA8ADwAAD/7S5eUGhvdG9zaG9wIDMuMAA4QklNA+0AAAAAABAA8AAAAAEAAQDwAAAAAQABOEJJTQQEAAAAAABXHAIAAAIAAhwCUAAKRnJlZCBCcnVudBwCVQAMUGhvdG9ncmFwaGVyHAJ0ABCpMjAxMCBGcmVkIEJydW50HAJ4ABZPTFlNUFVTIERJR0lUQUwgQ0FNRVJBADhCSU0ECgAAAAAAAQEAOEJJTQQMAAAAAC2XAAAAAQAAAQAAAACgAAADAAAB4AAAAC17ABgAAf/Y/+4ADkFkb2JlAGQAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAEHBwcNDA0YEBAYFA4ODhQUDg4ODhQRDAwMDAwREQwMDAwMDBEMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM/8AAEQgAoAEAAwERAAIRAQMRAf/dAAQAIP/EAaIAAAAHAQEBAQEAAAAAAAAAAAQFAwIGAQAHCAkKCwEAAgIDAQEBAQEAAAAAAAAAAQACAwQFBgcICQoLEAACAQMDAgQCBgcDBAIGAnMBAgMRBAAFIRIxQVEGE2EicYEUMpGhBxWxQiPBUtHhMxZi8CRygvElQzRTkqKyY3PCNUQnk6OzNhdUZHTD0uIIJoMJChgZhJRFRqS0VtNVKBry4/PE1OT0ZXWFlaW1xdXl9WZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+Ck5SVlpeYmZqbnJ2en5KjpKWmp6ipqqusra6voRAAICAQIDBQUEBQYECAMDbQEAAhEDBCESMUEFURNhIgZxgZEyobHwFMHR4SNCFVJicvEzJDRDghaSUyWiY7LCB3PSNeJEgxdUkwgJChgZJjZFGidkdFU38qOzwygp0+PzhJSktMTU5PRldYWVpbXF1eX1RlZmdoaWprbG1ub2R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+DlJWWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+v/aAAwDAQACEQMRAD8A4hazSRMFnZZDIeINdqmg36BvlmvnjBGzcERNNNBNIAB6AqvAfEaeO/uMrjCx/SUlA21+7XbNK7hnYFFGy1HUd8tljHDsxBTCaNpJw7DtyJDEEkdttsjjlWyS3bX7Q3StMqSCMgqzjYhegbxG3fLzvuGNPU9I/NnTLW2ji0/y/ENRMicLqMQsCobdSTQ8mAI55MZelIMT3vX/ACfrWt65pQutWsn0+4YkrCGDJSu25+L71XMiJ2ayGR2vqNRHqOPegoRhke5YjvTZH4wemAGXwOQHNmUmuVf1SZDyPt4ZnQOzgZBvurRNZcRyUg9674CJJBgieem8Coh3PRh1yAE+9mTCuSitqrn92fvyzjrm18F8nG2ZDRtiMeK0cFLhGcbWl4U42tL1BwKqAYGS8DFVRVwJVFGBKoBilUUHAqqqk9sFpXhSO2RtNKir7YCUrwmRtkAuC4LZcK4DAyAdil2KuxV//9DglFEjRSyhmdeTK4oeX0fqzGbUXaCSD4HH7o/ZApWtOm4ymVH3q3c20E49SIfv06qfhH0dVrtiJEc1IXx3AZUR0dmNCaVO49wRjwpBVWFm8nJWVajeoIP3YYkhTT1z8vfL3kW/t7VEilvr0BTfSpVUVv2UjWqLx/mdvtZk44gtU5U9402007TbJILKP0YVJZYyeRFd6b12y8Yy1+IF7XkjtuRT7svjjAaJZSSrxTRruBvSh3yJiWQmGnML70IJ677ZIAhjIgtkWxGykHwwi2J4XLQdBTCheoxVeEJxtaXCPG1peEOC1peIz4Y2ml6xnG1pUWMeGC00qLF7YLTSoIjjaaVViOC1pUWFsBknhVViORMmQiqBaZG2VLgMDIBvAmnYpdirsVdirsVf/9Hz68F96rTC2k9ViHDKhG7dQQPvzG4497Zuj4L+WQvDc2cpQUUkciFI37DKZx6gpVvR5rzgnDRt9lT8JA8D45X4neN1UXs54jzlaRCRUSKpC8egNRXbJiYK0qqQwiMi/XIVryMZIIpt8R7ZZjq+SJJzpVC/K0hlBKlwZWKhY9zzV1K/Zp1/ay6IDCResfl/+ZcFndyR+Y9dSWH0wsTSGRwqKNuLJyi23D8vjb+bL8eYA7lonjvkHquk+afLerRRS6fqMEyzgmFeYV2CmhIRqNmVGYPJxyCE4CnChUVfwwMlRVwWlUC4LTSoqDBa0vEeNppVWPBaeFeI8Fp4VRYsbXhVFixtPCqLFgteFUWE4OJPCqrBjxJ4VRYTg4k8K8IBkbZCK7AmnYpdirXJfEYq2CD0OKuxV2KuxV2Kv//S4xOysTWSQOpVClWoB0FBmpiXIlS6SG8Ul3eSrHiaEn4fkMMZRIrZSCsggW3fgjEDjyHEEgnp0/XhlIy3RVNme5gh5GWQqwoVDbAk0ruMeAE8lunC7nnuEtbSn1mZqDnShB7kr3y6GEFEpNjVr20ilsJLliGZklgavCh7+BH+TTLqIFBhQKFsnHPnFcMjk0mHGg4k0O/hkT3Ul6/+Xflz8q79lhuLqO6ur0EXH1wG3ki4mqpE6Mi9fi5BnzJxiFU48zJ7F",
+                "filetype": "image/jpeg"
+            },
+            "campsiteName": "Gulf Creek",
+            "latitude": "35.455936",
+            "longitude": "-85.620147",
+            "area": "Savage Gulf",
             "review": "The Savage Gulf and Stone Door areas of the park offer approximately 55 miles of hiking to remarkable vistas, waterfalls and historical locations such as the Stage Coach Road. The Great Stone Door is an impressive cliff line overlooking the Savage Gulf. It gets its name from a crack in the cliff that runs from the top to the bottom that looks like a door left slightly ajar. This is one of the many ways to access the gulf below. Many of the trails are perfect for wildflower hunts as the hiker traverses the different environs of the top of the plateau and the deep gulfs.",
-            "features": "",
-            "fee": "",
-            "bathrooms": "",
-            "type": "",
+            "features": "Large creek area that is great for swimming",
+            "fee": "None",
+            "bathrooms": "No",
+            "type": "Numbered w/ firepits",
             "uid": "M2LUZZ4WzBdnZuFaRPsW6Hl71Hk2"
         },
         "campsite1": {

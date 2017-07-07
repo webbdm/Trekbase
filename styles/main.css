@@ -149,13 +149,17 @@ nav {
   height: 80vh; }
   .campsite-view_main-box .review-box {
     padding: 15px;
-    height: 30%; }
+    height: 20%;
+    overflow: auto; }
+    .campsite-view_main-box .review-box p {
+      font-size: 15px; }
   .campsite-view_main-box .comment-box {
     padding: 15px;
-    height: 30%; }
+    height: 35%;
+    overflow: auto; }
   .campsite-view_main-box .bottom-box {
     padding: 15px;
-    height: 30%; }
+    height: 35%; }
 
 .bottom-box img {
   height: 100%;

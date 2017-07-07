@@ -1,5 +1,7 @@
 app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory, CommentFactory) {
 
+    $scope.uName = $rootScope.user.username;
+
     $scope.editedCampsite = {
         campsiteId: $routeParams.campsiteId,
     };
