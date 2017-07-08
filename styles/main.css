@@ -102,6 +102,11 @@ nav {
 .campsites-box {
   margin: 10px 0px; }
 
+.add-park, .add-campsite {
+  margin: 10px 17px;
+  padding: 10px;
+  background-color: #312F2F; }
+
 .park-title-box h3,
 .park-title-box p {
   color: white !important; }
@@ -161,8 +166,11 @@ nav {
     background-color: #555151;
     overflow: auto; }
     .campsite-view_main-box .comment-box input {
-      width: 400px;
+      color: black;
+      width: 350px;
       margin: 0px; }
+    .campsite-view_main-box .comment-box h4 {
+      color: #FFB81C; }
   .campsite-view_main-box .bottom-box {
     padding: 15px; }
 
@@ -173,6 +181,11 @@ nav {
 
 .input-box input {
   max-width: 300px; }
+
+.comment-text {
+  font-size: 12px;
+  margin-left: 10px;
+  color: white; }
 
 .boxy-inline {
   display: inline-block; }

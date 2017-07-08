@@ -151,6 +151,16 @@ nav {
     margin: 10px 0px;
 }
 
+.add-park, .add-campsite {
+    margin: 10px 17px;
+    padding: 10px;
+    background-color: $secondary;
+    input {
+            //width: 350px;
+            //margin: 0px;
+        }
+}
+
 .park-title-box {
     h3,
     p {
@@ -228,8 +238,12 @@ nav {
         background-color: #555151;
         overflow: auto;
         input {
-            width: 400px;
+            color: black;
+            width: 350px;
             margin: 0px;
+        }
+        h4{
+            color: $accent;
         }
     }
     .bottom-box {
@@ -246,6 +260,12 @@ nav {
 
 .input-box input {
     max-width: 300px;
+}
+
+.comment-text{
+    font-size: 12px;
+    margin-left: 10px;
+    color: white;
 }
 
 .boxy-inline {
