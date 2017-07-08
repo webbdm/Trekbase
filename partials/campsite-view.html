@@ -6,13 +6,13 @@
                 <h4>{{park.name}} - {{park.city}}, {{park.state}}</h4>
             </div>
             <div class="panel-body">
-                <p>Area: {{campsite.area}}</p>
-                <p>Type: {{campsite.type}}</p>
-                <p>Features: {{campsite.features}}</p>
-                <p>Fee: {{campsite.fee}}</p>
-                <p>Bathrooms: {{campsite.bathrooms}}</p>
-                <p>Latitude: {{campsite.latitude}}</p>
-                <p>Longitude: {{campsite.longitude}}</p>
+                <p>Area: <span>{{campsite.area}}</span></p>
+                <p>Type: <span>{{campsite.type}}</span></p>
+                <p>Features: <span>{{campsite.features}}</span></p>
+                <p>Fee: <span>{{campsite.fee}}</span></p>
+                <p>Bathrooms: <span>{{campsite.bathrooms}}</span></p>
+                <p>Latitude: <span>{{campsite.latitude}}</span></p>
+                <p>Longitude: <span>{{campsite.longitude}}</span></p>
                 <a ng-click="deleteCampsite(campsite.campsiteId)">
                     <button class="btn btn-default btn-accent">Delete Campsite <span class="glyphicon glyphicon-trash
 " aria-hidden="true"></span></button>

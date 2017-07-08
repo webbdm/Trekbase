@@ -1,4 +1,4 @@
-app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory, CommentFactory) {
+app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams, $scope, MAPS_CONFIG, ParkFactory, CampsiteFactory, CommentFactory) {
 
     $scope.uName = $rootScope.user.username;
 
@@ -15,8 +15,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     let getSinglePark = (id) => {
         ParkFactory.fbGetSinglePark(id).then((results) => {
-                $scope.park = results;
-            })
+            $scope.park = results;
+        })
             .catch((error) => {
                 console.log("getSinglePark error", error);
             });
@@ -24,12 +24,12 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     let getSingleCampsite = (campsiteParams) => {
         CampsiteFactory.fbGetSingleCampsite(campsiteParams.campsiteId).then((results) => {
-                $scope.campsite = results;
-                $scope.editedCampsite = results;
-                $scope.campsite.campsiteId = campsiteParams.campsiteId; /// Necessary?
-                getSinglePark($scope.campsite.parkId);
-                getMap($scope.campsite);
-            })
+            $scope.campsite = results;
+            $scope.editedCampsite = results;
+            $scope.campsite.campsiteId = campsiteParams.campsiteId; /// Necessary?
+            getSinglePark($scope.campsite.parkId);
+            getMap($scope.campsite);
+        })
             .catch((error) => {
                 console.log("getSingleCampsite error", error);
             });
@@ -39,8 +39,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.deleteCampsite = (Id) => {
         CampsiteFactory.fbDeleteCampsite(Id).then(() => {
-                $location.url(`/park_view/${$scope.campsite.parkId}`);
-            })
+            $location.url(`/park_view/${$scope.campsite.parkId}`);
+        })
             .catch((error) => {
                 console.log("creatNewCampsite error", error);
             });
@@ -57,10 +57,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     let getMap = (campsite) => {
         let map;
-        //console.log(campsite);
         let parsedLat = Number(campsite.latitude);
         let parsedLong = Number(campsite.longitude);
-        //console.log("lat", parsedLat, "long", parsedLong);
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: parsedLat,
@@ -77,11 +75,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
             filetype: $scope.file.filetype,
             category: $scope.imageCategory
         };
-        //console.log(newFile);
         CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
             getSingleCampsite($scope.campsite);
-            //console.log(results, "Image saved");
-
         }).catch((error) => {
             console.log("image save error", error);
         });
@@ -89,9 +84,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     let getAllComments = () => {
         CommentFactory.fbGetAllComments($routeParams.campsiteId).then((results) => {
-                $scope.commentList = results;
-                //console.log($scope.commentList);
-            })
+            $scope.commentList = results;
+        })
             .catch((error) => {
                 console.log("getAllComments error", error);
             });
@@ -101,10 +95,9 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.addComment = (newComment) => {
         CommentFactory.fbPostNewComment(newComment, $routeParams.campsiteId).then((resultz) => {
-                getAllComments();
-                $scope.newComment.text = "";
-                console.log("rezults", resultz);
-            })
+            getAllComments();
+            $scope.newComment.text = "";
+        })
             .catch((error) => {
                 console.log("addComment error", error);
             });
@@ -112,7 +105,6 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
     };
 
     $scope.editComment = (comment) => {
-        console.log(comment);
         CommentFactory.fbEditComment(comment).then(() => {
             getAllComments();
         }).catch((error) => {
@@ -122,9 +114,8 @@ app.controller("CampsiteViewCtrl", function($location, $rootScope, $routeParams,
 
     $scope.deleteComment = (id) => {
         CommentFactory.fbDeleteComment(id).then(() => {
-                getAllComments();
-                console.log("deleted", id);
-            })
+            getAllComments();
+        })
             .catch((error) => {
                 console.log("deleteComment error", error);
             });

@@ -67,7 +67,7 @@ nav {
 
 .bgr-box-primary {
   background-color: #1F445F;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   margin: 0;
   padding-top: 2%;
@@ -147,6 +147,12 @@ nav {
   color: white;
   border: none;
   background-color: #312F2F; }
+  .campsite-view_infobox p {
+    color: #FFB81C;
+    font-weight: bold; }
+  .campsite-view_infobox span {
+    color: white;
+    font-size: 12px; }
 
 .campsite-view_main-box {
   color: white;
@@ -155,13 +161,13 @@ nav {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: flex-start; }
   .campsite-view_main-box .review-box {
     padding: 15px; }
     .campsite-view_main-box .review-box p {
       font-size: 15px; }
   .campsite-view_main-box .comment-box {
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     background-color: #555151;
     overflow: auto; }
