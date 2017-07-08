@@ -58,7 +58,7 @@ app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $sc
             .catch((error)=>{
             	console.log("Create New Park Error", error);
             });
-    };
+    }; 
 
     $scope.deletePark = (parkId) => {
     	ParkFactory.fbDeletePark(parkId).then(() => {
