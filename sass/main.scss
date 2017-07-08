@@ -199,7 +199,7 @@ nav {
 }
 
 .campsite-view_infobox {
-    height: 80vh;
+    height: 100%;
     color: white;
     border: none;
     background-color: $secondary;
@@ -208,23 +208,33 @@ nav {
 .campsite-view_main-box {
     color: white;
     background-color: $secondary;
-    height: 80vh;
+    height: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .review-box {
         padding: 15px;
-        height: 20%;
-        overflow: auto;
+        //height: 20%;
+        //overflow: auto;
         p {
             font-size: 15px;
         }
     }
     .comment-box {
-        padding: 15px;
-        height: 35%;
+        margin: 10px;
+        padding: 10px;
+        //height: 35%;
+        background-color: #555151;
         overflow: auto;
+        input {
+            width: 400px;
+            margin: 0px;
+        }
     }
     .bottom-box {
         padding: 15px;
-        height: 35%;
+        //height: 35%;
     }
 }
 
@@ -236,6 +246,10 @@ nav {
 
 .input-box input {
     max-width: 300px;
+}
+
+.boxy-inline {
+    display: inline-block;
 }
 
 .uploadedImage {
