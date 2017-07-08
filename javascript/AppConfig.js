@@ -55,5 +55,10 @@ app.config(function($routeProvider) {
             controller: 'CampsiteViewCtrl',
             resolve: { isAuth }
         })
+        .when('/logout', {
+            templateUrl: 'partials/login-view.html',
+            controller: 'AuthCtrl',
+            resolve: { isAuth }
+        })
         .otherwise('/home');
 });
