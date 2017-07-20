@@ -1,10 +1,11 @@
-app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
+app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
     $rootScope.tallNav = false;
     $scope.editing = false;
 
     $scope.park = {};
     $scope.campsites = [];
+
     $scope.newCampsite = {
         area: "",
         bathrooms: "",
@@ -21,10 +22,10 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     let getSinglePark = () => {
         ParkFactory.fbGetSinglePark($routeParams.parkId).then((results) => {
-                $scope.park = results;
-                $scope.editedPark = results;
-                //getMap($scope.park);
-            })
+            $scope.park = results;
+            $scope.editedPark = results;
+            showBlankMap($scope.park);
+        })
             .catch((error) => {
                 console.log("getSinglePark error", error);
             });
@@ -34,8 +35,8 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     let getAllCampsites = () => {
         CampsiteFactory.fbGetAllCampsites($routeParams.parkId).then((results) => {
-                $scope.campsites = results;
-            })
+            $scope.campsites = results;
+        })
             .catch((error) => {
                 console.log("getAllCampsites error", error);
             });
@@ -43,7 +44,7 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     getAllCampsites();
 
-    $scope.makeEdit = (park) =>{
+    $scope.makeEdit = (park) => {
         //console.log("park", park);
         //$scope.editedPark = park;
     };
@@ -64,8 +65,8 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
 
     $scope.createNewCampsite = () => {
         CampsiteFactory.fbCreateNewCampsite($scope.newCampsite).then(() => {
-                getAllCampsites();
-            })
+            getAllCampsites();
+        })
             .catch((error) => {
                 console.log("creatNewCampsite error", error);
             });
@@ -91,17 +92,58 @@ app.controller("ParkViewCtrl", function($location, $rootScope, $routeParams, $sc
         // });
     };
 
-    let getMap = (park) => {
+    // let getMap = (park) => {
+    //     let map;
+    //     let parsedLat = Number(park.latitude);
+    //     let parsedLong = Number(park.longitude);
+    //     map = new google.maps.Map(document.getElementById('map'), {
+    //         center: {
+    //             lat: parsedLat,
+    //             lng: parsedLong
+    //         },
+    //         zoom: 12
+    //     });
+    // };
+
+    let showBlankMap = (park) => {
         let map;
+        console.log("park stuff", park);
         let parsedLat = Number(park.latitude);
         let parsedLong = Number(park.longitude);
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('blankMap'), {
             center: {
                 lat: parsedLat,
                 lng: parsedLong
             },
             zoom: 12
         });
+
+        var marker;
+        var coors;
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            placeMarker(event.latLng);
+            
+        });
+
+        function placeMarker(location) {
+            if (marker) {
+                marker.setPosition(location);
+            } else {
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+           
+            console.log(coorsLat, coorsLong);
+        }
+
+    
     };
+
+
+
+
 
 });

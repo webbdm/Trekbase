@@ -214,5 +214,9 @@ nav {
   height: 250px;
   width: 100%; }
 
+#blankMap {
+  height: 250px;
+  width: 400px; }
+
 .form-group label {
   color: white; }
