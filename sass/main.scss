@@ -52,23 +52,6 @@ nav {
     }
 }
 
-// .login-wrapper {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     &_left {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         border: 1px solid black;
-//     }
-//     &_right {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         border: 1px solid black;
-//     }
-// }
 .divider {
     width: 100%;
     height: 10px;
@@ -82,7 +65,7 @@ nav {
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 60vh;
     .park-box {
         background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
         background-size: cover;
@@ -108,7 +91,7 @@ nav {
 
 .bgr-box-primary {
     background-color: $primary;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     margin: 0;
     padding-top: 2%;
@@ -117,7 +100,7 @@ nav {
 
 .bgr-box-home {
     background-color: $primary;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
     margin: 0;
     overflow: auto;
@@ -151,6 +134,16 @@ nav {
     margin: 10px 0px;
 }
 
+.add-park, .add-campsite {
+    margin: 10px 17px;
+    padding: 10px;
+    background-color: $secondary;
+    input {
+            //width: 350px;
+            //margin: 0px;
+        }
+}
+
 .park-title-box {
     h3,
     p {
@@ -158,11 +151,12 @@ nav {
     }
 }
 
-.park-buttons{
+.park-buttons {
     margin: 5px 0px;
 }
 
-.park-title-box, .park-buttons{
+.park-title-box,
+.park-buttons {
     margin: 0px 20px;
 }
 
@@ -182,7 +176,7 @@ nav {
     p {
         color: white;
     }
-    div{
+    div {
         padding: 0;
     }
 }
@@ -198,20 +192,54 @@ nav {
 }
 
 .campsite-view_infobox {
-    height: 80vh;
+    height: 100%;
     color: white;
     border: none;
     background-color: $secondary;
+    p{
+        color: $accent;
+        font-weight: bold;
+    }
+    span{
+        color: white;
+        font-size: 12px;
+    }
 }
 
 .campsite-view_main-box {
     color: white;
     background-color: $secondary;
+    height: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     .review-box {
         padding: 15px;
+        //height: 20%;
+        //overflow: auto;
+        p {
+            font-size: 15px;
+        }
+    }
+    .comment-box {
+        margin: 5px;
+        padding: 10px;
+        //height: 35%;
+        background-color: #555151;
+        overflow: auto;
+        input {
+            color: black;
+            width: 350px;
+            margin: 0px;
+        }
+        h4{
+            color: $accent;
+        }
     }
     .bottom-box {
         padding: 15px;
+        //height: 35%;
     }
 }
 
@@ -225,12 +253,22 @@ nav {
     max-width: 300px;
 }
 
+.comment-text{
+    font-size: 12px;
+    margin-left: 10px;
+    color: white;
+}
+
+.boxy-inline {
+    display: inline-block;
+}
+
 .uploadedImage {
     height: 140px;
     width: auto;
 }
 
-.campsite-bgr{
+.campsite-bgr {
     height: 300px;
 }
 
@@ -247,7 +285,8 @@ nav {
 }
 
 #map {
-    height: 300px;
+    height: 250px;
+    //max-height: 50%;
     width: 100%;
 }
 

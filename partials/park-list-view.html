@@ -43,7 +43,8 @@
                     <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
                     <p>{{park.city}}, {{park.state}}</p>
                     <a ng-click="deletePark(park.parkId)">
-                        <button>Delete Park</button>
+                        <!--<button>Delete Park</button>-->
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </a>
                     <!-- <a ng-click="editing = true">
                         <button>Edit Park</button>

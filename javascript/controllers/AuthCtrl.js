@@ -1,8 +1,6 @@
 app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, UserFactory) {
 
     $rootScope.tallNav = true;
-    console.log($rootScope.tallNav);
-
 
 	$scope.auth = {
         email: "a@a.com",
