@@ -214,7 +214,7 @@ nav {
   height: 250px;
   width: 100%; }
 
-#blankMap {
+#blankMap, #editMap {
   height: 250px;
   width: 400px; }
 

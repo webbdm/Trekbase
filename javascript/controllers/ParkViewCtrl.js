@@ -13,8 +13,7 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
         features: "",
         fee: "",
         image: "",
-        latitude: "",
-        longitude: "",
+        coordinates: {},
         parkId: $routeParams.parkId,
         review: "",
         type: ""
@@ -45,13 +44,8 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
     getAllCampsites();
 
     $scope.makeEdit = (park) => {
-        //console.log("park", park);
-        //$scope.editedPark = park;
-    };
 
-    // $scope.editPark = (park) =>{
-    //     console.log(park);
-    // };
+    };
 
     $scope.editPark = () => {
         $scope.editedPark.parkId = $routeParams.parkId;
@@ -82,7 +76,7 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
         };
 
         $scope.newCampsite.image = newFile;
-        console.log("Test", $scope.newCampsite);
+        //console.log("Test", $scope.newCampsite);
         // CampsiteFactory.fbAddImage(newFile, $scope.campsite).then((results) => {
         //     getSingleCampsite($scope.campsite);
         //     console.log(results, "Image saved");
@@ -107,7 +101,6 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
 
     let showBlankMap = (park) => {
         let map;
-        console.log("park stuff", park);
         let parsedLat = Number(park.latitude);
         let parsedLong = Number(park.longitude);
         map = new google.maps.Map(document.getElementById('blankMap'), {
@@ -123,7 +116,11 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
 
         google.maps.event.addListener(map, 'click', function (event) {
             placeMarker(event.latLng);
-            
+            let coordinates = {
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng()
+            }
+            $scope.newCampsite.coordinates = coordinates;
         });
 
         function placeMarker(location) {
@@ -135,15 +132,8 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
                     map: map
                 });
             }
-           
-            console.log(coorsLat, coorsLong);
+
         }
-
-    
     };
-
-
-
-
 
 });

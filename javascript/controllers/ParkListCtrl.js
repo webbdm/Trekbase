@@ -1,8 +1,6 @@
 app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $scope, ParkFactory) {
 
     $rootScope.tallNav = false;
-    console.log($rootScope.tallNav);
-
     $scope.allParks = [];
     $scope.editing = true;
 

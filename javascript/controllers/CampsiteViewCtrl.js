@@ -29,6 +29,7 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             $scope.campsite.campsiteId = campsiteParams.campsiteId; /// Necessary?
             getSinglePark($scope.campsite.parkId);
             getMap($scope.campsite);
+            showEditMap($scope.campsite);
         })
             .catch((error) => {
                 console.log("getSingleCampsite error", error);
@@ -56,9 +57,11 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
     };
 
     let getMap = (campsite) => {
+        console.log("ayyyyy!", campsite.coordinates);
         let map;
-        let parsedLat = Number(campsite.latitude);
-        let parsedLong = Number(campsite.longitude);
+        let marker;
+        let parsedLat = Number(campsite.coordinates.lat);
+        let parsedLong = Number(campsite.coordinates.lng);
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
                 lat: parsedLat,
@@ -66,6 +69,28 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             },
             zoom: 12
         });
+
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            placeMarker(event.latLng);
+            let coordinates = {
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng()
+            }
+            $scope.editedCampsite.coordinates = coordinates;
+        });
+
+        function placeMarker(location) {
+            if (marker) {
+                marker.setPosition(location);
+            } else {
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+
+        }
     };
 
     $scope.itemSave = () => {
@@ -121,5 +146,39 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             });
     };
 
+    let showEditMap = (campsite) => {
+        let map;
+        let parsedLat = Number(campsite.coordinates.lat);
+        let parsedLong = Number(campsite.coordinates.lng);
+        map = new google.maps.Map(document.getElementById('editMap'), {
+            center: {
+                lat: parsedLat,
+                lng: parsedLong
+            },
+            zoom: 12
+        });
 
+        var marker;
+
+        google.maps.event.addListener(map, 'click', function (event) {
+            placeMarker(event.latLng);
+            let coordinates = {
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng()
+            }
+            $scope.editedCampsite.coordinates = coordinates;
+        });
+
+        function placeMarker(location) {
+            if (marker) {
+                marker.setPosition(location);
+            } else {
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        }
+
+    };
 });
