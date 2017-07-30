@@ -119,7 +119,7 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
             let coordinates = {
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng()
-            }
+            };
             $scope.newCampsite.coordinates = coordinates;
         });
 

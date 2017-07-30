@@ -76,7 +76,7 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             let coordinates = {
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng()
-            }
+            };
             $scope.editedCampsite.coordinates = coordinates;
         });
 
@@ -165,7 +165,7 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             let coordinates = {
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng()
-            }
+            };
             $scope.editedCampsite.coordinates = coordinates;
         });
 
