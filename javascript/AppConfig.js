@@ -14,7 +14,7 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, MAPS_CONFIG, AuthFactor
         var logged = AuthFactory.isAuthenticated();
         var appTo;
         if (currRoute.originalPath) {
-            appTo = currRoute.originalPath.indexOf('/auth') !== -1;
+            appTo = /auth/.test(currRoute.originalPath);
         }
         if (!appTo && !logged) {
             event.preventDefault();
