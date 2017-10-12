@@ -1,10 +1,23 @@
 nav {
-  height: 100px;
+  height: 150px;
   margin-bottom: 0; }
+
+.nav-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center; }
 
 .trek-logo {
   font-size: 3rem !important;
-  margin: 20px; }
+  font-family: 'Rubik Mono One', sans-serif;
+  margin: 20px;
+  padding: 5px 10px !important;
+  background-color: #1F445F;
+  text-decoration: none; }
+  .trek-logo:hover, .trek-logo:visited, .trek-logo:active {
+    text-decoration: none; }
 
 .navlist li {
   padding-top: 30px;
@@ -26,8 +39,22 @@ nav {
 .navbar-brand {
   color: white; }
 
+.nav-items-box {
+  margin-top: 1.5%; }
+
 .nav-item {
-  color: white !important; }
+  color: white !important;
+  font-family: 'Rubik Mono One', sans-serif;
+  flex-grow: 1; }
+
+@media (max-width: 420px) {
+  .nav {
+    height: 170px; }
+  .nav-items-box {
+    margin-top: 0; }
+  .nav-item {
+    font-size: 10px;
+    padding: 5px; } }
 
 .login-box_left {
   padding: 55px; }
@@ -51,9 +78,14 @@ nav {
   .home-container .park-box {
     background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
     background-size: cover; }
+    .home-container .park-box a {
+      font-family: 'Rubik Mono One', sans-serif;
+      color: #1F445F; }
   .home-container .campsite-box {
     background: url(https://images.theoutbound.com/uploads/1437140402255/wumsmrfw78e/ca76c0961beec40ee34c0e8b7997e543?w=900&h=600&fit=crop) no-repeat center center;
     background-size: cover; }
+    .home-container .campsite-box a {
+      font-family: 'Rubik Mono One', sans-serif; }
 
 .home_container-boxes {
   display: flex;

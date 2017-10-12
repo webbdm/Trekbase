@@ -23,7 +23,7 @@
     </div>
     <div class="add-campsite" ng-show="addingCampsite">
         <form class="form-group">
-            <div class="container">
+            <div class="">
                 <div class="col-md-6">
                     <div class="">
                         <label>Campsite Name</label>
@@ -91,32 +91,30 @@
         </div>
     </div>
     <div class="add-park" ng-hide="!editing">
-        <form class="form-group">
             <div class="">
                 <label>Park Name</label>
-                <input type="text" class="form-control" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
+                <input type="text" class="" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
             </div>
             <div class="">
                 <label>City/Town</label>
-                <input type="text" class="form-control" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
+                <input type="text" class="" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
             </div>
             <div class="">
                 <label>State</label>
-                <input type="text" class="form-control" placeholder="State" ng-model="editedPark.state" />
+                <input type="text" class="" placeholder="State" ng-model="editedPark.state" />
             </div>
             <div class="">
                 <label>Latitude</label>
-                <input type="text" class="form-control" placeholder="Latitude" ng-model="editedPark.latitude" />
+                <input type="text" class="" placeholder="Latitude" ng-model="editedPark.latitude" />
             </div>
             <div class="">
                 <label>Longitude</label>
-                <input type="text" class="form-control" placeholder="Longitude" ng-model="editedPark.longitude" />
+                <input type="text" class="" placeholder="Longitude" ng-model="editedPark.longitude" />
             </div>
             <!-- <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input type="file" id="exampleInputFile" ng-model="editedPark.image">
             </div> -->
             <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
-        </form>
     </div>
 </div>
