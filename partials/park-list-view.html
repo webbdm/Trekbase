@@ -1,39 +1,41 @@
-<div class="bgr-box-primary container">
+<div class="bgr-box-primary">
     <div>
         <div class="row">
             <div class="col-md-2 col-md-offset-10">
                 <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
-                <button class="btn btn-default btn-accent" ng-click="addingPark = false;" ng-show="addingPark">Close</button>
             </div>
         </div>
         <div class="add-park" ng-show="addingPark">
-            <form class="form-group">
-                <div class="">
-                    <label>Park Name</label>
-                    <input type="text" class="form-control" placeholder="Name" ng-model="newPark.name" ng-required="required" />
-                </div>
-                <div class="">
-                    <label>City/Town</label>
-                    <input type="text" class="form-control" placeholder="City/Town" ng-model="newPark.city" ng-required="required" />
-                </div>
-                <div class="">
-                    <label>State</label>
-                    <input type="text" class="form-control" placeholder="State" ng-model="newPark.state" />
-                </div>
-                <div class="">
-                    <label>Latitude</label>
-                    <input type="text" class="form-control" placeholder="Latitude" ng-model="newPark.latitude" />
-                </div>
-                <div class="">
-                    <label>Longitude</label>
-                    <input type="text" class="form-control" placeholder="Longitude" ng-model="newPark.longitude" />
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Image</label>
-                    <input type="file" id="exampleInputFile" ng-model="newPark.image">
-                </div>
-                <button class="btn btn-default" ng-click="addingPark = false; addNewPark()">Submit</button>
-            </form>
+            <!-- <form class="form-group"> -->
+            <div class="add-park_input">
+                <label>Park Name</label>
+                <input type="text" class="" placeholder="Name" ng-model="newPark.name" ng-required="required" />
+            </div>
+            <div class="add-park_input">
+                <label>City/Town</label>
+                <input type="text" class="" placeholder="City/Town" ng-model="newPark.city" ng-required="required" />
+            </div>
+            <div class="add-park_input">
+                <label>State</label>
+                <input type="text" class="" placeholder="State" ng-model="newPark.state" />
+            </div>
+            <div class="add-park_input">
+                <label>Latitude</label>
+                <input type="text" class="" placeholder="Latitude" ng-model="newPark.latitude" />
+            </div>
+            <div class="add-park_input">
+                <label>Longitude</label>
+                <input type="text" class="" placeholder="Longitude" ng-model="newPark.longitude" />
+            </div>
+            <div class="add-park_input">
+                <label for="exampleInputFile">Park Image</label>
+                <input class="" type="file" id="exampleInputFile" ng-model="newPark.image">
+            </div>
+            <div class="add-park_input add-park_submit">
+                <button class="btn btn-default btn-accent" ng-click="addingPark = false; addNewPark()">Submit</button>
+                <button class="btn btn-default btn-accent" ng-click="addingPark = false;" ng-show="addingPark">Close</button>
+            </div>
+            <!-- </form> -->
         </div>
     </div>
     <div ng-repeat="park in allParks" ng-show="!addingPark">

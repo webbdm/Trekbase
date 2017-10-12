@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "angular-base64-upload": "^0.1.22",
-    "google-maps": "^3.2.1"
+    "google-maps": "^3.2.1",
+    "materialize-css": "^0.100.2"
   }
 }

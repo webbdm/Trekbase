@@ -1,10 +1,10 @@
 nav {
+  height: 100px;
   margin-bottom: 0; }
 
-.logo {
-  font-size: 4em;
-  color: black;
-  padding: 50px; }
+.trek-logo {
+  font-size: 3rem !important;
+  margin: 20px; }
 
 .navlist li {
   padding-top: 30px;
@@ -105,7 +105,27 @@ nav {
 .add-park, .add-campsite {
   margin: 10px 17px;
   padding: 10px;
-  background-color: #312F2F; }
+  background-color: #312F2F;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center; }
+  .add-park_input, .add-campsite_input {
+    color: white;
+    min-width: 350px;
+    flex-grow: 1;
+    margin: 5px;
+    padding: 5px; }
+    .add-park_input input, .add-campsite_input input {
+      color: white; }
+    .add-park_input label, .add-campsite_input label {
+      color: white; }
+  .add-park_submit, .add-campsite_submit {
+    align-self: center;
+    flex-grow: 1; }
+    .add-park_submit button, .add-campsite_submit button {
+      margin: 5px; }
 
 .park-title-box h3,
 .park-title-box p {

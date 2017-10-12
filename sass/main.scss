@@ -1,13 +1,12 @@
 @import "colors";
 nav {
-    //height: 100px;
+    height: 100px;
     margin-bottom: 0;
 }
 
-.logo {
-    font-size: 4em;
-    color: black;
-    padding: 50px;
+.trek-logo {
+    font-size: 3rem !important;
+    margin: 20px;
 }
 
 .navlist {
@@ -138,10 +137,35 @@ nav {
     margin: 10px 17px;
     padding: 10px;
     background-color: $secondary;
-    input {
-            //width: 350px;
-            //margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    &_input {
+           color: white;
+           min-width: 350px;
+           flex-grow: 1;
+           margin: 5px;
+           padding: 5px;
+           input{
+               color: white;
+           }
+           label{
+               color: white}
+
         }
+    &_submit{
+        align-self: center;
+        flex-grow: 1;
+        button{
+            margin: 5px;
+        }
+    }
+}
+
+.park_img_upload{
+
 }
 
 .park-title-box {
