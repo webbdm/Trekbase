@@ -257,7 +257,23 @@ nav {
     }
 }
 
+// Campsite-View
+
+.campsite-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.campsite-wrapper*>{
+    flex-grow: 1;
+}
+
 .campsite-view_infobox {
+    margin: 10px;
+    max-width: 30%;
     height: 100%;
     color: white;
     border: none;
@@ -275,13 +291,12 @@ nav {
 .campsite-view_main-box {
     color: white;
     background-color: $secondary;
-    height: 100%;
-    margin-bottom: 10px;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     .review-box {
-        padding: 15px;
+        // padding: 15px;
         //height: 20%;
         //overflow: auto;
         p {
@@ -289,8 +304,8 @@ nav {
         }
     }
     .comment-box {
-        margin: 5px;
-        padding: 10px;
+        // margin: 5px;
+        // padding: 10px;
         //height: 35%;
         background-color: #555151;
         overflow: auto;
@@ -304,14 +319,14 @@ nav {
         }
     }
     .bottom-box {
-        padding: 15px;
+        // padding: 15px;
         //height: 35%;
     }
 }
 
 .bottom-box img {
-    height: 100%;
-    width: 100%;
+    height: 200px;
+    width: auto;
     margin: 5px;
 }
 
@@ -367,3 +382,5 @@ nav {
 .form-group label {
     color: white;
 }
+
+// Rules for ReDesign of UI

@@ -194,7 +194,19 @@ nav {
   .park_list--park_card p {
     color: white; }
 
+.campsite-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap; }
+
+.campsite-wrapper* > {
+  flex-grow: 1; }
+
 .campsite-view_infobox {
+  margin: 10px;
+  max-width: 30%;
   height: 100%;
   color: white;
   border: none;
@@ -209,18 +221,13 @@ nav {
 .campsite-view_main-box {
   color: white;
   background-color: #312F2F;
-  height: 100%;
-  margin-bottom: 10px;
+  max-width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
-  .campsite-view_main-box .review-box {
-    padding: 15px; }
-    .campsite-view_main-box .review-box p {
-      font-size: 15px; }
+  .campsite-view_main-box .review-box p {
+    font-size: 15px; }
   .campsite-view_main-box .comment-box {
-    margin: 5px;
-    padding: 10px;
     background-color: #555151;
     overflow: auto; }
     .campsite-view_main-box .comment-box input {
@@ -229,12 +236,10 @@ nav {
       margin: 0px; }
     .campsite-view_main-box .comment-box h4 {
       color: #FFB81C; }
-  .campsite-view_main-box .bottom-box {
-    padding: 15px; }
 
 .bottom-box img {
-  height: 100%;
-  width: 100%;
+  height: 200px;
+  width: auto;
   margin: 5px; }
 
 .input-box input {
