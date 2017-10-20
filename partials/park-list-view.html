@@ -41,10 +41,10 @@
             <!-- </form> -->
         </div>
     </div>
-    <div ng-repeat="park in allParks" ng-show="!addingPark">
-        <div class="col-md-4">
-            <div class="panel panel-default park_list--park_card">
-                <div class="panel-body">
+    <div class="park-list-grid">
+        <div ng-repeat="park in allParks" ng-show="!addingPark" class="">
+            <div class="park_list--park_card">
+                <div class="">
                     <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
                     <p>{{park.city}}, {{park.state}}</p>
                     <a ng-click="deletePark(park.parkId)">

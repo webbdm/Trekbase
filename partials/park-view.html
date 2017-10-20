@@ -80,41 +80,56 @@
     </div>
     <div class="campsites-box" ng-hide="editing == true || addingCampsite == true">
         <div ng-repeat="campsite in campsites">
-            <div class="col-md-4">
+            <div class="card card-themed">
+                <div class="card-image">
+                    <img clas="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+                    <span class="card-title card-title-themed">
+                            <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
+                    </span>
+                </div>
+                <!-- <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                        require little markup to use effectively.</p>
+                </div> -->
+                <!-- <div class="card-action">
+                    
+                </div> -->
+            </div>
+            <!-- <div class="col-md-4">
                 <div class="panel panel-default park_view--campsite-card">
                     <div class="panel-body">
                         <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
                         <img class="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="add-park" ng-hide="!editing">
-            <div class="">
-                <label>Park Name</label>
-                <input type="text" class="" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
-            </div>
-            <div class="">
-                <label>City/Town</label>
-                <input type="text" class="" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
-            </div>
-            <div class="">
-                <label>State</label>
-                <input type="text" class="" placeholder="State" ng-model="editedPark.state" />
-            </div>
-            <div class="">
-                <label>Latitude</label>
-                <input type="text" class="" placeholder="Latitude" ng-model="editedPark.latitude" />
-            </div>
-            <div class="">
-                <label>Longitude</label>
-                <input type="text" class="" placeholder="Longitude" ng-model="editedPark.longitude" />
-            </div>
-            <!-- <div class="form-group">
+        <div class="">
+            <label>Park Name</label>
+            <input type="text" class="" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
+        </div>
+        <div class="">
+            <label>City/Town</label>
+            <input type="text" class="" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
+        </div>
+        <div class="">
+            <label>State</label>
+            <input type="text" class="" placeholder="State" ng-model="editedPark.state" />
+        </div>
+        <div class="">
+            <label>Latitude</label>
+            <input type="text" class="" placeholder="Latitude" ng-model="editedPark.latitude" />
+        </div>
+        <div class="">
+            <label>Longitude</label>
+            <input type="text" class="" placeholder="Longitude" ng-model="editedPark.longitude" />
+        </div>
+        <!-- <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input type="file" id="exampleInputFile" ng-model="editedPark.image">
             </div> -->
-            <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
+        <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
     </div>
 </div>
