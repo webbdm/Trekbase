@@ -132,11 +132,11 @@ nav {
 
 .bgr-box-primary {
     background-color: $primary;
-    height: 90vh;
+    height: auto;
     width: 100%;
     margin: 0;
-    padding-top: 2%;
-    overflow: auto;
+    padding: 1%;
+    //overflow: auto;
 }
 
 .bgr-box-home {
@@ -260,44 +260,99 @@ nav {
 // Campsite-View
 
 .campsite-wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    // padding-top: 5px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
+    // align-content: center;
+    // flex-wrap: wrap;
 }
 
-.campsite-wrapper*>{
-    flex-grow: 1;
+.campsite-wrapper > *{
+    margin: 20px;
 }
 
 .campsite-view_infobox {
-    margin: 10px;
-    max-width: 30%;
-    height: 100%;
+    height: auto;
+    padding: 0px 20px !important;
     color: white;
     border: none;
     background-color: $secondary;
-    p{
-        color: $accent;
-        font-weight: bold;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .campsite-view_header{
+        h1{
+            text-align: center;
+            color: white;
+            font-family: 'Rubik Mono One', sans-serif;
+        }
+        h5{
+            text-align: center;
+            color: $accent;
+        }
+        .accent-border{
+            border-top: 2px solid $primary;
+            border-bottom: 2px solid $primary;
+            margin-bottom: 20px;
+        }
     }
-    span{
-        color: white;
-        font-size: 12px;
+
+    .campsite-view_details{
+        p{
+            font-size: 20px;
+            color: $accent;
+            font-weight: bold;
+            max-width: 400px;
+            overflow-wrap: break-word;
+        }
+
+        span{
+            color: white;
+            font-size: 17px;
+            max-width: 400px;
+            overflow-wrap: break-word;
+        }
+    }
+    
+    img{
+        width: 100%;
+        height: auto;
+        border: 2px solid $primary;
+
+    }
+    
+    a{
+        text-align: center;
+    }
+    .btn-box{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 15px;
     }
 }
 
 .campsite-view_main-box {
+    height: auto;
     color: white;
     background-color: $secondary;
-    max-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    flex-grow: 1;
+    &> * {
+        padding: 15px;
+        border-bottom: 4px solid $primary;
+        height: 33.33%
+    }
     .review-box {
-        // padding: 15px;
-        //height: 20%;
+        min-height: 20%;
         //overflow: auto;
         p {
             font-size: 15px;
@@ -306,9 +361,9 @@ nav {
     .comment-box {
         // margin: 5px;
         // padding: 10px;
-        //height: 35%;
-        background-color: #555151;
-        overflow: auto;
+        height: auto;
+        //background-color: #555151;
+        //overflow: auto;
         input {
             color: black;
             width: 350px;
@@ -319,8 +374,49 @@ nav {
         }
     }
     .bottom-box {
+        &> *{
+           border: none; 
+        }
+        min-height: 250px;
+        display: flex;
+        flex-direction: row;
+        flex-basis: 2;
+        //flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
         // padding: 15px;
         //height: 35%;
+        .img-map{
+            
+        }
+        .coordinates{
+            text-align: center;
+            border: none;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: center;
+            & p{
+                margin: 0;
+            }
+            & p:nth-of-type(odd){
+                font-size: 30px;
+            }
+            & p:nth-of-type(even){
+                background-color: $accent; 
+            }
+        }
+    }
+
+}
+
+// Switch from Grid to Flexbox on tablet size or smaller
+@media(max-width: 770px){
+    .campsite-wrapper{
+        display: flex;
+        flex-direction: column;
+        
     }
 }
 
@@ -366,9 +462,10 @@ nav {
 }
 
 #map {
-    height: 250px;
-    //max-height: 50%;
+    min-height: 200px;
+    height: 100%;
     width: 100%;
+    max-width: 600px;
 }
 
 

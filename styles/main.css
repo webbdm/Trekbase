@@ -99,11 +99,10 @@ nav {
 
 .bgr-box-primary {
   background-color: #1F445F;
-  height: 90vh;
+  height: auto;
   width: 100%;
   margin: 0;
-  padding-top: 2%;
-  overflow: auto; }
+  padding: 1%; }
 
 .bgr-box-home {
   background-color: #1F445F;
@@ -195,47 +194,109 @@ nav {
     color: white; }
 
 .campsite-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  flex-wrap: wrap; }
+  display: grid;
+  grid-template-columns: 1fr 2fr; }
 
-.campsite-wrapper* > {
-  flex-grow: 1; }
+.campsite-wrapper > * {
+  margin: 20px; }
 
 .campsite-view_infobox {
-  margin: 10px;
-  max-width: 30%;
-  height: 100%;
+  height: auto;
+  padding: 0px 20px !important;
   color: white;
   border: none;
-  background-color: #312F2F; }
-  .campsite-view_infobox p {
-    color: #FFB81C;
-    font-weight: bold; }
-  .campsite-view_infobox span {
-    color: white;
-    font-size: 12px; }
-
-.campsite-view_main-box {
-  color: white;
   background-color: #312F2F;
-  max-width: 60%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; }
-  .campsite-view_main-box .review-box p {
-    font-size: 15px; }
+  justify-content: space-between; }
+  .campsite-view_infobox .campsite-view_header h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Rubik Mono One', sans-serif; }
+  .campsite-view_infobox .campsite-view_header h5 {
+    text-align: center;
+    color: #FFB81C; }
+  .campsite-view_infobox .campsite-view_header .accent-border {
+    border-top: 2px solid #1F445F;
+    border-bottom: 2px solid #1F445F;
+    margin-bottom: 20px; }
+  .campsite-view_infobox .campsite-view_details p {
+    font-size: 20px;
+    color: #FFB81C;
+    font-weight: bold;
+    max-width: 400px;
+    overflow-wrap: break-word; }
+  .campsite-view_infobox .campsite-view_details span {
+    color: white;
+    font-size: 17px;
+    max-width: 400px;
+    overflow-wrap: break-word; }
+  .campsite-view_infobox img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #1F445F; }
+  .campsite-view_infobox a {
+    text-align: center; }
+  .campsite-view_infobox .btn-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 15px; }
+
+.campsite-view_main-box {
+  height: auto;
+  color: white;
+  background-color: #312F2F;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1; }
+  .campsite-view_main-box > * {
+    padding: 15px;
+    border-bottom: 4px solid #1F445F;
+    height: 33.33%; }
+  .campsite-view_main-box .review-box {
+    min-height: 20%; }
+    .campsite-view_main-box .review-box p {
+      font-size: 15px; }
   .campsite-view_main-box .comment-box {
-    background-color: #555151;
-    overflow: auto; }
+    height: auto; }
     .campsite-view_main-box .comment-box input {
       color: black;
       width: 350px;
       margin: 0px; }
     .campsite-view_main-box .comment-box h4 {
       color: #FFB81C; }
+  .campsite-view_main-box .bottom-box {
+    min-height: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 2;
+    justify-content: space-around;
+    align-items: center; }
+    .campsite-view_main-box .bottom-box > * {
+      border: none; }
+    .campsite-view_main-box .bottom-box .coordinates {
+      text-align: center;
+      border: none;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center; }
+      .campsite-view_main-box .bottom-box .coordinates p {
+        margin: 0; }
+      .campsite-view_main-box .bottom-box .coordinates p:nth-of-type(odd) {
+        font-size: 30px; }
+      .campsite-view_main-box .bottom-box .coordinates p:nth-of-type(even) {
+        background-color: #FFB81C; }
+
+@media (max-width: 770px) {
+  .campsite-wrapper {
+    display: flex;
+    flex-direction: column; } }
 
 .bottom-box img {
   height: 200px;
@@ -268,8 +329,10 @@ nav {
   height: 400px; }
 
 #map {
-  height: 250px;
-  width: 100%; }
+  min-height: 200px;
+  height: 100%;
+  width: 100%;
+  max-width: 600px; }
 
 #blankMap, #editMap {
   height: 250px;

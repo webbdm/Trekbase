@@ -1,25 +1,31 @@
-<div class="bgr-box-primary campsite-wrapper">
+<div class="bgr-box-primary campsite-wrapper ">
 
-    <div class="panel panel-default campsite-view_infobox">
-        <div class="panel-heading">
+    <div class="campsite-view_infobox">
+        <div class="campsite-view_header">
             <h1>{{campsite.campsiteName}}</h1>
-            <h4>{{park.name}} - {{park.city}}, {{park.state}}</h4>
+            <div class="accent-border">
+                <h5>{{park.name}}</h5>
+                <h5>{{park.city}}, {{park.state}}</h5>
+            </div>
+            <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
         </div>
-        <div class="panel-body">
+        <div class="campsite-view_details">
             <p>Area: <span>{{campsite.area}}</span></p>
             <p>Type: <span>{{campsite.type}}</span></p>
             <p>Features: <span>{{campsite.features}}</span></p>
             <p>Fee: <span>{{campsite.fee}}</span></p>
             <p>Bathrooms: <span>{{campsite.bathrooms}}</span></p>
-            <p>Latitude: <span>{{campsite.latitude}}</span></p>
-            <p>Longitude: <span>{{campsite.longitude}}</span></p>
-            <a ng-click="deleteCampsite(campsite.campsiteId)">
-                    <button class="btn btn-default btn-accent">Delete Campsite <span class="glyphicon glyphicon-trash
+            <p>Latitude: <span>{{coordinates.lat}}</span></p>
+            <p>Longitude: <span>{{coordinates.lng}}</span></p>
+            <div class="btn-box">
+                <a ng-click="deleteCampsite(campsite.campsiteId)">
+                    <button class="btn btn-default btn-accent">Delete<span class="glyphicon glyphicon-trash
 " aria-hidden="true"></span></button>
                 </a>
-            <a ng-click="editing = true;">
-                    <button class="btn btn-default btn-accent" ng-show="!editing">Edit Campsite</button>
+                <a ng-click="editing = true;">
+                    <button class="btn btn-default btn-accent" ng-show="!editing">Edit</button>
                 </a>
+            </div>
         </div>
     </div>
 
@@ -29,20 +35,17 @@
             <!-- <a ng-click="comments = true" ng-show="!comments">View Comments</a> -->
         </div>
         <div class="bottom-box">
-            <div class="image-map">
-                <div class="">
-                    <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
-                </div>
-                <div class="">
-                    <div id="map"></div>
-                </div>
+
+            <div class="image-map" id="map"></div>
+
+            <div class="coordinates">
+                <p>{{coordinates.lat}}</p>
+                <p>Latitude</p>
+                <p>{{coordinates.lng}}</p>
+                <p>Longitude</p>
             </div>
         </div>
         <div class="comment-box">
-            <div class="">
-                <input type="text" class="" placeholder="Write a comment..." ng-model="newComment.text" />
-                <button class="btn btn-default btn-accent boxy-inline" ng-click="addComment(newComment)">Submit</button>
-            </div>
             <div ng-repeat="comment in commentList">
                 <p>{{comment.creator}} <span class="comment-text">{{comment.text}}</span>
                     <input ng-show="editingComment" type="text" class="form-control" placeholder="Features" ng-model="comment.text" />
@@ -53,72 +56,76 @@
                     		<button class="btn btn-default btn-accent">Save Changes</button>
                   		</a>
                     <a ng-click="deleteComment(comment.commentId)" ng-if="uName = comment.creator">
-                    		<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        <i class="material-icons">delete</i>
                   		</a>
                 </p>
+            </div>
+            <div class="">
+                <input type="text" class="" placeholder="Write a comment..." ng-model="newComment.text" />
+                <button class="btn btn-default btn-accent boxy-inline" ng-click="addComment(newComment)">Submit</button>
             </div>
             <!-- <a ng-click="comments = false">Hide Comments</a> -->
         </div>
     </div>
 
     <!--End of first panel-->
-    <div class="edit-campsite" ng-show="editing">
-        <form class="form-group">
-            <div class="input-box">
-                <div class="no-space">
-                    <div class="">
-                        <label>Campsite Name</label>
-                        <input type="text" class="form-control" placeholder="Campsite Name" ng-model="editedCampsite.campsiteName" ng-required="required"
-                        />
-                    </div>
-                    <div class="Area">
-                        <label>Area</label>
-                        <input type="text" class="form-control" placeholder="Area" ng-model="editedCampsite.area" ng-required="required" />
-                    </div>
-                    <div class="">
-                        <label>Type</label>
-                        <input type="text" class="form-control" placeholder="Type" ng-model="editedCampsite.type" />
-                    </div>
-                    <div class="">
-                        <label>Latitude</label>
-                        <input type="text" class="form-control" placeholder="Latitude" ng-model="editedCampsite.latitude" />
-                    </div>
+    <div class="edit-campsite col l7" ng-show="editing">
+        <!-- <form class="form-group"> -->
+        <div class="input-box">
+            <div class="no-space">
+                <div class="">
+                    <label>Campsite Name</label>
+                    <input type="text" class="form-control" placeholder="Campsite Name" ng-model="editedCampsite.campsiteName" ng-required="required"
+                    />
                 </div>
-                <div class="no-space">
-                    <div class="">
-                        <label>Longitude</label>
-                        <input type="text" class="form-control" placeholder="Longitude" ng-model="editedCampsite.longitude" />
-                    </div>
-                    <div class="">
-                        <label>Fee</label>
-                        <input type="text" class="form-control" placeholder="Fee" ng-model="editedCampsite.fee" />
-                    </div>
-                    <div class="">
-                        <label>Bathrooms</label>
-                        <input type="text" class="form-control" placeholder="Bathrooms" ng-model="editedCampsite.bathrooms" />
-                    </div>
-                    <div class="">
-                        <label>Features</label>
-                        <input type="text" class="form-control" placeholder="Features" ng-model="editedCampsite.features" />
-                    </div>
+                <div class="Area">
+                    <label>Area</label>
+                    <input type="text" class="form-control" placeholder="Area" ng-model="editedCampsite.area" ng-required="required" />
                 </div>
-                <div class="row">
-                    <div class="">
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
-                            <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
-                            <div id="editMap"></div>
-                        </div>
-                        <div class="">
-                            <label>Review</label>
-                            <input type="textarea" class="form-control" placeholder="Write a review" ng-model="editedCampsite.review" />
-                        </div>
-                        <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
-                        <button class="btn btn-default" ng-click="editing = false;">Close</button>
-                    </div>
+                <div class="">
+                    <label>Type</label>
+                    <input type="text" class="form-control" placeholder="Type" ng-model="editedCampsite.type" />
+                </div>
+                <div class="">
+                    <label>Latitude</label>
+                    <input type="text" class="form-control" placeholder="Latitude" ng-model="editedCampsite.latitude" />
                 </div>
             </div>
-        </form>
+            <div class="no-space">
+                <div class="">
+                    <label>Longitude</label>
+                    <input type="text" class="form-control" placeholder="Longitude" ng-model="editedCampsite.longitude" />
+                </div>
+                <div class="">
+                    <label>Fee</label>
+                    <input type="text" class="form-control" placeholder="Fee" ng-model="editedCampsite.fee" />
+                </div>
+                <div class="">
+                    <label>Bathrooms</label>
+                    <input type="text" class="form-control" placeholder="Bathrooms" ng-model="editedCampsite.bathrooms" />
+                </div>
+                <div class="">
+                    <label>Features</label>
+                    <input type="text" class="form-control" placeholder="Features" ng-model="editedCampsite.features" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="">
+                    <div class="form-group">
+                        <label for="exampleInputFile">Image</label>
+                        <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
+                        <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
+                        <div id="editMap"></div>
+                    </div>
+                    <div class="">
+                        <label>Review</label>
+                        <input type="textarea" class="form-control" placeholder="Write a review" ng-model="editedCampsite.review" />
+                    </div>
+                    <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
+                    <button class="btn btn-default" ng-click="editing = false;">Close</button>
+                </div>
+            </div>
+        </div>
+        <!-- </form> -->
     </div>
 </div>
