@@ -1,9 +1,8 @@
 <div class="bgr-box-primary">
     <div>
-        <div class="row">
-            <div class="col-md-2 col-md-offset-10">
-                <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
-            </div>
+        <h2>Parks</h2>
+        <div class="">
+            <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">Add <i class="material-icons">landscape</i></button>
         </div>
 
         <!--  -->
@@ -42,19 +41,18 @@
         </div>
     </div>
     <div class="park-list-grid">
-        <div ng-repeat="park in allParks" ng-show="!addingPark" class="">
+        <div ng-repeat="park in allParks" ng-show="!addingPark" class="cardy">
             <div class="park_list--park_card">
-                <div class="">
-                    <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
-                    <p>{{park.city}}, {{park.state}}</p>
-                    <a ng-click="deletePark(park.parkId)">
-                        <!--<button>Delete Park</button>-->
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                    </a>
-                    <!-- <a ng-click="editing = true">
+
+                <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
+                <p>{{park.city}}, {{park.state}}</p>
+                <a ng-click="deletePark(park.parkId)">
+                    <!--<button>Delete Park</button>-->
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>
+                <!-- <a ng-click="editing = true">
                         <button>Edit Park</button>
                     </a> -->
-                </div>
             </div>
         </div>
     </div>

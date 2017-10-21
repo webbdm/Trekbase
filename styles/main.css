@@ -59,9 +59,19 @@ nav {
 
 .login-box_left {
   padding: 55px; }
+  .login-box_left a {
+    width: 40%;
+    color: #FFB81C; }
 
 .login-box_right {
   padding: 55px; }
+
+.login-input-wrapper {
+  background-color: #312F2F;
+  padding: 15px;
+  border-radius: 10px; }
+  .login-input-wrapper input {
+    padding: 20px; }
 
 .divider {
   width: 100%;
@@ -133,12 +143,29 @@ nav {
 
 .campsites-box {
   margin: 10px 0px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 400px);
-  align-items: center; }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; }
 
 .card-themed {
-  margin: 20px; }
+  margin: 20px;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  flex-grow: 1;
+  overflow: hidden;
+  border: 2px solid #312F2F; }
+  .card-themed a {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    background-color: #1F445F;
+    padding: 10px; }
+  .card-themed img {
+    min-width: 100%;
+    min-height: 100%; }
 
 .card-title-themed {
   background-color: #1F445F;
@@ -174,12 +201,35 @@ nav {
       margin: 5px; }
 
 .park-list-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr)); }
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center; }
+  .park-list-grid .cardy {
+    margin: 20px;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    flex-grow: 1;
+    overflow: hidden;
+    border: 2px solid #312F2F; }
+    .park-list-grid .cardy a {
+      text-align: center; }
 
-.park-title-box h3,
-.park-title-box p {
+.park-top-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.park-title-box h5 {
+  font-family: 'Rubik Mono One', sans-serif;
   color: white !important; }
+
+.park-title-box p {
+  color: #FFB81C; }
 
 .park-buttons {
   margin: 5px 0px; }
@@ -207,7 +257,7 @@ nav {
 .park_list--park_card {
   background-color: #312F2F;
   border: none;
-  height: 250px;
+  height: 400px;
   width: auto; }
   .park_list--park_card p {
     color: white; }

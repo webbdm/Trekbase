@@ -1,25 +1,27 @@
 <div class="bgr-box-primary">
-    <div class="park-title-box">
-        <h3>{{park.name}}</h3>
-        <p>{{park.city}}, {{park.state}}</p>
-    </div>
-    <div class="park-buttons">
-        <a ng-click="editing=true" ng-hide="addingCampsite">
+    <div class="park-top-box">
+        <div class="park-title-box">
+            <h5>{{park.name}}</h5>
+            <p>{{park.city}}, {{park.state}}</p>
+        </div>
+        <div class="park-buttons">
+            <a ng-click="editing=true" ng-hide="addingCampsite">
             <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
         </a>
-        <a ng-click="editing=false" ng-show="editing">
+            <a ng-click="editing=false" ng-show="editing">
             <button class="btn btn-default btn-accent">Close</button>
         </a>
-        <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
-        <!-- <div id="map"></div> -->
-        <!-- <div class="row">
+            <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
+            <!-- <div id="map"></div> -->
+            <!-- <div class="row">
         <div class="col-md-2 col-md-offset-10">
             <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Campsite <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
             <button class="btn btn-default btn-accent" ng-click="addingPark = false;" ng-show="addingPark">Close</button>
         </div>  
     </div> -->
-        <button class="btn btn-default btn-accent pull-right" ng-click="addingCampsite = true;" ng-hide="addingCampsite; editing">Add Campsite <span class="glyphicon glyphicon-tent" aria-hidden="true"></span></button>
-        <button class="btn btn-default btn-accent" ng-click="addingCampsite = false;" ng-show="addingCampsite">Close</button>
+            <button class="btn btn-default btn-accent " ng-click="addingCampsite = true;" ng-hide="addingCampsite; editing">Add Campsite <span class="glyphicon glyphicon-tent" aria-hidden="true"></span></button>
+            <button class="btn btn-default btn-accent" ng-click="addingCampsite = false;" ng-show="addingCampsite">Close</button>
+        </div>
     </div>
     <div class="add-campsite" ng-show="addingCampsite">
         <form class="form-group">
@@ -79,30 +81,11 @@
         </form>
     </div>
     <div class="campsites-box" ng-hide="editing == true || addingCampsite == true">
-        <div ng-repeat="campsite in campsites">
-            <div class="card card-themed">
-                <div class="card-image">
-                    <img clas="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
-                    <span class="card-title card-title-themed">
-                            <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
-                    </span>
-                </div>
-                <!-- <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                        require little markup to use effectively.</p>
-                </div> -->
-                <!-- <div class="card-action">
-                    
-                </div> -->
-            </div>
-            <!-- <div class="col-md-4">
-                <div class="panel panel-default park_view--campsite-card">
-                    <div class="panel-body">
-                        <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
-                        <img class="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
-                    </div>
-                </div>
-            </div> -->
+        <div class="card-themed" ng-repeat="campsite in campsites">
+            <img class="" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+            <span class="card-title-themed">
+             <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
+            </span>
         </div>
     </div>
     <div class="add-park" ng-hide="!editing">

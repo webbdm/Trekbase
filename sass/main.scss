@@ -81,9 +81,26 @@ nav {
 .login-box {
     &_left {
         padding: 55px;
+        a{
+            width: 40%;
+            color: $accent;
+        }
     }
     &_right {
         padding: 55px;
+    }
+}
+
+.login-input-wrapper{
+    background-color: $secondary;
+    padding: 15px;
+    border-radius: 10px;
+    //border: 2px solid $accent;
+    // border-top: 7px solid $accent; 
+    // border-bottom: 7px solid $accent;
+   
+    input{
+        padding: 20px;
     }
 }
 
@@ -174,19 +191,37 @@ nav {
 
 .campsites-box {
     margin: 10px 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    //justify-content: space-around;
+    justify-content: space-between;
     // display: flex;
     // flex-direction: row;
     // justify-content: space-between;
     // align-items: center;
 }
-.card-themed{
+.card-themed {
     margin: 20px;
-    // max-width: 500px ;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    flex-grow: 1;
+    overflow: hidden;
+    border: 2px solid $secondary;
+    a{
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+        background-color: $primary;
+        padding: 10px;
+    }
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
 }
+
 .card-title-themed{
     background-color: $primary;
     color: white !important;
@@ -234,14 +269,48 @@ nav {
 }
 
 .park-list-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15ch, 1fr));
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    .cardy{
+        margin: 20px;
+        position: relative;
+        height: 300px;
+        width: 300px;
+        flex-grow: 1;
+        overflow: hidden;
+        border: 2px solid $secondary;
+        a{
+            text-align: center;
+        }
+        p{
+            // position: absolute;
+            // bottom: 8px;
+            // right: 16px;
+            //background-color: $primary;
+            // padding: 10px;
+        }
+    }
+}
+
+.park-top-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .park-title-box {
-    h3,
-    p {
+    h5{
+        font-family: 'Rubik Mono One', sans-serif;
         color: white !important;
+    }
+
+    p {
+        color: $accent;
     }
 }
 
@@ -278,7 +347,7 @@ nav {
 .park_list--park_card {
     background-color: $secondary;
     border: none;
-    height: 250px;
+    height: 400px;
     width: auto;
     p {
         color: white;
