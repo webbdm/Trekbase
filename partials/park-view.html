@@ -1,29 +1,31 @@
-<div class="bgr-box-primary container">
-    <div class="park-title-box">
-        <h3>{{park.name}}</h3>
-        <p>{{park.city}}, {{park.state}}</p>
-    </div>
-    <div class="park-buttons">
-        <a ng-click="editing=true" ng-hide="addingCampsite">
+<div class="bgr-box-primary">
+    <div class="park-top-box">
+        <div class="park-title-box">
+            <h5>{{park.name}}</h5>
+            <p>{{park.city}}, {{park.state}}</p>
+        </div>
+        <div class="park-buttons">
+            <a ng-click="editing=true" ng-hide="addingCampsite">
             <button class="btn btn-default btn-accent">Edit Park <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
         </a>
-        <a ng-click="editing=false" ng-show="editing">
+            <a ng-click="editing=false" ng-show="editing">
             <button class="btn btn-default btn-accent">Close</button>
         </a>
-        <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
-        <!-- <div id="map"></div> -->
-        <!-- <div class="row">
+            <!-- <img class="uploadedImage" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}"> -->
+            <!-- <div id="map"></div> -->
+            <!-- <div class="row">
         <div class="col-md-2 col-md-offset-10">
             <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">+ Add Campsite <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span></button>
             <button class="btn btn-default btn-accent" ng-click="addingPark = false;" ng-show="addingPark">Close</button>
         </div>  
     </div> -->
-        <button class="btn btn-default btn-accent pull-right" ng-click="addingCampsite = true;" ng-hide="addingCampsite; editing">Add Campsite <span class="glyphicon glyphicon-tent" aria-hidden="true"></span></button>
-        <button class="btn btn-default btn-accent" ng-click="addingCampsite = false;" ng-show="addingCampsite">Close</button>
+            <button class="btn btn-default btn-accent " ng-click="addingCampsite = true;" ng-hide="addingCampsite; editing">Add Campsite <span class="glyphicon glyphicon-tent" aria-hidden="true"></span></button>
+            <button class="btn btn-default btn-accent" ng-click="addingCampsite = false;" ng-show="addingCampsite">Close</button>
+        </div>
     </div>
     <div class="add-campsite" ng-show="addingCampsite">
         <form class="form-group">
-            <div class="container">
+            <div class="">
                 <div class="col-md-6">
                     <div class="">
                         <label>Campsite Name</label>
@@ -79,44 +81,38 @@
         </form>
     </div>
     <div class="campsites-box" ng-hide="editing == true || addingCampsite == true">
-        <div ng-repeat="campsite in campsites">
-            <div class="col-md-4">
-                <div class="panel panel-default park_view--campsite-card">
-                    <div class="panel-body">
-                        <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
-                        <img class="campsite-bgr" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
-                    </div>
-                </div>
-            </div>
+        <div class="card-themed" ng-repeat="campsite in campsites">
+            <img class="" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+            <span class="card-title-themed">
+             <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
+            </span>
         </div>
     </div>
     <div class="add-park" ng-hide="!editing">
-        <form class="form-group">
-            <div class="">
-                <label>Park Name</label>
-                <input type="text" class="form-control" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
-            </div>
-            <div class="">
-                <label>City/Town</label>
-                <input type="text" class="form-control" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
-            </div>
-            <div class="">
-                <label>State</label>
-                <input type="text" class="form-control" placeholder="State" ng-model="editedPark.state" />
-            </div>
-            <div class="">
-                <label>Latitude</label>
-                <input type="text" class="form-control" placeholder="Latitude" ng-model="editedPark.latitude" />
-            </div>
-            <div class="">
-                <label>Longitude</label>
-                <input type="text" class="form-control" placeholder="Longitude" ng-model="editedPark.longitude" />
-            </div>
-            <!-- <div class="form-group">
+        <div class="">
+            <label>Park Name</label>
+            <input type="text" class="" placeholder="Name" ng-model="editedPark.name" ng-required="required" />
+        </div>
+        <div class="">
+            <label>City/Town</label>
+            <input type="text" class="" placeholder="City/Town" ng-model="editedPark.city" ng-required="required" />
+        </div>
+        <div class="">
+            <label>State</label>
+            <input type="text" class="" placeholder="State" ng-model="editedPark.state" />
+        </div>
+        <div class="">
+            <label>Latitude</label>
+            <input type="text" class="" placeholder="Latitude" ng-model="editedPark.latitude" />
+        </div>
+        <div class="">
+            <label>Longitude</label>
+            <input type="text" class="" placeholder="Longitude" ng-model="editedPark.longitude" />
+        </div>
+        <!-- <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input type="file" id="exampleInputFile" ng-model="editedPark.image">
             </div> -->
-            <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
-        </form>
+        <button class="btn btn-default" ng-click="editing = false; editPark()">Submit</button>
     </div>
 </div>

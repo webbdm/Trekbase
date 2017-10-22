@@ -58,6 +58,13 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
 
     let getMap = (campsite) => {
         console.log("ayyyyy!", campsite.coordinates);
+
+        let coordinatesToRound = {
+            lat: campsite.coordinates.lat.toFixed(6),
+            lng: campsite.coordinates.lng.toFixed(6)
+        };
+        //console.log(coordinatesToRound.lat.toFixed(6), "Lat");
+        $scope.coordinates = coordinatesToRound;
         let map;
         let marker;
         let parsedLat = Number(campsite.coordinates.lat);

@@ -6,11 +6,11 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
     }
 });
 
-app.run(function($location, $rootScope, FIREBASE_CONFIG, MAPS_CONFIG, AuthFactory) {
+app.run(function ($location, $rootScope, FIREBASE_CONFIG, MAPS_CONFIG, AuthFactory) {
     firebase.initializeApp(FIREBASE_CONFIG);
     GoogleMapsLoader.KEY = MAPS_CONFIG.mapsKey;
-    GoogleMapsLoader.load(function(google) {});
-    $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+    GoogleMapsLoader.load(function (google) { });
+    $rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
         var logged = AuthFactory.isAuthenticated();
         var appTo;
         if (currRoute.originalPath) {
@@ -23,7 +23,7 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, MAPS_CONFIG, AuthFactor
     });
 });
 
-app.config(function($routeProvider) {
+app.config(function ($routeProvider) {
     $routeProvider
         .when('/auth', {
             templateUrl: 'partials/login-view.html',
