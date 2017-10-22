@@ -18,8 +18,11 @@
     "matchdep": "^1.0.1"
   },
   "dependencies": {
+    "angular": "^1.6.6",
     "angular-base64-upload": "^0.1.22",
+    "angular-route": "^1.6.6",
     "google-maps": "^3.2.1",
+    "jquery": "^3.2.1",
     "materialize-css": "^0.100.2"
   }
 }
