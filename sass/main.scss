@@ -463,15 +463,34 @@ nav {
         }
     }
     .comment-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
         // margin: 5px;
         // padding: 10px;
         height: auto;
         //background-color: #555151;
         //overflow: auto;
-        input {
-            color: black;
-            width: 350px;
-            margin: 0px;
+        .submit-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            // position: absolute;
+            // right:    0px;
+            // bottom:   0px;
+            // position: absolute;
+            color: white;
+            min-width: 100%;
+            input{
+                margin: 0;
+                //flex-basis: 3;
+            }
+            button{
+                margin: 1% 0 0 1%;
+                //flex-basis: 1;
+            }
         }
         h4{
             color: $accent;
