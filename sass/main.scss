@@ -461,17 +461,32 @@ nav {
             margin: 0;
             font-size: 15px;
         }
+
+        .tag{
+            background-color: $accent;
+            color: $primary;
+            float: left;
+            padding: 5px 3px 5px 3px;
+            margin: 0 10px 5px 0;
+        }
     }
     .comment-box {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         position: relative;
+        align-items: flex-start;
         // margin: 5px;
         // padding: 10px;
         height: auto;
         //background-color: #555151;
         //overflow: auto;
+        &_comment {
+            margin: 0;
+            // p{
+            //     margin: 0;
+            // }
+        }
         .submit-box {
             display: flex;
             flex-direction: row;
@@ -509,12 +524,14 @@ nav {
         align-items: center;
         // padding: 15px;
         //height: 35%;
-        .img-map{
-            
-        }
+        // .image-map{
+        //     min-width: 100px;
+        // }
         .coordinates{
             text-align: center;
             border: none;
+            border-top: 2px solid $primary;
+            border-bottom: 2px solid $primary;
             margin: 10px;
             display: flex;
             flex-direction: column;
@@ -545,8 +562,13 @@ nav {
     .campsite-wrapper{
         display: flex;
         flex-direction: column;
-        
+    
     }
+    .image-map{
+        width: 100px;
+        height: auto;
+    }
+
 }
 
 .bottom-box img {

@@ -27,6 +27,7 @@
 
     <div class="campsite-view_main-box" ng-show="!editing">
         <div class="review-box">
+            <h5 class="tag">GUIDE</h5>
             <p>{{campsite.review}}</p>
             <!-- <a ng-click="comments = true" ng-show="!comments">View Comments</a> -->
         </div>
@@ -42,7 +43,7 @@
             </div>
         </div>
         <div class="comment-box">
-            <div ng-repeat="comment in commentList">
+            <div class="comment-box_comment" ng-repeat="comment in commentList">
                 <p>{{comment.creator}} <span class="comment-text">{{comment.text}}</span>
                     <input ng-show="editingComment" type="text" class="form-control" placeholder="Features" ng-model="comment.text" />
                     <a ng-click="editingComment = true" ng-show="!editingComment">

@@ -331,12 +331,21 @@ nav {
     .campsite-view_main-box .review-box p {
       margin: 0;
       font-size: 15px; }
+    .campsite-view_main-box .review-box .tag {
+      background-color: #FFB81C;
+      color: #1F445F;
+      float: left;
+      padding: 5px 3px 5px 3px;
+      margin: 0 10px 5px 0; }
   .campsite-view_main-box .comment-box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
+    align-items: flex-start;
     height: auto; }
+    .campsite-view_main-box .comment-box_comment {
+      margin: 0; }
     .campsite-view_main-box .comment-box .submit-box {
       display: flex;
       flex-direction: row;
@@ -361,6 +370,8 @@ nav {
     .campsite-view_main-box .bottom-box .coordinates {
       text-align: center;
       border: none;
+      border-top: 2px solid #1F445F;
+      border-bottom: 2px solid #1F445F;
       margin: 10px;
       display: flex;
       flex-direction: column;
@@ -381,7 +392,10 @@ nav {
 @media (max-width: 770px) {
   .campsite-wrapper {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column; }
+  .image-map {
+    width: 100px;
+    height: auto; } }
 
 .bottom-box img {
   height: 200px;
