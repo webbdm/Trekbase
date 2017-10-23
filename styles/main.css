@@ -156,7 +156,7 @@ nav {
   width: 300px;
   flex-grow: 1;
   overflow: hidden;
-  border: 2px solid #312F2F; }
+  border: 4px solid #312F2F; }
   .card-themed a {
     position: absolute;
     bottom: 8px;
@@ -175,7 +175,8 @@ nav {
   .card-title-themed a {
     color: white !important; }
 
-.add-park, .add-campsite {
+.add-park,
+.add-campsite {
   margin: 10px 17px;
   padding: 10px;
   background-color: #312F2F;
@@ -184,21 +185,38 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center; }
-  .add-park_input, .add-campsite_input {
+  .add-park_input,
+  .add-campsite_input {
     color: white;
     min-width: 350px;
     flex-grow: 1;
     margin: 5px;
     padding: 5px; }
-    .add-park_input input, .add-campsite_input input {
+    .add-park_input input,
+    .add-campsite_input input {
       color: white; }
-    .add-park_input label, .add-campsite_input label {
+    .add-park_input label,
+    .add-campsite_input label {
       color: white; }
-  .add-park_submit, .add-campsite_submit {
+  .add-park_submit,
+  .add-campsite_submit {
     align-self: center;
     flex-grow: 1; }
-    .add-park_submit button, .add-campsite_submit button {
+    .add-park_submit button,
+    .add-campsite_submit button {
       margin: 5px; }
+
+.park-list_top p {
+  font-size: 35px;
+  font-family: 'Rubik Mono One', sans-serif; }
+
+.park-list_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px; }
+  .park-list_header_buttons {
+    vertical-align: middle; }
 
 .park-list-grid {
   position: relative;
@@ -215,28 +233,36 @@ nav {
     width: 300px;
     flex-grow: 1;
     overflow: hidden;
-    border: 2px solid #312F2F; }
+    border: 3px solid #312F2F; }
     .park-list-grid .cardy a {
       text-align: center; }
 
 .park-top-box {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin-top: 10px; }
 
-.park-title-box h5 {
-  font-family: 'Rubik Mono One', sans-serif;
-  color: white !important; }
-
-.park-title-box p {
-  color: #FFB81C; }
-
-.park-buttons {
-  margin: 5px 0px; }
-
-.park-title-box,
-.park-buttons {
+.park-title-box {
   margin: 0px 20px; }
+  .park-title-box h5 {
+    font-family: 'Rubik Mono One', sans-serif;
+    color: white !important; }
+  .park-title-box p {
+    color: #FFB81C; }
+
+.park-buttons {
+  margin: 12px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .park-buttons button {
+    color: #1F445F;
+    font-size: 12px;
+    min-width: 180px; }
+    .park-buttons button i {
+      vertical-align: middle;
+      margin: 0 0 3px 3px; }
 
 .park_view--campsite-card {
   background-color: #272020;
@@ -387,7 +413,13 @@ nav {
 
 .edit-campsite {
   background-color: #312F2F;
-  padding: 25px; }
+  padding: 25px;
+  color: white; }
+
+.form-bottom-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
 
 @media (max-width: 770px) {
   .campsite-wrapper {
@@ -440,9 +472,18 @@ nav {
   width: 100%;
   max-width: 600px; }
 
-#blankMap, #editMap {
+#blankMap,
+#editMap {
   min-height: 250px;
   width: 100%; }
 
 .form-group label {
   color: white; }
+
+.add-campsite_grid {
+  display: grid;
+  grid-template-rows: 1fr; }
+  .add-campsite_grid_input-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }

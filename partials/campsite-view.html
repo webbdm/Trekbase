@@ -69,44 +69,44 @@
     <div class="edit-campsite" ng-show="editing">
         <!-- <form class="form-group"> -->
         <div class="input-box">
-            <div class="input-field">
+            <div class="input-field white-text">
                 <input type="text" class="" placeholder="Campsite Name" ng-model="editedCampsite.campsiteName" ng-required="required" />
                 <label>Campsite Name</label>
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <label>Area</label>
                 <input type="text" class="" placeholder="Area" ng-model="editedCampsite.area" ng-required="required" />
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <label>Type</label>
                 <input type="text" class="" placeholder="Type" ng-model="editedCampsite.type" />
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <label>Latitude</label>
                 <input type="text" class="" placeholder="Latitude" ng-model="editedCampsite.latitude" />
             </div>
 
-            <div class="input-field">
+            <div class="input-field white-text">
                 <input type="text" class="" placeholder="Longitude" ng-model="editedCampsite.longitude" />
                 <label>Longitude</label>
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <input type="text" class="" placeholder="Fee" ng-model="editedCampsite.fee" />
                 <label>Fee</label>
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <input type="text" class="" placeholder="Bathrooms" ng-model="editedCampsite.bathrooms" />
                 <label>Bathrooms</label>
             </div>
-            <div class="input-field">
+            <div class="input-field white-text">
                 <input type="text" class="" placeholder="Features" ng-model="editedCampsite.features" />
                 <label>Features</label>
             </div>
         </div>
-        <div class="input-field">
-                <textarea type="textarea" class="materialize-textarea" placeholder="Write a review" ng-model="editedCampsite.review"></textarea>
-                <label>Review</label>
-            </div>
+        <div class="input-field white-text">
+            <textarea type="textarea" class="materialize-textarea" placeholder="Write a review" ng-model="editedCampsite.review"></textarea>
+            <label>Review</label>
+        </div>
         <div class="form-bottom-box">
             <div class="upload-box">
                 <label for="exampleInputFile">Image</label>
@@ -115,11 +115,13 @@
                 <div id="editMap"></div>
             </div>
 
-            <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
-            <button class="btn btn-default" ng-click="editing = false;">Close</button>
-            <a ng-click="deleteCampsite(campsite.campsiteId)">
-              <button class="btn btn-default btn-accent">Delete Campsite<i class="material-icons">delete</i></button>
-            </a>
+            <div class="form-bottom-buttons">
+                <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
+                <button class="btn btn-default" ng-click="editing = false;">Close</button>
+                <a ng-click="deleteCampsite(campsite.campsiteId)">
+                    <button class="btn btn-default red">Delete Campsite<i class="material-icons">delete</i></button>
+                </a>
+            </div>
 
         </div>
     </div>
