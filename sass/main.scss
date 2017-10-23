@@ -339,7 +339,7 @@ nav {
         color: $primary;
         font-size: 12px;
         min-width: 180px;
-        i{
+        i {
             vertical-align: middle;
             margin: 0 0 3px 3px;
         }
@@ -609,7 +609,6 @@ nav {
 
 .form-bottom-box {
     margin: 25px 0px;
-
 }
 
 .uploadedImage {
@@ -650,16 +649,23 @@ nav {
 }
 
 // Rules for ReDesign of UI
-
 // ---- New Grid Classes----
-
-.add-campsite_grid{
-    display: grid;
-    grid-template-rows: 1fr;
-    &_input-box{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+.add-campsite {
+    &_grid {
+        background-color: $secondary;
+        padding: 25px;
+        margin-top: 25px;
     }
-
+    &_input-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+    }
+    &_column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > *{
+            margin: 10px;
+        }
+    }
 }

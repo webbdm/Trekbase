@@ -25,38 +25,42 @@
     </div>
     <div class="add-campsite_grid" ng-show="addingCampsite">
         <div class="add-campsite_input-box">
-            <div class="">
-                <label>Campsite Name</label>
-                <input type="text" class="" placeholder="Campsite Name" ng-model="newCampsite.campsiteName" ng-required="required" />
-            </div>
-            <div class="Area">
-                <label>Area</label>
-                <input type="text" class="" placeholder="Area" ng-model="newCampsite.area" ng-required="required" />
-            </div>
-            <div class="">
-                <label>Type</label>
-                <input type="text" class="" placeholder="Type" ng-model="newCampsite.type" />
-            </div>
-            <div class="">
-                <label>Fee</label>
-                <input type="text" class="" placeholder="Fee" ng-model="newCampsite.fee" />
+            <div class="add-campsite_column white-text">
+                <div class="">
+                    <label>Campsite Name</label>
+                    <input type="text" class="" placeholder="Campsite Name" ng-model="newCampsite.campsiteName" ng-required="required" />
+                </div>
+                <div class="Area">
+                    <label>Area</label>
+                    <input type="text" class="" placeholder="Area" ng-model="newCampsite.area" ng-required="required" />
+                </div>
+                <div class="">
+                    <label>Type</label>
+                    <input type="text" class="" placeholder="Type" ng-model="newCampsite.type" />
+                </div>
+                <div class="">
+                    <label>Fee</label>
+                    <input type="text" class="" placeholder="Fee" ng-model="newCampsite.fee" />
+                </div>
             </div>
 
-            <div class="">
-                <label>Latitude</label>
-                <input type="text" class="" placeholder="Latitude" ng-model="newCampsite.latitude" />
-            </div>
-            <div class="">
-                <label>Longitude</label>
-                <input type="text" class="" placeholder="Longitude" ng-model="newCampsite.longitude" />
-            </div>
-            <div class="">
-                <label>Bathrooms</label>
-                <input type="text" class="" placeholder="Bathrooms" ng-model="newCampsite.bathrooms" />
-            </div>
-            <div class="">
-                <label>Features</label>
-                <input type="text" class="" placeholder="Features" ng-model="newCampsite.features" />
+            <div class="add-campsite_column white-text">
+                <div class="">
+                    <label>Latitude</label>
+                    <input type="text" class="" placeholder="Latitude" ng-model="newCampsite.latitude" />
+                </div>
+                <div class="">
+                    <label>Longitude</label>
+                    <input type="text" class="" placeholder="Longitude" ng-model="newCampsite.longitude" />
+                </div>
+                <div class="">
+                    <label>Bathrooms</label>
+                    <input type="text" class="" placeholder="Bathrooms" ng-model="newCampsite.bathrooms" />
+                </div>
+                <div class="">
+                    <label>Features</label>
+                    <input type="text" class="" placeholder="Features" ng-model="newCampsite.features" />
+                </div>
             </div>
 
         </div>
@@ -69,10 +73,7 @@
             <div id="blankMap"></div>
 
         </div>
-        <div class="">
-            <label>Review</label>
-            <input type="text" class="" placeholder="Write a review" ng-model="newCampsite.review" />
-        </div>
+        
         <button class="btn btn-default" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
 
 

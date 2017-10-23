@@ -481,9 +481,17 @@ nav {
   color: white; }
 
 .add-campsite_grid {
+  background-color: #312F2F;
+  padding: 25px;
+  margin-top: 25px; }
+
+.add-campsite_input-box {
   display: grid;
-  grid-template-rows: 1fr; }
-  .add-campsite_grid_input-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; }
+  grid-template-columns: 1fr 1fr; }
+
+.add-campsite_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .add-campsite_column > * {
+    margin: 10px; }
