@@ -668,4 +668,27 @@ nav {
             margin: 10px;
         }
     }
+    &_review{
+        margin: 10px;
+    }
+    &_image-box{
+        margin: 10px;
+        background-color: $accent;
+        label{
+            font-size: 15px;
+            margin: 5px;
+            color: $primary;
+        }
+        label, i{
+            vertical-align: middle;
+        }
+        button{
+            margin: 10px;
+        }
+    }
+
+    .save-btn{
+        width: 100%;
+        flex-basis: 1;
+    }
 }

@@ -495,3 +495,22 @@ nav {
   justify-content: space-between; }
   .add-campsite_column > * {
     margin: 10px; }
+
+.add-campsite_review {
+  margin: 10px; }
+
+.add-campsite_image-box {
+  margin: 10px;
+  background-color: #FFB81C; }
+  .add-campsite_image-box label {
+    font-size: 15px;
+    margin: 5px;
+    color: #1F445F; }
+  .add-campsite_image-box label, .add-campsite_image-box i {
+    vertical-align: middle; }
+  .add-campsite_image-box button {
+    margin: 10px; }
+
+.add-campsite .save-btn {
+  width: 100%;
+  flex-basis: 1; }

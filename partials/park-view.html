@@ -65,16 +65,20 @@
 
         </div>
 
+        <div class="white-text add-campsite_review">
+            <label>Review</label>
+            <input type="text" class="" placeholder="Write a review" ng-model="newCampsite.review" />
+        </div>
+
 
         <div class="add-campsite_image-box">
-            <label for="file">Image</label>
-            <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
-            <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
+            <label class="" for="file">Park Image <i class="small material-icons">insert_photo</i></label>
+            <input class="btn-accent" type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
+            <button class="btn btn-warning " ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
             <div id="blankMap"></div>
-
         </div>
-        
-        <button class="btn btn-default" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
+
+        <button class="btn btn-default save-btn" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
 
 
     </div>
