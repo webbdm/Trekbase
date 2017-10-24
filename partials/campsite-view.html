@@ -112,14 +112,15 @@
                 <label for="exampleInputFile">Image</label>
                 <input type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
                 <button class="btn btn-warning" ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
-                <div id="editMap"></div>
             </div>
+
+            <div class="edit-map" id="editMap"></div>
 
             <div class="form-bottom-buttons">
                 <button class="btn btn-default" ng-click="editing = false; editCampsite()">Save</button>
                 <button class="btn btn-default" ng-click="editing = false;">Close</button>
                 <a ng-click="deleteCampsite(campsite.campsiteId)">
-                    <button class="btn btn-default red">Delete Campsite<i class="material-icons">delete</i></button>
+                    <button class="btn btn-default red delete-btn">Delete Campsite<i class="material-icons">delete</i></button>
                 </a>
             </div>
 

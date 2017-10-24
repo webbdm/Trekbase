@@ -110,7 +110,7 @@ nav {
 
 .bgr-box-primary {
   background-color: #1F445F;
-  height: auto;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 1%; }
@@ -133,7 +133,8 @@ nav {
 .btn-secondary {
   background-color: #312F2F;
   border: none;
-  color: white; }
+  color: white;
+  min-height: 100%; }
   .btn-secondary:hover {
     color: #FFB81C; }
 
@@ -206,16 +207,18 @@ nav {
     .add-campsite_submit button {
       margin: 5px; }
 
-.park-list_top p {
-  font-size: 35px;
-  font-family: 'Rubik Mono One', sans-serif; }
-
-.park-list_header {
+.park-list_top {
+  color: white;
+  vertical-align: middle;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px; }
-  .park-list_header_buttons {
+  padding: 0px 20px; }
+  .park-list_top p {
+    margin: 0;
+    font-size: 35px;
+    font-family: 'Rubik Mono One', sans-serif; }
+  .park-list_top_buttons {
     vertical-align: middle; }
 
 .park-list-grid {
@@ -284,9 +287,17 @@ nav {
   background-color: #312F2F;
   border: none;
   height: 400px;
-  width: auto; }
-  .park_list--park_card p {
-    color: white; }
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; }
+  .park_list--park_card_title a {
+    color: white;
+    font-family: 'Rubik Mono One', sans-serif;
+    vertical-align: middle; }
+  .park_list--park_card_title p {
+    color: #FFB81C; }
 
 .campsite-wrapper {
   display: grid;
@@ -416,10 +427,33 @@ nav {
   padding: 25px;
   color: white; }
 
+.upload-box {
+  margin: 10px;
+  background-color: #FFB81C; }
+  .upload-box input {
+    padding: 20px; }
+  .upload-box label {
+    font-size: 15px;
+    margin: 5px;
+    color: #1F445F; }
+  .upload-box label,
+  .upload-box i {
+    vertical-align: middle; }
+  .upload-box button {
+    margin: 10px; }
+
+.edit-map {
+  margin: 10px; }
+
 .form-bottom-buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
+  justify-content: space-between; }
+  .form-bottom-buttons button,
+  .form-bottom-buttons .delete-btn {
+    flex-grow: 1;
+    vertical-align: middle;
+    margin: 10px; }
 
 @media (max-width: 770px) {
   .campsite-wrapper {
@@ -506,11 +540,15 @@ nav {
     font-size: 15px;
     margin: 5px;
     color: #1F445F; }
-  .add-campsite_image-box label, .add-campsite_image-box i {
+  .add-campsite_image-box label,
+  .add-campsite_image-box i {
     vertical-align: middle; }
   .add-campsite_image-box button {
     margin: 10px; }
 
-.add-campsite .save-btn {
+.add-campsite_end .blank-map {
+  margin: 10px; }
+
+.add-campsite_end .save-btn {
   width: 100%;
-  flex-basis: 1; }
+  margin: 10px; }

@@ -147,7 +147,8 @@ nav {
 
 .bgr-box-primary {
     background-color: $primary;
-    height: auto;
+    //height: auto;
+    min-height: 100vh;
     width: 100%;
     margin: 0;
     padding: 1%; //overflow: auto;
@@ -175,6 +176,7 @@ nav {
     background-color: $secondary;
     border: none;
     color: white;
+    min-height: 100%;
     &:hover {
         color: $accent;
     }
@@ -263,15 +265,16 @@ nav {
 .park-list {
     &_top {
         p {
+            margin: 0;
             font-size: 35px;
             font-family: 'Rubik Mono One', sans-serif;
         }
-    }
-    &_header {
+        color: white;
+        vertical-align: middle;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 20px;
+        padding: 0px 20px;
         &_buttons {
             vertical-align: middle;
         }
@@ -372,8 +375,19 @@ nav {
     border: none;
     height: 400px;
     width: auto;
-    p {
-        color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &_title {
+        a {
+            color: white;
+            font-family: 'Rubik Mono One', sans-serif;
+            vertical-align: middle;
+        }
+        p {
+            color: $accent;
+        }
     }
 }
 
@@ -559,15 +573,40 @@ nav {
     color: white;
 }
 
-// .upload-box{
-//     input{
-//         padding: 20px;
-//     }
-// }
+.upload-box {
+    input {
+        padding: 20px;
+    }
+    margin: 10px;
+    background-color: $accent;
+    label {
+        font-size: 15px;
+        margin: 5px;
+        color: $primary;
+    }
+    label,
+    i {
+        vertical-align: middle;
+    }
+    button {
+        margin: 10px;
+    }
+}
+
+.edit-map {
+    margin: 10px;
+}
+
 .form-bottom-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    button,
+    .delete-btn {
+        flex-grow: 1;
+        vertical-align: middle;
+        margin: 10px;
+    }
 }
 
 // Switch from Grid to Flexbox on tablet size or smaller
@@ -658,37 +697,42 @@ nav {
     }
     &_input-box {
         display: grid;
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
     }
     &_column {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        > *{
+        >* {
             margin: 10px;
         }
     }
-    &_review{
+    &_review {
         margin: 10px;
     }
-    &_image-box{
+    &_image-box {
         margin: 10px;
         background-color: $accent;
-        label{
+        label {
             font-size: 15px;
             margin: 5px;
             color: $primary;
         }
-        label, i{
+        label,
+        i {
             vertical-align: middle;
         }
-        button{
+        button {
             margin: 10px;
         }
     }
-
-    .save-btn{
-        width: 100%;
-        flex-basis: 1;
+    &_end {
+        .blank-map {
+            margin: 10px;
+        }
+        .save-btn {
+            width: 100%;
+            margin: 10px;
+        }
     }
 }

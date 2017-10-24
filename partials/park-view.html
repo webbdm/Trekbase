@@ -75,11 +75,13 @@
             <label class="" for="file">Park Image <i class="small material-icons">insert_photo</i></label>
             <input class="btn-accent" type="file" ng-model="file" name="file" base-sixty-four-input onload="onLoad" accept="image/*">
             <button class="btn btn-warning " ng-click="itemSave()" ng-disabled="!file.base64">Upload Image</button>
-            <div id="blankMap"></div>
         </div>
 
-        <button class="btn btn-default save-btn" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
+        <div class="add-campsite_end">
+            <div class="blank-map" id="blankMap"></div>
 
+            <button class="btn btn-default btn-accent save-btn" ng-click="addingCampsite = false; createNewCampsite()">Save</button>
+        </div>
 
     </div>
     <div class="campsites-box" ng-hide="editing == true || addingCampsite == true">
