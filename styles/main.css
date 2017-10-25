@@ -81,11 +81,11 @@ nav {
 .home-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 60vh; }
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  min-height: 100%; }
   .home-container .park-box {
     background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
     background-size: cover; }
@@ -99,12 +99,15 @@ nav {
       font-family: 'Rubik Mono One', sans-serif; }
 
 .home_container-boxes {
+  margin: 10px;
+  flex-grow: 1;
+  height: 300px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
-  width: 50%;
-  height: 100%;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
   font-size: 50px; }
 
@@ -117,10 +120,9 @@ nav {
 
 .bgr-box-home {
   background-color: #1F445F;
-  height: 60vh;
+  min-height: 100%;
   width: 100%;
-  margin: 0;
-  overflow: auto; }
+  margin: 0; }
   .bgr-box-home a,
   .bgr-box-home a:hover {
     color: white;
