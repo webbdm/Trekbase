@@ -87,10 +87,11 @@
     </div>
     <div class="campsites-box" ng-hide="editing == true || addingCampsite == true">
         <div class="card-themed" ng-repeat="campsite in campsites">
-            <img class="" src="data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}">
+            <div class="uploadedImage" style="background: url('data:{{campsite.image.filetype}};base64,{{campsite.image.base64code}}') no-repeat center center">
             <span class="card-title-themed">
              <a ng-href="#!/campsite_view/{{campsite.campsiteId}}">{{campsite.campsiteName}}</a><br>
             </span>
+            </div>
         </div>
     </div>
     <div class="add-park" ng-hide="!editing">

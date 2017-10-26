@@ -2,6 +2,7 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
 
     $rootScope.tallNav = false;
     $scope.editing = false;
+    console.log($scope.editing);
 
     $scope.park = {};
     $scope.campsites = [];
@@ -100,14 +101,12 @@ app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $s
     // };
 
     let showBlankMap = (park) => {
+        console.log(park);
         let map;
         let parsedLat = Number(park.latitude);
         let parsedLong = Number(park.longitude);
         map = new google.maps.Map(document.getElementById('blankMap'), {
-            center: {
-                lat: parsedLat,
-                lng: parsedLong
-            },
+            center: new google.maps.LatLng(parsedLat, parsedLong),
             zoom: 12
         });
 

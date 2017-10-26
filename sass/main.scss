@@ -11,6 +11,15 @@ nav {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+};
+
+.nav-banner{
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(31, 68, 95, 0.54);
 }
 
 .trek-logo {
@@ -61,7 +70,7 @@ nav {
 }
 
 .nav-item {
-    color: white !important;
+    color: $primary !important;
     font-family: 'Rubik Mono One', sans-serif;
     flex-grow: 1;
 }
@@ -126,11 +135,11 @@ nav {
     // padding: 0;
     // height: 60vh;
     .park-box {
-        background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
+        background: url(http://d3ne5s9fv9p81l.cloudfront.net/48/96/22f/47a/3bfea62751652abe5f9a3b.jpg) no-repeat center center;
         background-size: cover;
         a {
             font-family: 'Rubik Mono One', sans-serif;
-            color: $primary;
+            color: white;
         }
     }
     .campsite-box {
@@ -233,11 +242,10 @@ nav {
 }
 
 .card-title-themed {
-    background-color: $primary;
-    color: white !important;
-    padding: 7px !important;
-    font-family: 'Rubik Mono One', sans-serif;
     a {
+        background-color: $primary;
+        padding: 7px !important;
+        font-family: 'Rubik Mono One', sans-serif;
         color: white !important;
     }
 }
@@ -663,8 +671,9 @@ nav {
 }
 
 .uploadedImage {
-    height: 140px;
-    width: auto;
+    min-height: 100%;
+    width: 100%;
+    background-size: cover;
 }
 
 .campsite-bgr {
@@ -677,7 +686,7 @@ nav {
 }
 
 .nav-test {
-    height: 400px; // color: red;
+    height: 600px; // color: red;
     // text-transform: uppercase;
     // text-decoration: underline;
 }

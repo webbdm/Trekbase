@@ -28,7 +28,6 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
             $scope.editedCampsite = results;
             $scope.campsite.campsiteId = campsiteParams.campsiteId; /// Necessary?
             getSinglePark($scope.campsite.parkId);
-            console.log($scope.campsite);
             getMap($scope.campsite);
             showEditMap($scope.campsite);
         })
@@ -58,14 +57,12 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
     };
 
     let getMap = (campsite) => {
-        console.log("ayyyyy!", campsite.coordinates);
-
         let parsedLat = Number(campsite.coordinates.lat);
-        let parsedLong = Number(campsite.coordinates.lng);
+        let parsedLng = Number(campsite.coordinates.lng);
 
         let coordinatesToRound = {
             lat: parsedLat,
-            lng: parsedLong
+            lng: parsedLng
         };
         console.log(coordinatesToRound);
         $scope.coordinates = coordinatesToRound;
@@ -73,10 +70,11 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
         let marker;
         
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: parsedLat,
-                lng: parsedLong
-            },
+            // center: {
+            //     lat: parsedLat,
+            //     lng: parsedLng
+            // }
+            center: new google.maps.LatLng(parsedLat, parsedLng),
             zoom: 12
         });
 
