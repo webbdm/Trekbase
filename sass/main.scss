@@ -5,12 +5,21 @@ nav {
     padding-bottom: 20px;
 }
 
-.nav-flex{
+.nav-flex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+};
+
+.nav-banner{
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(31, 68, 95, 0.54);
 }
 
 .trek-logo {
@@ -18,9 +27,11 @@ nav {
     font-family: 'Rubik Mono One', sans-serif;
     margin: 20px;
     padding: 5px 10px !important;
-    background-color: #1F445F; 
+    background-color: #1F445F;
     text-decoration: none;
-    &:hover, &:visited, &:active{
+    &:hover,
+    &:visited,
+    &:active {
         text-decoration: none;
     }
 }
@@ -54,25 +65,24 @@ nav {
     color: white;
 }
 
-.nav-items-box{
+.nav-items-box {
     margin-top: 1.5%;
 }
 
 .nav-item {
-    color: white !important;
+    color: $primary !important;
     font-family: 'Rubik Mono One', sans-serif;
     flex-grow: 1;
-    
 }
 
 @media (max-width: 420px) {
-    .nav{ 
+    .nav {
         height: 170px;
     }
-    .nav-items-box{
+    .nav-items-box {
         margin-top: 0;
     }
-    .nav-item{
+    .nav-item {
         font-size: 10px;
         padding: 5px;
     }
@@ -81,7 +91,7 @@ nav {
 .login-box {
     &_left {
         padding: 55px;
-        a{
+        a {
             width: 40%;
             color: $accent;
         }
@@ -91,15 +101,13 @@ nav {
     }
 }
 
-.login-input-wrapper{
+.login-input-wrapper {
     background-color: $secondary;
     padding: 15px;
-    border-radius: 10px;
-    //border: 2px solid $accent;
+    border-radius: 10px; //border: 2px solid $accent;
     // border-top: 7px solid $accent; 
     // border-bottom: 7px solid $accent;
-   
-    input{
+    input {
         padding: 20px;
     }
 }
@@ -113,56 +121,66 @@ nav {
 .home-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 60vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    min-height: 100%;
+
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    // width: 100%;
+    // margin: 0;
+    // padding: 0;
+    // height: 60vh;
     .park-box {
-        background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160129105442-nationalparks-1-super-169.jpg) no-repeat center center;
+        background: url(http://d3ne5s9fv9p81l.cloudfront.net/48/96/22f/47a/3bfea62751652abe5f9a3b.jpg) no-repeat center center;
         background-size: cover;
-        a{
+        a {
             font-family: 'Rubik Mono One', sans-serif;
-            color: $primary;
+            color: white;
         }
     }
     .campsite-box {
         background: url(https://images.theoutbound.com/uploads/1437140402255/wumsmrfw78e/ca76c0961beec40ee34c0e8b7997e543?w=900&h=600&fit=crop) no-repeat center center;
         background-size: cover;
-        a{
+        a {
             font-family: 'Rubik Mono One', sans-serif;
         }
     }
 }
 
 .home_container-boxes {
+    margin: 10px;
+    flex-grow: 1;
+    height: 300px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
-    //align-items: center;
-    width: 50%;
-    height: 100%;
+    justify-content: space-around; 
+    align-items: center;
+    // width: 50%;
+    // min-height: 100%;
     text-align: center;
-    font-size: 50px;
-    //padding-top: 10%;
+    font-size: 50px; //padding-top: 10%;
 }
 
 .bgr-box-primary {
     background-color: $primary;
-    height: auto;
+    //height: auto;
+    min-height: 100vh;
     width: 100%;
     margin: 0;
-    padding: 1%;
-    //overflow: auto;
+    padding: 1%; //overflow: auto;
 }
 
 .bgr-box-home {
     background-color: $primary;
-    height: 60vh;
+    min-height: 100%;
     width: 100%;
     margin: 0;
-    overflow: auto;
     a,
     a:hover {
         color: white;
@@ -179,6 +197,7 @@ nav {
     background-color: $secondary;
     border: none;
     color: white;
+    min-height: 100%;
     &:hover {
         color: $accent;
     }
@@ -195,12 +214,12 @@ nav {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    // display: flex;
+    justify-content: space-between; // display: flex;
     // flex-direction: row;
     // justify-content: space-between;
     // align-items: center;
 }
+
 .card-themed {
     margin: 20px;
     position: relative;
@@ -208,8 +227,8 @@ nav {
     width: 300px;
     flex-grow: 1;
     overflow: hidden;
-    border: 2px solid $secondary;
-    a{
+    border: 4px solid $secondary;
+    a {
         position: absolute;
         bottom: 8px;
         right: 16px;
@@ -222,18 +241,17 @@ nav {
     }
 }
 
-.card-title-themed{
-    background-color: $primary;
-    color: white !important;
-    padding: 7px !important;
-    font-family: 'Rubik Mono One', sans-serif;
-    a{
+.card-title-themed {
+    a {
+        background-color: $primary;
+        padding: 7px !important;
+        font-family: 'Rubik Mono One', sans-serif;
         color: white !important;
     }
-
 }
 
-.add-park, .add-campsite {
+.add-park,
+.add-campsite {
     margin: 10px 17px;
     padding: 10px;
     background-color: $secondary;
@@ -243,32 +261,52 @@ nav {
     justify-content: space-between;
     align-content: center;
     &_input {
-           color: white;
-           min-width: 350px;
-           flex-grow: 1;
-           margin: 5px;
-           padding: 5px;
-           input{
-               color: white;
-           }
-           label{
-               color: white}
-
+        color: white;
+        min-width: 350px;
+        flex-grow: 1;
+        margin: 5px;
+        padding: 5px;
+        input {
+            color: white;
         }
-    &_submit{
+        label {
+            color: white
+        }
+    }
+    &_submit {
         align-self: center;
         flex-grow: 1;
-        button{
+        button {
             margin: 5px;
         }
     }
 }
 
-.park_img_upload{
-
+.park-list {
+    &_top {
+        p {
+            margin: 0;
+            font-size: 35px;
+            font-family: 'Rubik Mono One', sans-serif;
+        }
+        color: white;
+        vertical-align: middle;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 20px;
+        &_buttons {
+            vertical-align: middle;
+        }
+    }
+    &_add-park {}
 }
 
-.park-list-grid{
+.park_img_upload {}
+
+.park-list-top {}
+
+.park-list-grid {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -276,18 +314,18 @@ nav {
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
-    .cardy{
+    .cardy {
         margin: 20px;
         position: relative;
         height: 300px;
         width: 300px;
         flex-grow: 1;
         overflow: hidden;
-        border: 2px solid $secondary;
-        a{
+        border: 3px solid $secondary;
+        a {
             text-align: center;
         }
-        p{
+        p {
             // position: absolute;
             // bottom: 8px;
             // right: 16px;
@@ -297,30 +335,38 @@ nav {
     }
 }
 
-.park-top-box{
+.park-top-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .park-title-box {
-    h5{
+    margin: 0px 20px;
+    h5 {
         font-family: 'Rubik Mono One', sans-serif;
         color: white !important;
     }
-
     p {
         color: $accent;
     }
 }
 
 .park-buttons {
-    margin: 5px 0px;
-}
-
-.park-title-box,
-.park-buttons {
-    margin: 0px 20px;
+    margin: 12px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    button {
+        color: $primary;
+        font-size: 12px;
+        min-width: 180px;
+        i {
+            vertical-align: middle;
+            margin: 0 0 3px 3px;
+        }
+    }
 }
 
 // change to BEM dashes park-view
@@ -349,17 +395,26 @@ nav {
     border: none;
     height: 400px;
     width: auto;
-    p {
-        color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &_title {
+        a {
+            color: white;
+            font-family: 'Rubik Mono One', sans-serif;
+            vertical-align: middle;
+        }
+        p {
+            color: $accent;
+        }
     }
 }
 
 // Campsite-View
-
-.campsite-wrapper{
+.campsite-wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    // padding-top: 5px;
+    grid-template-columns: 1fr 2fr; // padding-top: 5px;
     // display: flex;
     // flex-direction: row;
     // justify-content: space-around;
@@ -367,7 +422,7 @@ nav {
     // flex-wrap: wrap;
 }
 
-.campsite-wrapper > *{
+.campsite-wrapper>* {
     margin: 20px;
 }
 
@@ -381,57 +436,51 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .campsite-view_header{
-        h1{
+    .campsite-view_header {
+        h1 {
             text-align: center;
             color: white;
             font-family: 'Rubik Mono One', sans-serif;
         }
-        h5{
+        h5 {
             text-align: center;
             color: $accent;
         }
-        .accent-border{
+        .accent-border {
             border-top: 2px solid $primary;
             border-bottom: 2px solid $primary;
             margin-bottom: 20px;
         }
     }
-
-    .campsite-view_details{
-        p{
+    .campsite-view_details {
+        p {
             font-size: 20px;
             color: $accent;
             font-weight: bold;
             max-width: 370px;
             overflow-wrap: break-word;
         }
-
-        span{
+        span {
             color: white;
             font-size: 17px;
             max-width: 400px;
             overflow-wrap: break-word;
         }
     }
-    
-    img{
+    img {
         width: 100%;
         height: auto;
         border: 2px solid $primary;
-
     }
-    
-    .btn-box{
+    .btn-box {
         margin: 15px;
-        button{
+        button {
             text-align: center;
             font-size: 12px;
             color: $primary;
             width: 100%;
             vertical-align: middle;
-            i{
+            i {
                 vertical-align: middle;
                 margin: 4px 4px 5px 4px;
             }
@@ -442,27 +491,23 @@ nav {
 .campsite-view_main-box {
     height: auto;
     color: white;
-    background-color: $secondary;
-    // display: flex;
+    background-color: $secondary; // display: flex;
     // flex-direction: column;
     // justify-content: flex-start;
     // flex-grow: 1;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr; 
-    &> * {
+    grid-template-rows: 1fr 1fr 1fr;
+    &>* {
         padding: 15px;
-        border-bottom: 4px solid $primary;
-        //height: 33.33%
+        border-bottom: 4px solid $primary; //height: 33.33%
     }
     .review-box {
-        min-height: 20%;
-        //overflow: auto;
+        min-height: 20%; //overflow: auto;
         p {
             margin: 0;
             font-size: 15px;
         }
-
-        .tag{
+        .tag {
             background-color: $accent;
             color: $primary;
             float: left;
@@ -475,59 +520,50 @@ nav {
         flex-direction: column;
         justify-content: space-around;
         position: relative;
-        align-items: flex-start;
-        // margin: 5px;
+        align-items: flex-start; // margin: 5px;
         // padding: 10px;
-        height: auto;
-        //background-color: #555151;
+        height: auto; //background-color: #555151;
         //overflow: auto;
         &_comment {
-            margin: 0;
-            // p{
+            margin: 0; // p{
             //     margin: 0;
             // }
         }
         .submit-box {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-
-            // position: absolute;
+            justify-content: space-between; // position: absolute;
             // right:    0px;
             // bottom:   0px;
             // position: absolute;
             color: white;
             min-width: 100%;
-            input{
-                margin: 0;
-                //flex-basis: 3;
+            input {
+                margin: 0; //flex-basis: 3;
             }
-            button{
-                margin: 1% 0 0 1%;
-                //flex-basis: 1;
+            button {
+                margin: 1% 0 0 1%; //flex-basis: 1;
             }
         }
-        h4{
+        h4 {
             color: $accent;
         }
     }
     .bottom-box {
-        &> *{
-           border: none; 
+        &>* {
+            border: none;
         }
         min-height: 250px;
         display: flex;
         flex-direction: row;
-        flex-basis: 2;
-        //flex-wrap: wrap;
+        flex-basis: 2; //flex-wrap: wrap;
         justify-content: space-around;
-        align-items: center;
-        // padding: 15px;
+        align-items: center; // padding: 15px;
         //height: 35%;
         // .image-map{
         //     min-width: 100px;
         // }
-        .coordinates{
+        .coordinates {
             text-align: center;
             border: none;
             border-top: 2px solid $primary;
@@ -537,38 +573,72 @@ nav {
             flex-direction: column;
             justify-content: space-between;
             align-content: center;
-            & p{
+            & p {
                 margin: 10px;
             }
-            & p:nth-of-type(odd){
+            & p:nth-of-type(odd) {
                 font-size: 30px;
             }
-            & p:nth-of-type(even){
-                background-color: $accent; 
+            & p:nth-of-type(even) {
+                background-color: $accent;
                 color: $primary;
             }
         }
     }
-
 }
 
-.edit-campsite{
+.edit-campsite {
     background-color: $secondary;
     padding: 25px;
+    color: white;
+}
+
+.upload-box {
+    input {
+        padding: 20px;
+    }
+    margin: 10px;
+    background-color: $accent;
+    label {
+        font-size: 15px;
+        margin: 5px;
+        color: $primary;
+    }
+    label,
+    i {
+        vertical-align: middle;
+    }
+    button {
+        margin: 10px;
+    }
+}
+
+.edit-map {
+    margin: 10px;
+}
+
+.form-bottom-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button,
+    .delete-btn {
+        flex-grow: 1;
+        vertical-align: middle;
+        margin: 10px;
+    }
 }
 
 // Switch from Grid to Flexbox on tablet size or smaller
-@media(max-width: 770px){
-    .campsite-wrapper{
+@media(max-width: 770px) {
+    .campsite-wrapper {
         display: flex;
         flex-direction: column;
-    
     }
-    .image-map{
+    .image-map {
         width: 100px;
         height: auto;
     }
-
 }
 
 .bottom-box img {
@@ -576,7 +646,8 @@ nav {
     width: auto;
     margin: 5px;
 }
-.input-box{
+
+.input-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -585,7 +656,7 @@ nav {
     max-width: 300px;
 }
 
-.comment-text{
+.comment-text {
     font-size: 12px;
     margin-left: 10px;
     color: white;
@@ -595,13 +666,14 @@ nav {
     display: inline-block;
 }
 
-.form-bottom-box{
-    margin: 25px 0px;;
+.form-bottom-box {
+    margin: 25px 0px;
 }
 
 .uploadedImage {
-    height: 140px;
-    width: auto;
+    min-height: 100%;
+    width: 100%;
+    background-size: cover;
 }
 
 .campsite-bgr {
@@ -614,8 +686,7 @@ nav {
 }
 
 .nav-test {
-    height: 400px;
-    // color: red;
+    height: 600px; // color: red;
     // text-transform: uppercase;
     // text-decoration: underline;
 }
@@ -627,11 +698,9 @@ nav {
     max-width: 600px;
 }
 
-
-
-#blankMap, #editMap {
-    min-height: 250px;
-    //max-height: 50%;
+#blankMap,
+#editMap {
+    min-height: 250px; //max-height: 50%;
     width: 100%;
 }
 
@@ -640,3 +709,51 @@ nav {
 }
 
 // Rules for ReDesign of UI
+// ---- New Grid Classes----
+.add-campsite {
+    &_grid {
+        background-color: $secondary;
+        padding: 25px;
+        margin-top: 25px;
+    }
+    &_input-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    &_column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        >* {
+            margin: 10px;
+        }
+    }
+    &_review {
+        margin: 10px;
+    }
+    &_image-box {
+        margin: 10px;
+        background-color: $accent;
+        label {
+            font-size: 15px;
+            margin: 5px;
+            color: $primary;
+        }
+        label,
+        i {
+            vertical-align: middle;
+        }
+        button {
+            margin: 10px;
+        }
+    }
+    &_end {
+        .blank-map {
+            margin: 10px;
+        }
+        .save-btn {
+            width: 100%;
+            margin: 10px;
+        }
+    }
+}

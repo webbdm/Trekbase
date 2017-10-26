@@ -57,23 +57,24 @@ app.controller("CampsiteViewCtrl", function ($location, $rootScope, $routeParams
     };
 
     let getMap = (campsite) => {
-        console.log("ayyyyy!", campsite.coordinates);
+        let parsedLat = Number(campsite.coordinates.lat);
+        let parsedLng = Number(campsite.coordinates.lng);
 
         let coordinatesToRound = {
-            lat: campsite.coordinates.lat.toFixed(6),
-            lng: campsite.coordinates.lng.toFixed(6)
+            lat: parsedLat,
+            lng: parsedLng
         };
-        //console.log(coordinatesToRound.lat.toFixed(6), "Lat");
+        console.log(coordinatesToRound);
         $scope.coordinates = coordinatesToRound;
         let map;
         let marker;
-        let parsedLat = Number(campsite.coordinates.lat);
-        let parsedLong = Number(campsite.coordinates.lng);
+        
         map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-                lat: parsedLat,
-                lng: parsedLong
-            },
+            // center: {
+            //     lat: parsedLat,
+            //     lng: parsedLng
+            // }
+            center: new google.maps.LatLng(parsedLat, parsedLng),
             zoom: 12
         });
 

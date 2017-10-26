@@ -1,11 +1,10 @@
+<div class="divider"></div>
 <div class="bgr-box-primary">
-    <div>
-        <h2>Parks</h2>
-        <div class="">
-            <button class="btn btn-default btn-accent btn-right pull-right" ng-click="addingPark = true;" ng-show="!addingPark">Add <i class="material-icons">landscape</i></button>
+    <div class="park-list_top">
+        <p>Parks</p>
+        <div class="park-list_buttons">
+            <button class="btn btn-default btn-accent" ng-click="addingPark = true;" ng-show="!addingPark">Add <i class="material-icons">landscape</i></button>
         </div>
-
-        <!--  -->
 
         <div class="add-park" ng-show="addingPark">
             <!-- <form class="form-group"> -->
@@ -43,13 +42,14 @@
     <div class="park-list-grid">
         <div ng-repeat="park in allParks" ng-show="!addingPark" class="cardy">
             <div class="park_list--park_card">
-
-                <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
-                <p>{{park.city}}, {{park.state}}</p>
-                <a ng-click="deletePark(park.parkId)">
-                    <!--<button>Delete Park</button>-->
-                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                </a>
+                <div class="park_list--park_card_title">
+                    <a ng-href="#!/park_view/{{park.parkId}}">{{park.name}}</a>
+                    <p>{{park.city}}, {{park.state}}</p>
+                    <a ng-click="deletePark(park.parkId)">
+                        <!--<button>Delete Park</button>-->
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
+                </div>
                 <!-- <a ng-click="editing = true">
                         <button>Edit Park</button>
                     </a> -->
