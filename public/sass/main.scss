@@ -70,7 +70,7 @@ nav {
 }
 
 .nav-item {
-    color: $primary !important;
+    color: $primary;
     font-family: 'Rubik Mono One', sans-serif;
     flex-grow: 1;
 }
@@ -85,6 +85,7 @@ nav {
     .nav-item {
         font-size: 10px;
         padding: 5px;
+        color: white !important;
     }
 }
 
@@ -639,6 +640,14 @@ nav {
         width: 100px;
         height: auto;
     }
+
+    .nav-item {
+        font-size: 10px;
+        padding: 5px;
+        color: white !important;
+    }
+
+
 }
 
 .bottom-box img {

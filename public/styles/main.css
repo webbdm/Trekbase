@@ -52,7 +52,7 @@ nav {
   margin-top: 1.5%; }
 
 .nav-item {
-  color: #1F445F !important;
+  color: #1F445F;
   font-family: 'Rubik Mono One', sans-serif;
   flex-grow: 1; }
 
@@ -63,7 +63,8 @@ nav {
     margin-top: 0; }
   .nav-item {
     font-size: 10px;
-    padding: 5px; } }
+    padding: 5px;
+    color: white !important; } }
 
 .login-box_left {
   padding: 55px; }
@@ -469,7 +470,11 @@ nav {
     flex-direction: column; }
   .image-map {
     width: 100px;
-    height: auto; } }
+    height: auto; }
+  .nav-item {
+    font-size: 10px;
+    padding: 5px;
+    color: white !important; } }
 
 .bottom-box img {
   height: 200px;
