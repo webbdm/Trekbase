@@ -67,10 +67,18 @@ nav {
     color: white !important; } }
 
 .login-box_left {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   padding: 55px; }
+  .login-box_left .auth-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
   .login-box_left a {
-    width: 40%;
-    color: #FFB81C; }
+    color: #FFB81C;
+    width: 50%;
+    margin: 10px; }
 
 .login-box_right {
   padding: 55px; }
@@ -80,7 +88,8 @@ nav {
   padding: 15px;
   border-radius: 10px; }
   .login-input-wrapper input {
-    padding: 20px; }
+    padding: 10px;
+    color: white; }
 
 .divider {
   width: 100%;

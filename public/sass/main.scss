@@ -91,10 +91,19 @@ nav {
 
 .login-box {
     &_left {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
         padding: 55px;
+        .auth-btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
         a {
-            width: 40%;
             color: $accent;
+            width: 50%;
+            margin: 10px;
         }
     }
     &_right {
@@ -109,7 +118,8 @@ nav {
     // border-top: 7px solid $accent; 
     // border-bottom: 7px solid $accent;
     input {
-        padding: 20px;
+        padding: 10px;
+        color: white;
     }
 }
 
