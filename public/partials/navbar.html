@@ -13,25 +13,23 @@
             </ul>
 
             <!-- <h4 ng-if="tallNav==true" class="nav-banner">Find Your Trail</h4> -->
-            
+
             <div ng-if="showAuth" class="nav-banner">
                 <div class="nav-banner_text">
-                    <h4 class="">Find Your Trail</h4>
-                    <p>Camping is fun, getting lost isn't. Join a community </p>
+                    <h2 class="">Find Your Trail.</h2>
+                    <p>Camping is fun, getting lost isn't. Join a community of explorers & find photos, reviews, and exact locations for even the most remote campsites.</p>
 
                 </div>
 
                 <div class="nav-banner-auth">
-                    <div class="login-box_left">
-                        <div class="login-input-wrapper">
-                            <input type="email" class="" placeholder="Email Address" ng-model="auth.email" required autofocus>
-                            <input type="password" class="" placeholder="Password" ng-model="auth.password" required>
-                            <input type="text" class="" placeholder="Username" ng-model="auth.username" required>
-                        </div>
-                        <div class="auth-btn">
-                            <a class="btn" ng-click="loginUser()">Login</a>
-                            <a class="btn" ng-click="registerUser()">Register</a>
-                        </div>
+                    <div class="login-input-wrapper">
+                        <input type="email" class="" placeholder="Email Address" ng-model="auth.email" required autofocus>
+                        <input type="password" class="" placeholder="Password" ng-model="auth.password" required>
+                        <input type="text" class="" placeholder="Username" ng-model="auth.username" required>
+                    </div>
+                    <div class="auth-btn">
+                        <a class="btn" ng-click="loginUser()">Login</a>
+                        <a class="btn" ng-click="registerUser()">Register</a>
                     </div>
                 </div>
             </div>

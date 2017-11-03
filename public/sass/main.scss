@@ -1,7 +1,7 @@
 @import "colors";
 
 body{
-    padding-bottom: -20px;
+    background-color: $primary;
 }
 nav {
     height: 150px;
@@ -23,14 +23,41 @@ nav {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 400px;
+    height: 500px;
     width: 100%;
     padding: 20px;
     margin-top: 7%;
     background-color: $transparent;
+    &> *{
+        margin: 20px;
+        padding: 30px;
+    }
     &_text{
-        height: 200px;
-        padding: 45px;
+        height: auto;
+        text-align: left;
+        color: white;
+        p{
+            max-width: 350px;;
+            line-height: 160%;
+            // border: 1px solid red;
+        }
+    }
+}
+
+.nav-banner-auth{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    .auth-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    a {
+        color: $secondary;
+        background-color: $accent;
+        width: 50%;
+        margin: 10px;
     }
 }
 
@@ -113,25 +140,12 @@ nav {
 
 .login-box {
     &_left {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        padding: 55px;
-        .auth-btn {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-        a {
-            color: $accent;
-            width: 50%;
-            margin: 10px;
-        }
+       
     }
 }
 
 .login-input-wrapper {
-    background-color: $transparent;
+    background-color: rgba(31, 68, 95, 0.84);
     padding: 15px;
     input {
         padding: 10px;
