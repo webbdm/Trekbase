@@ -2,6 +2,7 @@ app.controller("ParkListCtrl", function($location, $rootScope, $routeParams, $sc
 
     $rootScope.tallNav = false;
     $rootScope.halfNav = false;
+    $rootScope.showAuth = false;    
     $scope.allParks = [];
     $scope.editing = true;
 

@@ -1,6 +1,8 @@
 app.controller("ParkViewCtrl", function ($location, $rootScope, $routeParams, $scope, ParkFactory, CampsiteFactory) {
 
     $rootScope.tallNav = false;
+    $rootScope.showAuth = false;
+    
     $scope.editing = false;
     console.log($scope.editing);
 
