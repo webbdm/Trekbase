@@ -1,30 +1,42 @@
 <div ng-controller="NavCtrl">
-    <nav ng-class="{'nav-test': tallNav}" style="background: url(http://www.mountainaircabinrentals.com/wp-content/uploads/2015/11/gatlinburg-cabins2.jpg) no-repeat center center; background-size: cover;"
+    <nav ng-class="{'nav-tall': tallNav, 'nav-half': halfNav}" style="background: url(./img/NavBkg.jpg) no-repeat center center; background-size: cover;"
         class="navbar navbar-default" ng-controller="NavCtrl">
         <div class="nav-flex">
-            <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="trek-logo" href="">Trek</a>
-                <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
-                <ul class="nav-items-box right" ng-if="user.uid">
-                    <li><a class="nav-item" href="#!/">Home</a></li>
-                    <li><a class="nav-item" href="#!/list">Parks</a></li>
-                    <li><a class="nav-item" href="#!/campsite_view">Campsites</a></li>
-                    <li><a class="nav-item" href="#!/logout">Logout</a></li>
-                </ul>
 
-                <h4 ng-show="tallNav==true" class="nav-banner">Find Your Trail</h4>
-                <!-- <ul class="side-nav" id="mobile-demo" ng-if="user.uid">
-                    <li><a class="nav-item" href="#!/list">Parks</a></li>
-                    <li><a class="nav-item" href="#!/campsite_view">Campsites</a></li>
-                    <li><a class="nav-item" href="#!/logout">Logout</a></li>
-                </ul> -->
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <a class="trek-logo" href="">Trek</a>
 
-                <!-- <ul class="nav navbar-nav navbar-right" ng-if="!user.uid">
-                    <li><a href="#!/auth">Authenticate</a></li>
-                </ul> -->
-            <!-- /.navbar-collapse -->
+            <ul class="nav-items-box right" ng-if="user.uid">
+                <li><a class="nav-item" href="#!/">Home</a></li>
+                <li><a class="nav-item" href="#!/list">Parks</a></li>
+                <li><a class="nav-item" href="#!/campsite_view">Campsites</a></li>
+                <li><a class="nav-item" href="#!/logout">Logout</a></li>
+            </ul>
+
+            <!-- <h4 ng-if="tallNav==true" class="nav-banner">Find Your Trail</h4> -->
+            
+            <div ng-if="showAuth" class="nav-banner">
+                <div class="nav-banner_text">
+                    <h4 class="">Find Your Trail</h4>
+                    <p>Camping is fun, getting lost isn't. Join a community </p>
+
+                </div>
+
+                <div class="nav-banner-auth">
+                    <div class="login-box_left">
+                        <div class="login-input-wrapper">
+                            <input type="email" class="" placeholder="Email Address" ng-model="auth.email" required autofocus>
+                            <input type="password" class="" placeholder="Password" ng-model="auth.password" required>
+                            <input type="text" class="" placeholder="Username" ng-model="auth.username" required>
+                        </div>
+                        <div class="auth-btn">
+                            <a class="btn" ng-click="loginUser()">Login</a>
+                            <a class="btn" ng-click="registerUser()">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <!-- /.container-fluid -->
+
     </nav>
 </div>

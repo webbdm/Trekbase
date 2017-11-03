@@ -1,4 +1,8 @@
 @import "colors";
+
+body{
+    padding-bottom: -20px;
+}
 nav {
     height: 150px;
     margin-bottom: 0;
@@ -11,14 +15,32 @@ nav {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
-};
+}
 
-.nav-banner{
+.nav-banner {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 7%;
+    background-color: $transparent;
+    &_text{
+        height: 200px;
+        padding: 45px;
+    }
+}
+
+
+.nav-banner-login {
     text-align: center;
     position: absolute;
     top: 400px;
     width: 100%;
-    padding: 20px;
+    height: auto;
     background-color: rgba(31, 68, 95, 0.54);
 }
 
@@ -95,7 +117,7 @@ nav {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         padding: 55px;
-        .auth-btn{
+        .auth-btn {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -106,17 +128,11 @@ nav {
             margin: 10px;
         }
     }
-    &_right {
-        padding: 55px;
-    }
 }
 
 .login-input-wrapper {
-    background-color: $secondary;
+    background-color: $transparent;
     padding: 15px;
-    border-radius: 10px; //border: 2px solid $accent;
-    // border-top: 7px solid $accent; 
-    // border-bottom: 7px solid $accent;
     input {
         padding: 10px;
         color: white;
@@ -136,9 +152,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-    min-height: 100%;
-
-    // display: flex;
+    min-height: 100%; // display: flex;
     // flex-direction: row;
     // flex-wrap: nowrap;
     // width: 100%;
@@ -170,17 +184,15 @@ nav {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-around; 
-    align-items: center;
-    // width: 50%;
+    justify-content: space-around;
+    align-items: center; // width: 50%;
     // min-height: 100%;
     text-align: center;
     font-size: 50px; //padding-top: 10%;
 }
 
 .bgr-box-primary {
-    background-color: $primary;
-    //height: auto;
+    background-color: $primary; //height: auto;
     min-height: 100vh;
     width: 100%;
     margin: 0;
@@ -650,14 +662,11 @@ nav {
         width: 100px;
         height: auto;
     }
-
     .nav-item {
         font-size: 10px;
         padding: 5px;
         color: white !important;
     }
-
-
 }
 
 .bottom-box img {
@@ -704,10 +713,14 @@ nav {
     padding: 0;
 }
 
-.nav-test {
-    height: 600px; // color: red;
+.nav-tall {
+    height: 100vh; // color: red;
     // text-transform: uppercase;
     // text-decoration: underline;
+}
+
+.nav-half {
+    height: 60vh;
 }
 
 #map {

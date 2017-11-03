@@ -1,6 +1,8 @@
 app.controller("HomeCtrl", function($rootScope) {
 
-    $rootScope.tallNav = true;
+    $rootScope.tallNav = false;
+    $rootScope.halfNav = true;
+    $rootScope.showAuth = false;
 
 
 });

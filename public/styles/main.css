@@ -1,3 +1,6 @@
+body {
+  padding-bottom: -20px; }
+
 nav {
   height: 150px;
   margin-bottom: 0;
@@ -12,10 +15,25 @@ nav {
 
 .nav-banner {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 7%;
+  background-color: rgba(31, 68, 95, 0.54); }
+  .nav-banner_text {
+    height: 200px;
+    padding: 45px; }
+
+.nav-banner-login {
+  text-align: center;
   position: absolute;
   top: 400px;
   width: 100%;
-  padding: 20px;
+  height: auto;
   background-color: rgba(31, 68, 95, 0.54); }
 
 .trek-logo {
@@ -80,13 +98,9 @@ nav {
     width: 50%;
     margin: 10px; }
 
-.login-box_right {
-  padding: 55px; }
-
 .login-input-wrapper {
-  background-color: #312F2F;
-  padding: 15px;
-  border-radius: 10px; }
+  background-color: rgba(31, 68, 95, 0.54);
+  padding: 15px; }
   .login-input-wrapper input {
     padding: 10px;
     color: white; }
@@ -520,8 +534,11 @@ nav {
   max-width: 350px;
   padding: 0; }
 
-.nav-test {
-  height: 600px; }
+.nav-tall {
+  height: 100vh; }
+
+.nav-half {
+  height: 60vh; }
 
 #map {
   min-height: 200px;
